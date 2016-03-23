@@ -22,7 +22,7 @@ class Restaurant: NSManagedObject {
         
         return dates!
     }
-    
+    //
     
     // fonction permmettant d'afficher le jour, date, année
     
