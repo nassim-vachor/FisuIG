@@ -37,6 +37,18 @@
 		9130FCAD1C9AB66C0056A8C8 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9130FC9A1C9AB66C0056A8C8 /* Speaker.swift */; };
 		9130FCAE1C9AB66C0056A8C8 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9130FC9A1C9AB66C0056A8C8 /* Speaker.swift */; };
 		9147ECCE1CA1C73F00BE1D21 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9147ECCD1CA1C73F00BE1D21 /* SecondViewController.swift */; };
+		D42C47EF1CA446EA0009F6AE /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42C47EE1CA446EA0009F6AE /* EventViewController.swift */; };
+		D42C47F01CA446EA0009F6AE /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42C47EE1CA446EA0009F6AE /* EventViewController.swift */; };
+		D42C47F21CA447070009F6AE /* RestoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42C47F11CA447070009F6AE /* RestoViewController.swift */; };
+		D42C47F31CA447070009F6AE /* RestoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42C47F11CA447070009F6AE /* RestoViewController.swift */; };
+		D42C47F51CA447170009F6AE /* HotelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42C47F41CA447170009F6AE /* HotelViewController.swift */; };
+		D42C47F61CA447170009F6AE /* HotelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42C47F41CA447170009F6AE /* HotelViewController.swift */; };
+		D42C47F81CA4472B0009F6AE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42C47F71CA4472B0009F6AE /* MapViewController.swift */; };
+		D42C47F91CA4472B0009F6AE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42C47F71CA4472B0009F6AE /* MapViewController.swift */; };
+		D42C47FB1CA447BC0009F6AE /* MyEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42C47FA1CA447BC0009F6AE /* MyEventViewController.swift */; };
+		D42C47FC1CA447BC0009F6AE /* MyEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42C47FA1CA447BC0009F6AE /* MyEventViewController.swift */; };
+		D42C48011CA45AE30009F6AE /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42C48001CA45AE30009F6AE /* ScheduleTableViewCell.swift */; };
+		D42C48021CA45AE30009F6AE /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42C48001CA45AE30009F6AE /* ScheduleTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +95,12 @@
 		9130FC991C9AB66C0056A8C8 /* Speaker+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Speaker+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9130FC9A1C9AB66C0056A8C8 /* Speaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
 		9147ECCD1CA1C73F00BE1D21 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = ../SecondViewController.swift; sourceTree = "<group>"; };
+		D42C47EE1CA446EA0009F6AE /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		D42C47F11CA447070009F6AE /* RestoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestoViewController.swift; sourceTree = "<group>"; };
+		D42C47F41CA447170009F6AE /* HotelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelViewController.swift; sourceTree = "<group>"; };
+		D42C47F71CA4472B0009F6AE /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		D42C47FA1CA447BC0009F6AE /* MyEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyEventViewController.swift; sourceTree = "<group>"; };
+		D42C48001CA45AE30009F6AE /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +166,12 @@
 				9147ECCD1CA1C73F00BE1D21 /* SecondViewController.swift */,
 				9130FC621C9AA1390056A8C8 /* ViewController.swift */,
 				9130FC641C9AA1390056A8C8 /* Main.storyboard */,
+				D42C48001CA45AE30009F6AE /* ScheduleTableViewCell.swift */,
+				D42C47FA1CA447BC0009F6AE /* MyEventViewController.swift */,
+				D42C47EE1CA446EA0009F6AE /* EventViewController.swift */,
+				D42C47F11CA447070009F6AE /* RestoViewController.swift */,
+				D42C47F41CA447170009F6AE /* HotelViewController.swift */,
+				D42C47F71CA4472B0009F6AE /* MapViewController.swift */,
 				9130FC6A1C9AA1390056A8C8 /* Assets.xcassets */,
 				9130FC6C1C9AA1390056A8C8 /* LaunchScreen.storyboard */,
 				9130FC6F1C9AA1390056A8C8 /* Info.plist */,
@@ -306,10 +330,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				9130FC9F1C9AB66C0056A8C8 /* Restaurant+CoreDataProperties.swift in Sources */,
+				D42C47FB1CA447BC0009F6AE /* MyEventViewController.swift in Sources */,
+				D42C47F51CA447170009F6AE /* HotelViewController.swift in Sources */,
 				9130FCA91C9AB66C0056A8C8 /* Location.swift in Sources */,
 				9130FC9D1C9AB66C0056A8C8 /* Activity.swift in Sources */,
 				9147ECCE1CA1C73F00BE1D21 /* SecondViewController.swift in Sources */,
 				9130FCAD1C9AB66C0056A8C8 /* Speaker.swift in Sources */,
+				D42C47EF1CA446EA0009F6AE /* EventViewController.swift in Sources */,
+				D42C48011CA45AE30009F6AE /* ScheduleTableViewCell.swift in Sources */,
+				D42C47F81CA4472B0009F6AE /* MapViewController.swift in Sources */,
+				D42C47F21CA447070009F6AE /* RestoViewController.swift in Sources */,
 				17F744041CA0A5F80029092C /* Commentaire.swift in Sources */,
 				9130FC9B1C9AB66C0056A8C8 /* Activity+CoreDataProperties.swift in Sources */,
 				9130FCA11C9AB66C0056A8C8 /* Restaurant.swift in Sources */,
@@ -332,11 +362,17 @@
 				9130FCAC1C9AB66C0056A8C8 /* Speaker+CoreDataProperties.swift in Sources */,
 				9130FCA21C9AB66C0056A8C8 /* Restaurant.swift in Sources */,
 				9130FC9E1C9AB66C0056A8C8 /* Activity.swift in Sources */,
+				D42C47F01CA446EA0009F6AE /* EventViewController.swift in Sources */,
 				9130FCAE1C9AB66C0056A8C8 /* Speaker.swift in Sources */,
 				9130FCAA1C9AB66C0056A8C8 /* Location.swift in Sources */,
 				9130FC9C1C9AB66C0056A8C8 /* Activity+CoreDataProperties.swift in Sources */,
+				D42C47F61CA447170009F6AE /* HotelViewController.swift in Sources */,
 				9130FCA01C9AB66C0056A8C8 /* Restaurant+CoreDataProperties.swift in Sources */,
+				D42C48021CA45AE30009F6AE /* ScheduleTableViewCell.swift in Sources */,
+				D42C47F31CA447070009F6AE /* RestoViewController.swift in Sources */,
 				9130FC791C9AA1390056A8C8 /* FisuTests.swift in Sources */,
+				D42C47FC1CA447BC0009F6AE /* MyEventViewController.swift in Sources */,
+				D42C47F91CA4472B0009F6AE /* MapViewController.swift in Sources */,
 				9130FCA61C9AB66C0056A8C8 /* Accomodation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
