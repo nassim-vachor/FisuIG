@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -146,19 +147,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0P8-vf-ba1">
-                                <rect key="frame" x="-14" y="0.0" width="600" height="551"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0P8-vf-ba1">
+                                <rect key="frame" x="-14" y="13" width="600" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <imageView key="tableFooterView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hiking" id="A7i-Jz-lzD">
-                                    <rect key="frame" x="0.0" y="64" width="600" height="191"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </imageView>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DayId" rowHeight="44" id="ULR-F9-7Pv" customClass="ScheduleTableViewCell" customModule="Fisu" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ULR-F9-7Pv" id="Ii3-EY-gIB">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zor-bG-RU9">
+                                                    <rect key="frame" x="19" y="0.0" width="581" height="43"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="43" id="0QL-qN-2wI"/>
+                                                        <constraint firstAttribute="width" constant="581" id="4HY-gj-oUP"/>
+                                                        <constraint firstAttribute="height" constant="43" id="EA7-3w-DV1"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="581" id="Id5-W6-Qb2"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="zor-bG-RU9" firstAttribute="top" secondItem="Ii3-EY-gIB" secondAttribute="topMargin" constant="-8" id="7sD-U5-Yph"/>
+                                                <constraint firstItem="zor-bG-RU9" firstAttribute="centerX" secondItem="Ii3-EY-gIB" secondAttribute="centerX" id="prJ-gQ-t3d"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dayLabel" destination="zor-bG-RU9" id="vSk-VD-sC3"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="0P8-vf-ba1" firstAttribute="centerY" secondItem="dwN-85-3DV" secondAttribute="centerY" id="83f-Td-3F7"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="k3V-NT-4X8"/>
                     <connections>
@@ -308,7 +333,6 @@
         <image name="acco" width="35" height="35"/>
         <image name="backg" width="2560" height="1600"/>
         <image name="event" width="35" height="35"/>
-        <image name="hiking" width="2560" height="1600"/>
         <image name="logo" width="117" height="241"/>
         <image name="map" width="35" height="35"/>
         <image name="myEvent" width="35" height="35"/>
