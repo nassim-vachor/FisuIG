@@ -13,6 +13,7 @@ import CoreData
 class ViewController: UIViewController {
     
     //- pr récuperer le contexte de la classe Appdelegate
+ 
     let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
 
     override func viewDidLoad() {

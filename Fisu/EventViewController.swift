@@ -14,14 +14,11 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var days = [ Activity ]()
     
 
-   
-
     @IBOutlet weak var myTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let fetchRequest = NSFetchRequest ( entityName: "Activity")
-        self.myTableView.delegate = self
         do {
             let fetchResult = try managedObjectContext.executeFetchRequest(fetchRequest) as! [Activity]
             days = fetchResult
