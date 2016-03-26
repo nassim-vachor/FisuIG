@@ -14,7 +14,7 @@ import CoreData
 
 extension Restaurant {
 
-    @NSManaged var hourdeb: NSDate?
+    @NSManaged var hourdeb: NSDate?//
     @NSManaged var hourFin: NSDate?
     @NSManaged var idRes: NSNumber?
     @NSManaged var nameRes: String?
