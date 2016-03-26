@@ -56,7 +56,7 @@ class Activity: NSManagedObject {
     
     
     // methode de classe pour l'insertion d'une nouvelle activity
-    class func  insertNewActivity( context: NSManagedObjectContext ,id: NSNumber, nom: String, desc: String, dateD: String, dateF: String, lieu: Location?, speak: Speaker?, photo : String?) -> Activity?{
+    class func  insertNewActivity( context: NSManagedObjectContext ,id: NSNumber, nom: String, desc: String, dateD: String, dateF: String, lieu: Location?, speak: Speaker?, photo : String?, day: Day?) -> Activity?{
         let ActivityDescription = NSEntityDescription.entityForName( "Activity", inManagedObjectContext : context)
         let request = NSFetchRequest()
         request.entity = ActivityDescription
@@ -78,6 +78,7 @@ class Activity: NSManagedObject {
                 newActivity.dateFin = convertStringToNSDate(dateF)
                 newActivity.setValue( lieu , forKeyPath: "isLocated3")
                 newActivity.setValue(speak, forKeyPath: "isPresented")
+                newActivity.setValue(day, forKeyPath: "dayIs")
                 // Pour rajouter l'image on prends une image et le transforme en NSData
                 let newImage = UIImage ( named : photo!)
                 newActivity.photoActi = UIImageJPEGRepresentation(newImage!, 1.0)

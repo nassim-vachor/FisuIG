@@ -2,7 +2,7 @@
 //  Activity+CoreDataProperties.swift
 //  Fisu
 //
-//  Created by nassim on 19/03/2016.
+//  Created by nassim on 26/03/2016.
 //  Copyright © 2016 Nassim VACHOR. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -23,5 +23,6 @@ extension Activity {
     @NSManaged var selected: NSNumber?
     @NSManaged var isLocated3: Location?
     @NSManaged var isPresented: Speaker?
+    @NSManaged var dayIs: Day?
 
 }

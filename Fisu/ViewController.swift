@@ -19,8 +19,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self
-       
-        
+  // ************************************* LIEUX DES ACTIVITÉS *******************************
+        let day1 = Day.insertNewDay(moc, id: 1, day: "Day 1")
+        let day2 = Day.insertNewDay(moc, id: 2, day: "Day 2")
+        let day3 = Day.insertNewDay(moc, id: 3, day: "Day 3")
+        let day4 = Day.insertNewDay(moc, id: 4, day: "Day 4")
+        let day5 = Day.insertNewDay(moc, id: 5, day: "Day 5")
+        let day6 = Day.insertNewDay(moc, id: 6, day: "Day 6")
  // ************************************* LIEUX DES ACTIVITÉS *******************************
     // LIEUX DES ACTIVITÉS
     let Loc1 = Location.insertNewLocation(moc, id: 1, address: "Law Faculty" , lat: 43.61, long: 3.87)
@@ -105,23 +110,23 @@ class ViewController: UIViewController {
      
         
         
-        let Activity1 = Activity.insertNewActivity(moc, id: 1, nom: "Open Ceremony", desc: "Open Ceremony for the FISU", dateD: "04/07/2016, 09:00", dateF: "04/07/2016, 12:30", lieu: Loc1, speak: Speak1, photo: "ceremony")
+        let Activity1 = Activity.insertNewActivity(moc, id: 1, nom: "Open Ceremony", desc: "Open Ceremony for the FISU", dateD: "04/07/2016, 09:00", dateF: "04/07/2016, 12:30", lieu: Loc1, speak: Speak1, photo: "ceremony", day: day1)
         
        
         
-        let Activity2 = Activity.insertNewActivity(moc, id: 2, nom: "UNESCO session", desc: "UNESCO will speak about the importance of FISU", dateD: "04/07/2016, 13:45", dateF: "04/07/2016, 14:30", lieu: Loc3, speak: Speak2, photo: "unesco")
+        let Activity2 = Activity.insertNewActivity(moc, id: 2, nom: "UNESCO session", desc: "UNESCO will speak about the importance of FISU", dateD: "04/07/2016, 13:45", dateF: "04/07/2016, 14:30", lieu: Loc3, speak: Speak2, photo: "unesco", day: day1)
     
         
-        let Activity3 = Activity.insertNewActivity(moc, id: 3, nom: "Football", desc: "Sport", dateD: "04/07/2016, 14:00", dateF: "04/07/2016, 17:00", lieu: Loc12, speak: Speak2, photo: "foot")
+        let Activity3 = Activity.insertNewActivity(moc, id: 3, nom: "Football", desc: "Sport", dateD: "04/07/2016, 14:00", dateF: "04/07/2016, 17:00", lieu: Loc12, speak: Speak2, photo: "foot", day: day1)
         
         
-        let Activity4 = Activity.insertNewActivity(moc, id: 4, nom: "Salsa session", desc: "Dance", dateD: "04/07/2016, 14:00", dateF: "04/07/2016, 17:00", lieu: Loc12, speak: Speak2, photo: "salsa")
+        let Activity4 = Activity.insertNewActivity(moc, id: 4, nom: "Salsa session", desc: "Dance", dateD: "04/07/2016, 14:00", dateF: "04/07/2016, 17:00", lieu: Loc12, speak: Speak2, photo: "salsa", day: day1)
         
         
-        let Activity5 = Activity.insertNewActivity(moc, id: 5, nom: "Definition of Projet working group", desc: "woking team in professionnal world", dateD :"04/07/2016, 15:30", dateF:"04/07/2016, 16:30", lieu: Loc1, speak: Speak4, photo: "team")
+        let Activity5 = Activity.insertNewActivity(moc, id: 5, nom: "Definition of Projet working group", desc: "woking team in professionnal world", dateD :"04/07/2016, 15:30", dateF:"04/07/2016, 16:30", lieu: Loc1, speak: Speak4, photo: "team", day: day1)
    
         
-        let Activity6 = Activity.insertNewActivity(moc, id: 6, nom: "Boules/Pétanque", desc: "playing and take a rest", dateD :"04/07/2016, 17:00", dateF:"04/07/2016, 19:00", lieu: Loc3, speak: nil, photo: "boule")
+        let Activity6 = Activity.insertNewActivity(moc, id: 6, nom: "Boules/Pétanque", desc: "playing and take a rest", dateD :"04/07/2016, 17:00", dateF:"04/07/2016, 19:00", lieu: Loc3, speak: nil, photo: "boule", day: day1)
       
         //hjhtgtg
    
@@ -129,27 +134,27 @@ class ViewController: UIViewController {
         //********************************************Day2***********************************************************
         // création des activité du Day2 gràce à la methode de classe insertNewActivity
       
-        let Activity7 = Activity.insertNewActivity(moc, id: 7, nom: "Plenary session", desc: "Values/Ethics/Integrity", dateD: "05/07/2016, 09:00", dateF: "05/07/2016, 10:00", lieu: Loc1, speak: Speak1, photo: "plenary")
+        let Activity7 = Activity.insertNewActivity(moc, id: 7, nom: "Plenary session", desc: "Values/Ethics/Integrity", dateD: "05/07/2016, 09:00", dateF: "05/07/2016, 10:00", lieu: Loc1, speak: Speak1, photo: "plenary", day: day2)
         
      
-        let Activity8 = Activity.insertNewActivity(moc, id: 8, nom: "Projet Working Session", desc: "explain by scientist", dateD: "05/07/2016, 11:30", dateF: "05/07/2016, 12:30", lieu: Loc2, speak: Speak3, photo: "team" )
+        let Activity8 = Activity.insertNewActivity(moc, id: 8, nom: "Projet Working Session", desc: "explain by scientist", dateD: "05/07/2016, 11:30", dateF: "05/07/2016, 12:30", lieu: Loc2, speak: Speak3, photo: "team" , day: day2)
   
 
       
-        let Activity9 = Activity.insertNewActivity(moc, id: 9, nom: "Visit of Montpellier", desc: "Montpellier City", dateD :"05/07/2016, 16:30", dateF:"05/07/2016, 18:30", lieu: nil, speak: nil, photo: "montpell")
+        let Activity9 = Activity.insertNewActivity(moc, id: 9, nom: "Visit of Montpellier", desc: "Montpellier City", dateD :"05/07/2016, 16:30", dateF:"05/07/2016, 18:30", lieu: nil, speak: nil, photo: "montpell", day: day2)
         
       
     
         //********************************************Day2finish******************************************************
         //*********************************************Day3***********************************************************
         // création des activité du Day3 gràce à la methode de classe insertNewActivity
-           let Activity10 = Activity.insertNewActivity(moc, id: 10, nom: "Plenary session", desc: "LeaderShip", dateD: "06/07/2016, 09:00", dateF: "06/07/2016, 10:00", lieu: Loc1, speak: Speak1, photo: "plenary")
+           let Activity10 = Activity.insertNewActivity(moc, id: 10, nom: "Plenary session", desc: "LeaderShip", dateD: "06/07/2016, 09:00", dateF: "06/07/2016, 10:00", lieu: Loc1, speak: Speak1, photo: "plenary", day: day3)
         
 
-        let Activity11 = Activity.insertNewActivity(moc, id: 11, nom: "Projet Working Session", desc: "explain by scientist", dateD: "06/07/2016, 11:30", dateF: "06/07/2016, 12:30", lieu: Loc2, speak: Speak3, photo: "project")
+        let Activity11 = Activity.insertNewActivity(moc, id: 11, nom: "Projet Working Session", desc: "explain by scientist", dateD: "06/07/2016, 11:30", dateF: "06/07/2016, 12:30", lieu: Loc2, speak: Speak3, photo: "project", day: day3)
         
 
-        let Activity12 = Activity.insertNewActivity(moc, id: 12, nom: "Rumba", desc: "Come on and enjoying dancing", dateD :"06/07/2016, 16:30", dateF:"06/07/2016, 17:30", lieu: Loc6, speak: nil, photo: "rumba")
+        let Activity12 = Activity.insertNewActivity(moc, id: 12, nom: "Rumba", desc: "Come on and enjoying dancing", dateD :"06/07/2016, 16:30", dateF:"06/07/2016, 17:30", lieu: Loc6, speak: nil, photo: "rumba", day: day3)
    
 
         //********************************************Day3finish******************************************************
@@ -157,53 +162,48 @@ class ViewController: UIViewController {
        
   
         
-        let Activity13 = Activity.insertNewActivity(moc, id:13, nom: "HandBall", desc:"Sport", dateD: "07/07/2016, 08:00", dateF: "07/07/2016, 10:30", lieu: Loc12, speak: nil, photo: "hand")
+        let Activity13 = Activity.insertNewActivity(moc, id:13, nom: "HandBall", desc:"Sport", dateD: "07/07/2016, 08:00", dateF: "07/07/2016, 10:30", lieu: Loc12, speak: nil, photo: "hand", day: day4)
         
-        let Activity14 = Activity.insertNewActivity(moc, id: 14, nom: "Volley", desc: "Sport", dateD: "07/07/2016, 10:30", dateF: "07/07/2016, 13:00", lieu: Loc12, speak:nil, photo: "volley")
+        let Activity14 = Activity.insertNewActivity(moc, id: 14, nom: "Volley", desc: "Sport", dateD: "07/07/2016, 10:30", dateF: "07/07/2016, 13:00", lieu: Loc12, speak:nil, photo: "volley", day: day4)
        
        
-        let Activity15 = Activity.insertNewActivity(moc, id: 15, nom:  "Theather", desc: "Comedie", dateD :"07/07/2016, 13:45", dateF:"07/07/2016, 14:45", lieu: Loc2, speak: nil, photo: "theatre")
+        let Activity15 = Activity.insertNewActivity(moc, id: 15, nom:  "Theather", desc: "Comedie", dateD :"07/07/2016, 13:45", dateF:"07/07/2016, 14:45", lieu: Loc2, speak: nil, photo: "theatre", day: day4)
         
-         let Activity16 = Activity.insertNewActivity(moc, id: 16, nom: "Shopping", desc: "Doing shopping in your free time",dateD :"07/07/2016, 19:00", dateF:"07/07/2016, 19:45", lieu: Loc7, speak: nil, photo: "shopping")
+         let Activity16 = Activity.insertNewActivity(moc, id: 16, nom: "Shopping", desc: "Doing shopping in your free time",dateD :"07/07/2016, 19:00", dateF:"07/07/2016, 19:45", lieu: Loc7, speak: nil, photo: "shopping", day: day4)
     
       
-        let Activity17 = Activity.insertNewActivity(moc, id: 17, nom: "Party", desc: "Enjoy the party and relax you",dateD :"07/07/2016, 23:00", dateF:"07/07/2016, 03:45", lieu: Loc7, speak: nil, photo: "party")
+        let Activity17 = Activity.insertNewActivity(moc, id: 17, nom: "Party", desc: "Enjoy the party and relax you",dateD :"07/07/2016, 23:00", dateF:"07/07/2016, 03:45", lieu: Loc7, speak: nil, photo: "party", day: day4)
    
 
         //***********************************************Day4finish***************************************************
         //************************************************Day5******************************************************
        
-        let Activity18 = Activity.insertNewActivity(moc, id: 18, nom: "Equitation", desc: "Riding horses", dateD: "08/07/2016, 09:00", dateF: "08/07/2016, 11:00", lieu: Loc1, speak: nil , photo: "equit")
+        let Activity18 = Activity.insertNewActivity(moc, id: 18, nom: "Equitation", desc: "Riding horses", dateD: "08/07/2016, 09:00", dateF: "08/07/2016, 11:00", lieu: Loc1, speak: nil , photo: "equit", day: day5)
        
 
-        let Activity19 = Activity.insertNewActivity(moc, id: 19, nom: "Visit of Montpellier", desc: "Montpellier city", dateD: "08/07/2016, 18:30", dateF: "08/07/2016, 19:45", lieu:nil, speak:nil, photo: "montpell")
+        let Activity19 = Activity.insertNewActivity(moc, id: 19, nom: "Visit of Montpellier", desc: "Montpellier city", dateD: "08/07/2016, 18:30", dateF: "08/07/2016, 19:45", lieu:nil, speak:nil, photo: "montpell", day: day5)
         
-        let Activity20 = Activity.insertNewActivity(moc, id: 20, nom: "Running", desc: "Run", dateD: "08/07/2016, 19:45", dateF: "08/07/2016, 21:00", lieu: nil, speak: nil, photo: "run")
+        let Activity20 = Activity.insertNewActivity(moc, id: 20, nom: "Running", desc: "Run", dateD: "08/07/2016, 19:45", dateF: "08/07/2016, 21:00", lieu: nil, speak: nil, photo: "run", day: day5)
        
 
         ///***********************************************Day5finish***************************************************
         //************************************************Day6******************************************************
       
        
-        let Activity21 = Activity.insertNewActivity(moc, id: 21, nom: "Hiking", desc: "Morning hiking", dateD: "09/07/2016, 11:00", dateF: "09/07/2016, 11:30", lieu: Loc1, speak: nil, photo: "hiking")
+        let Activity21 = Activity.insertNewActivity(moc, id: 21, nom: "Hiking", desc: "Morning hiking", dateD: "09/07/2016, 11:00", dateF: "09/07/2016, 11:30", lieu: Loc1, speak: nil, photo: "hiking", day: day6)
         
       
        
-        let Activity22 = Activity.insertNewActivity(moc, id: 22, nom: "Canoe Kayyak", desc:"Sport", dateD :"09/07/2016, 17:00", dateF:"09/07/2016, 18:00", lieu: Loc11, speak: nil, photo: "canoe")
+        let Activity22 = Activity.insertNewActivity(moc, id: 22, nom: "Canoe Kayyak", desc:"Sport", dateD :"09/07/2016, 17:00", dateF:"09/07/2016, 18:00", lieu: Loc11, speak: nil, photo: "canoe", day: day6)
         
-        let Activity23 = Activity.insertNewActivity(moc, id: 23, nom: "Tennis", desc:"Sport", dateD :"09/07/2016, 17:00", dateF:"09/07/2016, 18:00", lieu: Loc12, speak: nil, photo: "tennis")
+        let Activity23 = Activity.insertNewActivity(moc, id: 23, nom: "Tennis", desc:"Sport", dateD :"09/07/2016, 17:00", dateF:"09/07/2016, 18:00", lieu: Loc12, speak: nil, photo: "tennis", day: day6)
        
-
         
+          let Activity24 = Activity.insertNewActivity(moc, id: 24, nom: "Closing Ceremony", desc: "eating and relax", dateD :"09/07/2016, 09:30", dateF:"09/07/2016, 11:30", lieu: Loc5, speak: Speak4, photo: "ceremony", day: day6)
         
-        //***********************************************Day6finish***************************************************
-        // print(Activity5!.getTimeFin())
+          let Activity25 = Activity.insertNewActivity(moc, id: 25, nom: "Beach", desc: "swimming and relax", dateD :"09/07/2016, 14:30", dateF:"09/07/2016, 17:30", lieu: Loc7, speak: nil, photo: "beach", day: day6)
         
-          let Activity24 = Activity.insertNewActivity(moc, id: 24, nom: "Closing Ceremony", desc: "eating and relax", dateD :"09/07/2016, 09:30", dateF:"09/07/2016, 11:30", lieu: Loc5, speak: Speak4, photo: "ceremony")
-        
-          let Activity25 = Activity.insertNewActivity(moc, id: 25, nom: "Beach", desc: "swimming and relax", dateD :"09/07/2016, 14:30", dateF:"09/07/2016, 17:30", lieu: Loc7, speak: nil, photo: "beach")
-        
-         let Activity26 = Activity.insertNewActivity(moc, id: 26, nom: "Party", desc: "Come on and enjoy the party", dateD :"09/07/2016, 19:30", dateF:"09/07/2016, 23:30", lieu: Loc5, speak: nil, photo: "party")
+         let Activity26 = Activity.insertNewActivity(moc, id: 26, nom: "Party", desc: "Come on and enjoy the party", dateD :"09/07/2016, 19:30", dateF:"09/07/2016, 23:30", lieu: Loc5, speak: nil, photo: "party", day: day6)
         
         
         

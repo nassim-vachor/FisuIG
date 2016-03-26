@@ -11,16 +11,19 @@ import CoreData
 
 class EventViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     let managedObjectContext = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-    var days = [ Activity ]()
+    var days = [ Day ]()
     
 
     @IBOutlet weak var myTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let fetchRequest = NSFetchRequest ( entityName: "Activity")
+        let fetchRequest = NSFetchRequest ( entityName: "Day")
+       // fetchRequest.returnsDistinctResults = true
+    //    fetchRequest.propertiesToFetch = ["dayIs"]
+        //fetchRequest.propertiesToGroupBy = ["dayIs"]
         do {
-            let fetchResult = try managedObjectContext.executeFetchRequest(fetchRequest) as! [Activity]
+            let fetchResult = try managedObjectContext.executeFetchRequest(fetchRequest) as! [Day]
             days = fetchResult
             
             
@@ -89,9 +92,10 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }*/
         
         // for ( var i = 0; i<indexPath.row; i++){
-        
-        cell.dayLabel.text = days[indexPath.row].getDay()
-        
+     
+        cell.dayLabel.text = days[indexPath.row].day
+       
+       
         //mmmmmmmm
         // nassim est un boti et il se ùmet facilement en colere et apres il me frappe hum
         

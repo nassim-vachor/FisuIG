@@ -18,8 +18,14 @@
         <attribute name="nomAct" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photoActi" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="selected" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="dayIs" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Day" inverseName="dayActivity" inverseEntity="Day" syncable="YES"/>
         <relationship name="isLocated3" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="correspond3" inverseEntity="Location" syncable="YES"/>
         <relationship name="isPresented" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Speaker" inverseName="participate" inverseEntity="Speaker" syncable="YES"/>
+    </entity>
+    <entity name="Day" representedClassName=".Day" syncable="YES">
+        <attribute name="day" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="keyDay" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="dayActivity" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="dayIs" inverseEntity="Activity" syncable="YES"/>
     </entity>
     <entity name="Location" representedClassName=".Location" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
@@ -51,9 +57,10 @@
     </entity>
     <elements>
         <element name="Accomodation" positionX="288" positionY="333" width="128" height="165"/>
-        <element name="Activity" positionX="196" positionY="98" width="128" height="180"/>
+        <element name="Activity" positionX="196" positionY="98" width="128" height="193"/>
         <element name="Location" positionX="-108" positionY="468" width="128" height="150"/>
         <element name="Restaurant" positionX="297" positionY="594" width="128" height="165"/>
         <element name="Speaker" positionX="-135" positionY="-16" width="128" height="150"/>
+        <element name="Day" positionX="-63" positionY="378" width="128" height="88"/>
     </elements>
 </model>
