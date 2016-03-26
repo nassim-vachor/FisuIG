@@ -55,6 +55,7 @@ class Activity: NSManagedObject {
     }
     //
     
+    //
     
     // methode de classe pour l'insertion d'une nouvelle activity
     class func  insertNewActivity( context: NSManagedObjectContext ,id: NSNumber, nom: String, desc: String, dateD: String, dateF: String, lieu: Location?, speak: Speaker?, photo : String?, day: Day?) -> Activity?{
