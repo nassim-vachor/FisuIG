@@ -53,6 +53,7 @@ class Activity: NSManagedObject {
         let timeString = formatter.stringFromDate(self.dateFin!)
         return timeString
     }
+    //
     
     
     // methode de classe pour l'insertion d'une nouvelle activity
