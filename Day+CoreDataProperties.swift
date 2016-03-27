@@ -1,3 +1,4 @@
+
 //
 //  Day+CoreDataProperties.swift
 //  Fisu

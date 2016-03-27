@@ -49,6 +49,10 @@
 		D42C47FC1CA447BC0009F6AE /* MyEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42C47FA1CA447BC0009F6AE /* MyEventViewController.swift */; };
 		D42C48011CA45AE30009F6AE /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42C48001CA45AE30009F6AE /* ScheduleTableViewCell.swift */; };
 		D42C48021CA45AE30009F6AE /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42C48001CA45AE30009F6AE /* ScheduleTableViewCell.swift */; };
+		D44CCB841CA752240018A026 /* DisplayActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44CCB831CA752240018A026 /* DisplayActivityViewController.swift */; };
+		D44CCB851CA752240018A026 /* DisplayActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44CCB831CA752240018A026 /* DisplayActivityViewController.swift */; };
+		D44CCB871CA752F90018A026 /* DisplayActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44CCB861CA752F90018A026 /* DisplayActivityTableViewCell.swift */; };
+		D44CCB881CA752F90018A026 /* DisplayActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44CCB861CA752F90018A026 /* DisplayActivityTableViewCell.swift */; };
 		D49A15351CA6E4430066E478 /* Day+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49A15331CA6E4430066E478 /* Day+CoreDataProperties.swift */; };
 		D49A15361CA6E4430066E478 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49A15341CA6E4430066E478 /* Day.swift */; };
 /* End PBXBuildFile section */
@@ -103,6 +107,8 @@
 		D42C47F71CA4472B0009F6AE /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D42C47FA1CA447BC0009F6AE /* MyEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyEventViewController.swift; sourceTree = "<group>"; };
 		D42C48001CA45AE30009F6AE /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		D44CCB831CA752240018A026 /* DisplayActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayActivityViewController.swift; sourceTree = "<group>"; };
+		D44CCB861CA752F90018A026 /* DisplayActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayActivityTableViewCell.swift; sourceTree = "<group>"; };
 		D49A15331CA6E4430066E478 /* Day+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Day+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D49A15341CA6E4430066E478 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,7 +141,6 @@
 		9130FC541C9AA1390056A8C8 = {
 			isa = PBXGroup;
 			children = (
-				D49A15331CA6E4430066E478 /* Day+CoreDataProperties.swift */,
 				D49A15341CA6E4430066E478 /* Day.swift */,
 				9130FC921C9AB66C0056A8C8 /* Activity.swift */,
 				9130FC941C9AB66C0056A8C8 /* Restaurant.swift */,
@@ -148,6 +153,7 @@
 				9130FC951C9AB66C0056A8C8 /* Accomodation+CoreDataProperties.swift */,
 				9130FC971C9AB66C0056A8C8 /* Location+CoreDataProperties.swift */,
 				9130FC991C9AB66C0056A8C8 /* Speaker+CoreDataProperties.swift */,
+				D49A15331CA6E4430066E478 /* Day+CoreDataProperties.swift */,
 				9130FC5F1C9AA1390056A8C8 /* Fisu */,
 				9130FC771C9AA1390056A8C8 /* FisuTests */,
 				9130FC821C9AA1390056A8C8 /* FisuUITests */,
@@ -174,6 +180,8 @@
 				D42C48001CA45AE30009F6AE /* ScheduleTableViewCell.swift */,
 				D42C47FA1CA447BC0009F6AE /* MyEventViewController.swift */,
 				D42C47EE1CA446EA0009F6AE /* EventViewController.swift */,
+				D44CCB831CA752240018A026 /* DisplayActivityViewController.swift */,
+				D44CCB861CA752F90018A026 /* DisplayActivityTableViewCell.swift */,
 				D42C47F11CA447070009F6AE /* RestoViewController.swift */,
 				D42C47F41CA447170009F6AE /* HotelViewController.swift */,
 				D42C47F71CA4472B0009F6AE /* MapViewController.swift */,
@@ -343,6 +351,7 @@
 				9147ECCE1CA1C73F00BE1D21 /* SecondViewController.swift in Sources */,
 				9130FCAD1C9AB66C0056A8C8 /* Speaker.swift in Sources */,
 				D42C47EF1CA446EA0009F6AE /* EventViewController.swift in Sources */,
+				D44CCB841CA752240018A026 /* DisplayActivityViewController.swift in Sources */,
 				D42C48011CA45AE30009F6AE /* ScheduleTableViewCell.swift in Sources */,
 				D49A15361CA6E4430066E478 /* Day.swift in Sources */,
 				D42C47F81CA4472B0009F6AE /* MapViewController.swift in Sources */,
@@ -357,6 +366,7 @@
 				9130FC631C9AA1390056A8C8 /* ViewController.swift in Sources */,
 				9130FC611C9AA1390056A8C8 /* AppDelegate.swift in Sources */,
 				9130FCAB1C9AB66C0056A8C8 /* Speaker+CoreDataProperties.swift in Sources */,
+				D44CCB871CA752F90018A026 /* DisplayActivityTableViewCell.swift in Sources */,
 				9130FC691C9AA1390056A8C8 /* Fisu.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,11 +377,13 @@
 			files = (
 				9130FCA81C9AB66C0056A8C8 /* Location+CoreDataProperties.swift in Sources */,
 				9130FCA41C9AB66C0056A8C8 /* Accomodation+CoreDataProperties.swift in Sources */,
+				D44CCB851CA752240018A026 /* DisplayActivityViewController.swift in Sources */,
 				9130FCAC1C9AB66C0056A8C8 /* Speaker+CoreDataProperties.swift in Sources */,
 				9130FCA21C9AB66C0056A8C8 /* Restaurant.swift in Sources */,
 				9130FC9E1C9AB66C0056A8C8 /* Activity.swift in Sources */,
 				D42C47F01CA446EA0009F6AE /* EventViewController.swift in Sources */,
 				9130FCAE1C9AB66C0056A8C8 /* Speaker.swift in Sources */,
+				D44CCB881CA752F90018A026 /* DisplayActivityTableViewCell.swift in Sources */,
 				9130FCAA1C9AB66C0056A8C8 /* Location.swift in Sources */,
 				9130FC9C1C9AB66C0056A8C8 /* Activity+CoreDataProperties.swift in Sources */,
 				D42C47F61CA447170009F6AE /* HotelViewController.swift in Sources */,
