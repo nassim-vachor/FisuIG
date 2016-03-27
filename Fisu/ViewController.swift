@@ -123,7 +123,7 @@ class ViewController: UIViewController {
         let Activity4 = Activity.insertNewActivity(moc, id: 4, nom: "Salsa session", desc: "Dance", dateD: "04/07/2016, 14:00", dateF: "04/07/2016, 17:00", lieu: Loc12, speak: Speak2, photo: "salsa", day: day1)
         
         
-        let Activity5 = Activity.insertNewActivity(moc, id: 5, nom: "Definition of Projet working group", desc: "woking team in professionnal world", dateD :"04/07/2016, 15:30", dateF:"04/07/2016, 16:30", lieu: Loc1, speak: Speak4, photo: "team", day: day1)
+        let Activity5 = Activity.insertNewActivity(moc, id: 5, nom: "Projet working group", desc: "woking team in professionnal world", dateD :"04/07/2016, 15:30", dateF:"04/07/2016, 16:30", lieu: Loc1, speak: Speak4, photo: "team", day: day1)
    
         
         let Activity6 = Activity.insertNewActivity(moc, id: 6, nom: "Boules/Pétanque", desc: "playing and take a rest", dateD :"04/07/2016, 17:00", dateF:"04/07/2016, 19:00", lieu: Loc3, speak: nil, photo: "boule", day: day1)
@@ -137,7 +137,7 @@ class ViewController: UIViewController {
         let Activity7 = Activity.insertNewActivity(moc, id: 7, nom: "Plenary session", desc: "Values/Ethics/Integrity", dateD: "05/07/2016, 09:00", dateF: "05/07/2016, 10:00", lieu: Loc1, speak: Speak1, photo: "plenary", day: day2)
         
      
-        let Activity8 = Activity.insertNewActivity(moc, id: 8, nom: "Projet Working Session", desc: "explain by scientist", dateD: "05/07/2016, 11:30", dateF: "05/07/2016, 12:30", lieu: Loc2, speak: Speak3, photo: "team" , day: day2)
+        let Activity8 = Activity.insertNewActivity(moc, id: 8, nom: "Projet Working", desc: "explain by scientist", dateD: "05/07/2016, 11:30", dateF: "05/07/2016, 12:30", lieu: Loc2, speak: Speak3, photo: "team" , day: day2)
   
 
       

@@ -60,7 +60,7 @@ class DisplayActivityViewController: UIViewController, UITableViewDelegate, UITa
         DisplayActivityTableViewCell  //on force le downCast avec
         
         cell.ActivityLabel.text = act[indexPath.row].nomAct
-        cell.activityImage.image = UIImage(data: (act[indexPath.row].photoActi)!, scale: 0.2)
+        cell.activityImage.image = UIImage(data: (act[indexPath.row].photoActi)!, scale: 0.1)
         
         return cell
     }
