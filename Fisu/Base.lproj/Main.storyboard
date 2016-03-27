@@ -235,6 +235,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="609" height="134"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egq-PX-HxO">
+                                                    <rect key="frame" x="179" y="8" width="213" height="46"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tUY-D5-iww">
                                                     <rect key="frame" x="8" y="0.0" width="163" height="126"/>
                                                     <constraints>
@@ -242,25 +248,32 @@
                                                         <constraint firstAttribute="height" constant="126" id="kG1-h4-6TQ"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egq-PX-HxO">
-                                                    <rect key="frame" x="179" y="31" width="213" height="51"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bs-hs-uzm">
+                                                    <rect key="frame" x="179" y="62" width="213" height="47"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="egq-PX-HxO" firstAttribute="leading" secondItem="tUY-D5-iww" secondAttribute="trailing" constant="8" id="8zs-kq-emZ"/>
+                                                <constraint firstItem="2bs-hs-uzm" firstAttribute="trailing" secondItem="egq-PX-HxO" secondAttribute="trailing" id="1z8-0C-4yn"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="2bs-hs-uzm" secondAttribute="bottom" constant="17" id="3q3-n1-cHs"/>
+                                                <constraint firstItem="2bs-hs-uzm" firstAttribute="top" secondItem="egq-PX-HxO" secondAttribute="bottom" constant="8" id="7Rh-IM-PlD"/>
                                                 <constraint firstItem="tUY-D5-iww" firstAttribute="leading" secondItem="Naa-Ra-DZ9" secondAttribute="leadingMargin" id="E8X-Ro-ZLt"/>
-                                                <constraint firstItem="egq-PX-HxO" firstAttribute="top" secondItem="Naa-Ra-DZ9" secondAttribute="topMargin" constant="23" id="QbJ-7N-t9V"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="egq-PX-HxO" secondAttribute="trailing" constant="209" id="Ufc-lR-AVM"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="egq-PX-HxO" secondAttribute="bottom" constant="44" id="VlP-Tb-dc6"/>
+                                                <constraint firstItem="2bs-hs-uzm" firstAttribute="leading" secondItem="egq-PX-HxO" secondAttribute="leading" id="HpE-jB-kuB"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="2bs-hs-uzm" secondAttribute="trailing" constant="209" id="Q6C-AO-bOT"/>
+                                                <constraint firstItem="2bs-hs-uzm" firstAttribute="leading" secondItem="tUY-D5-iww" secondAttribute="trailing" constant="8" id="UNg-gB-so7"/>
+                                                <constraint firstItem="2bs-hs-uzm" firstAttribute="top" secondItem="egq-PX-HxO" secondAttribute="bottom" constant="8" id="WL6-dY-wbM"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="egq-PX-HxO" secondAttribute="trailing" constant="209" id="jhx-lf-2xc"/>
                                                 <constraint firstItem="tUY-D5-iww" firstAttribute="top" secondItem="Naa-Ra-DZ9" secondAttribute="topMargin" constant="-8" id="qiQ-Oh-aw8"/>
+                                                <constraint firstItem="egq-PX-HxO" firstAttribute="top" secondItem="Naa-Ra-DZ9" secondAttribute="topMargin" id="uSh-hb-Qg2"/>
+                                                <constraint firstItem="egq-PX-HxO" firstAttribute="leading" secondItem="tUY-D5-iww" secondAttribute="trailing" constant="8" id="uf6-zO-ITj"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="ActivityLabel" destination="egq-PX-HxO" id="YXh-QZ-P4b"/>
                                             <outlet property="activityImage" destination="tUY-D5-iww" id="cLQ-eh-oj6"/>
+                                            <outlet property="heureLabel" destination="2bs-hs-uzm" id="TCA-Ub-vmx"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

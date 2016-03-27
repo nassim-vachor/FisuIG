@@ -10,6 +10,7 @@ import UIKit
 
 class DisplayActivityTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var heureLabel: UILabel!
     @IBOutlet weak var activityImage: UIImageView!
     @IBOutlet weak var ActivityLabel: UILabel!
     override func awakeFromNib() {

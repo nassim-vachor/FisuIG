@@ -61,6 +61,10 @@ class DisplayActivityViewController: UIViewController, UITableViewDelegate, UITa
         
         cell.ActivityLabel.text = act[indexPath.row].nomAct
         cell.activityImage.image = UIImage(data: (act[indexPath.row].photoActi)!, scale: 0.1)
+        cell.heureLabel.text = (act[indexPath.row].getTimeDeb())+" - \(act[indexPath.row].getTimeFin())"
+        
+        
+    
         
         return cell
     }
