@@ -60,7 +60,7 @@ class HotelViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     
-    
+    //nnjjhjhjhhg
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("HotelId", forIndexPath: indexPath) as!

@@ -27,5 +27,5 @@ class HotelTableViewCell: UITableViewCell {
     
     @IBOutlet weak var hotelImage: UIImageView!
     
-    
+    //ggfddddfd
 }
