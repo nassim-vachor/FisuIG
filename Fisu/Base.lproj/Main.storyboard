@@ -18,11 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backg" translatesAutoresizingMaskIntoConstraints="NO" id="yvR-2K-qYS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="backg" translatesAutoresizingMaskIntoConstraints="NO" id="yvR-2K-qYS">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="4zh-Eo-WPH">
-                                <rect key="frame" x="236" y="89" width="129" height="297"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="DaT-8Y-0v3"/>
+                                    <constraint firstAttribute="height" constant="600" id="lkt-wy-3gi"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKh-DI-fBL">
                                 <rect key="frame" x="231" y="443" width="138" height="39"/>
@@ -40,6 +41,9 @@
                                     <segue destination="6il-TQ-aJC" kind="show" id="b9C-hM-Oou"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="4zh-Eo-WPH">
+                                <rect key="frame" x="236" y="90" width="129" height="297"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
