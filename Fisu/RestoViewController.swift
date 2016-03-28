@@ -56,7 +56,7 @@ class RestoViewController: UIViewController , UITableViewDelegate, UITableViewDa
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("RestoId", forIndexPath: indexPath) as!  RestoTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("RestoId", forIndexPath: indexPath) as! RestoTableViewCell
         //on force le downCast avec
         
         cell.restoLabel.text = resto[indexPath.row].nameRes
@@ -65,16 +65,26 @@ class RestoViewController: UIViewController , UITableViewDelegate, UITableViewDa
        
         return cell
     }
-///hhhkkkk
-//hbhjjhjjhg
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+        
+        if let index1 = self.restoTableView.indexPathForSelectedRow?.row
+        {
+            
+            if let identifier = segue.identifier{
+                switch identifier{
+                case "restoSegue":
+                    let SecondVC = segue.destinationViewController as! DisplayRestoViewController
+                    
+                    SecondVC.receved = self.resto[index1]
+                    
+                default: break
+                }
+            }
+            
+            
+        }}
 
 }

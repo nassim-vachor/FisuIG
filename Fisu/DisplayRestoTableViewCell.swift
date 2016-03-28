@@ -1,14 +1,14 @@
 //
-//  HotelTableViewCell.swift
+//  DisplayRestoTableViewCell.swift
 //  Fisu
 //
-//  Created by Djeneba KANE on 27/03/2016.
+//  Created by Djeneba KANE on 28/03/2016.
 //  Copyright © 2016 Nassim VACHOR. All rights reserved.
 //
 
 import UIKit
 
-class HotelTableViewCell: UITableViewCell {
+class DisplayRestoTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,11 +21,4 @@ class HotelTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    @IBOutlet weak var hotelNomLabel: UILabel!
-    
-    @IBOutlet weak var hotelHorLabel: UILabel!
-    
-    @IBOutlet weak var hotelImage: UIImageView!
-    
-    
 }

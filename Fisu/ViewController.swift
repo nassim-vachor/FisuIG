@@ -266,9 +266,9 @@ class ViewController: UIViewController {
         let imageView = UIImageView ( image: a!)
         imageView.frame = CGRect (x: 220, y: 150, width: 40, height: 50)
         view.addSubview(imageView)*/
-        
+       print(Acco9?.getTimeDeb())
     
-    
+       print(Resto9?.getTimeDeb())
     }
     override func viewWillAppear(animated: Bool) {
         navigationController?.navigationBarHidden = true
@@ -297,6 +297,5 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    
 }
 

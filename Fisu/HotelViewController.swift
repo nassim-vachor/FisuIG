@@ -74,14 +74,22 @@ class HotelViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+        
+        if let index1 = self.hotelTableView.indexPathForSelectedRow?.row
+        {
+            
+            if let identifier = segue.identifier{
+                switch identifier{
+                case "hotelSegue":
+                    let SecondVC = segue.destinationViewController as! DisplayHotelViewController
+                    
+                    SecondVC.receved = self.hotels[index1]
+                    
+                default: break
+                }
+            }
+            
+            
+        }}
 }
