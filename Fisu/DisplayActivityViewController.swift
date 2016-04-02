@@ -68,5 +68,26 @@ class DisplayActivityViewController: UIViewController, UITableViewDelegate, UITa
         
         return cell
     }
-
+    
+    
+  /*
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if let index1 = self.activityTableView.indexPathForSelectedRow?.row
+        {
+            
+            if let identifier = segue.identifier{
+                switch identifier{
+                case "secondSegue":
+                    let SecondVC = segue.destinationViewController as! DisplayActivityDetailsViewController
+                    
+                    SecondVC.receved2 = self.act[index1]
+                    
+                default: break
+                }
+            }
+            
+            
+        }}
+*/
 }

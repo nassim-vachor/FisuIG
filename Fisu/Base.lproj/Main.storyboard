@@ -476,8 +476,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="39" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0P8-vf-ba1">
-                                <rect key="frame" x="3" y="182" width="595" height="369"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="mtp" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JbH-ZF-NRv">
+                                <rect key="frame" x="-54" y="57" width="654" height="269"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="39" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0P8-vf-ba1">
+                                <rect key="frame" x="25" y="182" width="595" height="369"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DayId" rowHeight="39" id="ULR-F9-7Pv" customClass="ScheduleTableViewCell" customModule="Fisu" customModuleProvider="target">
@@ -506,9 +509,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="mtp" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JbH-ZF-NRv">
-                                <rect key="frame" x="-54" y="57" width="654" height="269"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -590,6 +590,7 @@
                                             <outlet property="ActivityLabel" destination="egq-PX-HxO" id="YXh-QZ-P4b"/>
                                             <outlet property="activityImage" destination="tUY-D5-iww" id="cLQ-eh-oj6"/>
                                             <outlet property="heureLabel" destination="2bs-hs-uzm" id="TCA-Ub-vmx"/>
+                                            <segue destination="IEM-CM-6Mb" kind="show" identifier="secondSegue" id="k4Q-p2-5MK"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -611,6 +612,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="99V-Ls-7TI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5406" y="1107"/>
+        </scene>
+        <!--Display Activity Details View Controller-->
+        <scene sceneID="x3o-VJ-aJE">
+            <objects>
+                <viewController id="IEM-CM-6Mb" customClass="DisplayActivityDetailsViewController" customModule="Fisu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O6K-Mm-wbL"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xhy-i6-Rsd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="N6y-ge-5GU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="daT-uw-LeZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6138" y="1096"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="mWe-6B-7jA">

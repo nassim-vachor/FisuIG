@@ -270,7 +270,7 @@ class ViewController: UIViewController {
     
        print(Resto9?.getTimeDeb())
     }
-    override func viewWillAppear(animated: Bool) {
+   override func viewWillAppear(animated: Bool) {
         navigationController?.navigationBarHidden = true
         super.viewWillAppear(animated)
     }
