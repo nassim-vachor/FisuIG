@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self
+        //
   // ************************************* LIEUX DES ACTIVITÉS *******************************
         let day1 = Day.insertNewDay(moc, id: 1, day: "Day 1")
         let day2 = Day.insertNewDay(moc, id: 2, day: "Day 2")
