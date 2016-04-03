@@ -183,9 +183,9 @@ class ViewController: UIViewController {
         let Activity18 = Activity.insertNewActivity(moc, id: 18, nom: "Equitation", desc: "Riding horses", dateD: "08/07/2016, 09:00", dateF: "08/07/2016, 11:00", lieu: Loc1, speak: nil , photo: "equit", day: day5)
        
 
-        let Activity19 = Activity.insertNewActivity(moc, id: 19, nom: "Visit of Montpellier", desc: "Montpellier city", dateD: "08/07/2016, 18:30", dateF: "08/07/2016, 19:45", lieu:nil, speak:nil, photo: "montpell", day: day5)
+        let Activity19 = Activity.insertNewActivity(moc, id: 19, nom: "Visit of Montpellier", desc: "Montpellier city", dateD: "08/07/2016, 18:30", dateF: "08/07/2016, 19:45", lieu:Loc2, speak:nil, photo: "montpell", day: day5)
         
-        let Activity20 = Activity.insertNewActivity(moc, id: 20, nom: "Running", desc: "Run", dateD: "08/07/2016, 19:45", dateF: "08/07/2016, 21:00", lieu: nil, speak: nil, photo: "run", day: day5)
+        let Activity20 = Activity.insertNewActivity(moc, id: 20, nom: "Running", desc: "Run", dateD: "08/07/2016, 19:45", dateF: "08/07/2016, 21:00", lieu: Loc7, speak: nil, photo: "run", day: day5)
        
 
         ///***********************************************Day5finish***************************************************
