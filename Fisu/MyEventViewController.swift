@@ -10,6 +10,9 @@ import UIKit
 
 class MyEventViewController: UIViewController {
 
+    @IBAction func home(sender: AnyObject) {
+         self.navigationController?.dismissViewControllerAnimated(true, completion: nil )
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

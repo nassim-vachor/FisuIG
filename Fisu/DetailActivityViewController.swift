@@ -14,9 +14,17 @@ import CoreLocation
 class DetailActivityViewController: UIViewController {
   
     var receved: Activity? = nil
-
+   // var receved2: Speaker? = nil
     var activity = [ Activity ]()
     
+
+   
+    @IBOutlet weak var theSwitch: UISwitch!
+    
+    @IBAction func switchOnOff(sender: AnyObject) {
+    }
+
+    @IBOutlet weak var horaireLabel: UILabel!
 
     @IBAction func biography(sender: AnyObject) {
     }
@@ -31,8 +39,10 @@ class DetailActivityViewController: UIViewController {
     @IBOutlet weak var DescLabel: UILabel!
     @IBOutlet weak var adresseLabel: UILabel!
     
+    @IBOutlet weak var speakButton: UIButton!
       
     let managedObjectContext = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+ 
      
         
       override func viewDidLoad() {
@@ -54,12 +64,20 @@ class DetailActivityViewController: UIViewController {
             NomActLabel.text = activity[0].nomAct
             DescLabel.text = "About This Event : \(activity[0].descriptionAct!)"
             //[descLabel.text.: "About This Restaurant" ]
-            HeureActLabel.text = "\(activity[0].getDay())\n \(activity[0].getTimeDeb())"+" - \(activity[0].getTimeFin())"
+            HeureActLabel.text = "\(activity[0].getDay())"
+            horaireLabel.text = "\(activity[0].getTimeDeb())"+" - \(activity[0].getTimeFin())"
+        
         
         if ( activity[0].isPresented == nil){
             speakLabel.hidden = true
+            speakButton.hidden = true
+            
+            
         } else {
-            speakLabel.text = "\(activity[0].isPresented!.surname!)"+" \(activity[0].isPresented!.name!)"
+            speakLabel.text = "Speaker :  "
+            let surname = activity[0].isPresented!.surname!
+            let buttonTitle = String(surname[surname.startIndex]) + ". " + activity[0].isPresented!.name! + ""
+            speakButton.setTitle(buttonTitle, forState: UIControlState.Normal)
         }
         
             adresseLabel?.text = "Location Map : \((activity[0].isLocated3!).address!)"
@@ -74,7 +92,7 @@ class DetailActivityViewController: UIViewController {
             annotation.title = activity[0].isLocated3?.address!
             annotation.subtitle = "Montpellier"
             actiMap.addAnnotation(annotation)
-            
+        
             
             
             // Do any additional setup after loading the view.
@@ -89,6 +107,25 @@ class DetailActivityViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+            
+            if  segue.identifier == "speakSegue"{
+            
+                    let SecondVC = segue.destinationViewController as! SpeakerBiographyViewController
+                    
+                    SecondVC.receved2 = receved!.isPresented
+                
+
+                }
+            }
+            
+    
+ 
+       
+    
+
 
     /*
     // MARK: - Navigation

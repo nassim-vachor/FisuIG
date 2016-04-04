@@ -15,6 +15,9 @@ import CoreLocation
 class MapViewController: UIViewController , MKMapViewDelegate {
     
      let managedObjectContext = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    @IBAction func home(sender: AnyObject) {
+         self.navigationController?.dismissViewControllerAnimated(true, completion: nil )
+    }
    
     @IBOutlet weak var mapView: MKMapView!
     var lieu = [ Location ]()

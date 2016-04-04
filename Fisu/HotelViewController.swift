@@ -14,8 +14,15 @@ class HotelViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var hotels = [ Accomodation ]()
     
 
+  
     
     
+    @IBAction func home(sender: AnyObject) {
+     
+            self.navigationController?.dismissViewControllerAnimated(true, completion: nil )
+        
+        
+    }
     
     @IBOutlet weak var hotelTableView: UITableView!
 

@@ -14,6 +14,9 @@ class RestoViewController: UIViewController , UITableViewDelegate, UITableViewDa
     var resto = [ Restaurant]()
     
 
+    @IBAction func home(sender: AnyObject) {
+         self.navigationController?.dismissViewControllerAnimated(true, completion: nil )
+    }
 
     @IBOutlet weak var restoTableView: UITableView!
     override func viewDidLoad() {
@@ -79,6 +82,7 @@ class RestoViewController: UIViewController , UITableViewDelegate, UITableViewDa
                     let SecondVC = segue.destinationViewController as! DisplayRestoViewController
                     
                     SecondVC.receved = self.resto[index1]
+                   
                     
                 default: break
                 }
