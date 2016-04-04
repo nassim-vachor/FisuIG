@@ -36,6 +36,17 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>ATSApplicationFontsPath</key>
+	<string>Lato-black.ttf</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Lato-black.ttf</string>
+		<string>OpenSans</string>
+		<string>Oswald</string>
+        <string>icomoon</string>
+	</array>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
