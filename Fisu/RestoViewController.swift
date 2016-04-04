@@ -79,6 +79,7 @@ class RestoViewController: UIViewController , UITableViewDelegate, UITableViewDa
                     let SecondVC = segue.destinationViewController as! DisplayRestoViewController
                     
                     SecondVC.receved = self.resto[index1]
+                   
                     
                 default: break
                 }

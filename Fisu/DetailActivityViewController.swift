@@ -14,7 +14,7 @@ import CoreLocation
 class DetailActivityViewController: UIViewController {
   
     var receved: Activity? = nil
-
+   // var receved2: Speaker? = nil
     var activity = [ Activity ]()
     
 
@@ -31,8 +31,10 @@ class DetailActivityViewController: UIViewController {
     @IBOutlet weak var DescLabel: UILabel!
     @IBOutlet weak var adresseLabel: UILabel!
     
+    @IBOutlet weak var speakButton: UIButton!
       
     let managedObjectContext = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+ 
      
         
       override func viewDidLoad() {
@@ -58,8 +60,13 @@ class DetailActivityViewController: UIViewController {
         
         if ( activity[0].isPresented == nil){
             speakLabel.hidden = true
+            speakButton.hidden = true
+            
+            
         } else {
-            speakLabel.text = "\(activity[0].isPresented!.surname!)"+" \(activity[0].isPresented!.name!)"
+            speakLabel.text = "Speaker :  " + "\(activity[0].isPresented!.surname!)"+" \(activity[0].isPresented!.name!)"
+            
+            
         }
         
             adresseLabel?.text = "Location Map : \((activity[0].isLocated3!).address!)"
@@ -74,7 +81,7 @@ class DetailActivityViewController: UIViewController {
             annotation.title = activity[0].isLocated3?.address!
             annotation.subtitle = "Montpellier"
             actiMap.addAnnotation(annotation)
-            
+        
             
             
             // Do any additional setup after loading the view.
@@ -89,6 +96,24 @@ class DetailActivityViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+            
+            if  segue.identifier == "speakSegue"{
+            
+                    let SecondVC = segue.destinationViewController as! SpeakerBiographyViewController
+                    
+                    SecondVC.receved2 = receved!.isPresented
+                
+
+                }
+            }
+            
+            
+       
+    
+
 
     /*
     // MARK: - Navigation

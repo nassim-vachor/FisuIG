@@ -143,7 +143,7 @@ class ViewController: UIViewController {
   
 
       
-        let Activity9 = Activity.insertNewActivity(moc, id: 9, nom: "Visit of Montpellier", desc: "Montpellier City", dateD :"05/07/2016, 16:30", dateF:"05/07/2016, 18:30", lieu: nil, speak: nil, photo: "montpell", day: day2)
+        let Activity9 = Activity.insertNewActivity(moc, id: 9, nom: "Visit of Montpellier", desc: "Montpellier City", dateD :"05/07/2016, 16:30", dateF:"05/07/2016, 18:30", lieu: Loc2, speak: nil, photo: "montpell", day: day2)
         
       
     
@@ -279,6 +279,8 @@ class ViewController: UIViewController {
     override func viewWillDisappear(animated: Bool) {
         if (navigationController?.topViewController != self){
             navigationController?.navigationBarHidden = false
+        //    navigationController?.popToRootViewControllerAnimated(true)
+         
             
         
         }
