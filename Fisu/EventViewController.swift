@@ -14,6 +14,9 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var days = [ Day ]()
     
     
+    @IBAction func home(sender: AnyObject) {
+         self.navigationController?.dismissViewControllerAnimated(true, completion: nil )
+    }
     @IBOutlet weak var myTableView: UITableView!
     
     override func viewDidLoad() {

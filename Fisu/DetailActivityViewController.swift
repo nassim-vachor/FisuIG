@@ -18,6 +18,14 @@ class DetailActivityViewController: UIViewController {
     var activity = [ Activity ]()
     
 
+   
+    @IBOutlet weak var theSwitch: UISwitch!
+    
+    @IBAction func switchOnOff(sender: AnyObject) {
+    }
+
+    @IBOutlet weak var horaireLabel: UILabel!
+
     @IBAction func biography(sender: AnyObject) {
     }
     
@@ -56,7 +64,9 @@ class DetailActivityViewController: UIViewController {
             NomActLabel.text = activity[0].nomAct
             DescLabel.text = "About This Event : \(activity[0].descriptionAct!)"
             //[descLabel.text.: "About This Restaurant" ]
-            HeureActLabel.text = "\(activity[0].getDay())\n \(activity[0].getTimeDeb())"+" - \(activity[0].getTimeFin())"
+            HeureActLabel.text = "\(activity[0].getDay())"
+            horaireLabel.text = "\(activity[0].getTimeDeb())"+" - \(activity[0].getTimeFin())"
+        
         
         if ( activity[0].isPresented == nil){
             speakLabel.hidden = true
@@ -64,9 +74,10 @@ class DetailActivityViewController: UIViewController {
             
             
         } else {
-            speakLabel.text = "Speaker :  " + "\(activity[0].isPresented!.surname!)"+" \(activity[0].isPresented!.name!)"
-            
-            
+            speakLabel.text = "Speaker :  "
+            let surname = activity[0].isPresented!.surname!
+            let buttonTitle = String(surname[surname.startIndex]) + ". " + activity[0].isPresented!.name! + ""
+            speakButton.setTitle(buttonTitle, forState: UIControlState.Normal)
         }
         
             adresseLabel?.text = "Location Map : \((activity[0].isLocated3!).address!)"
@@ -110,7 +121,8 @@ class DetailActivityViewController: UIViewController {
                 }
             }
             
-            
+    
+ 
        
     
 

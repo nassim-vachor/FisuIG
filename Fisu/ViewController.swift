@@ -279,7 +279,7 @@ class ViewController: UIViewController {
     override func viewWillDisappear(animated: Bool) {
         if (navigationController?.topViewController != self){
             navigationController?.navigationBarHidden = false
-        //    navigationController?.popToRootViewControllerAnimated(true)
+            //navigationController?.popToRootViewControllerAnimated(true)
          
             
         
@@ -296,6 +296,10 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var logo: UIImageView!
     
+    @IBAction func returned (segue: UIStoryboard){
+        
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
