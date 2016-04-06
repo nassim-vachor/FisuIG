@@ -9,11 +9,8 @@
 import UIKit
 import CoreData
 
-class HotelViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    let managedObjectContext = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-    var hotels = [ Accomodation ]()
-    
-
+class HotelViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
+     var frc : NSFetchedResultsController = NSFetchedResultsController()
   
     
     
@@ -21,31 +18,24 @@ class HotelViewController: UIViewController, UITableViewDelegate, UITableViewDat
      
             self.navigationController?.dismissViewControllerAnimated(true, completion: nil )
         
-        
     }
     
     @IBOutlet weak var hotelTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
-        let fetchRequest = NSFetchRequest ( entityName: "Accomodation")
-    
+        frc = Accomodation.getAccoFetchedResultController("Accomodation", key: "idAcco")
+        frc.delegate = self
         do {
-            let fetchResult = try managedObjectContext.executeFetchRequest(fetchRequest) as! [Accomodation]
-            hotels = fetchResult
-            
-            
-            
-        } catch let error as NSError{
-            print("Could not fecth \(error), \(error.userInfo)")
-            
+            try frc.performFetch()
+        } catch {
+            print("An error occured")
         }
+        
         self.hotelTableView.delegate = self
         self.hotelTableView.dataSource = self
-        
+
     }
     
 
@@ -58,45 +48,53 @@ class HotelViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        if let sections = frc.sections{
+            return sections.count
+        }
+        return 0
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return hotels.count
+        if let sections = frc.sections {
+            let currentSection = sections[section]
+            return currentSection.numberOfObjects
+        }
+        return 0
         
     }
     
-    //nnjjhjhjhhg
+
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("HotelId", forIndexPath: indexPath) as!
         HotelTableViewCell  //on force le downCast avec
+        let acco = frc.objectAtIndexPath(indexPath) as! Accomodation
         
-        cell.hotelNomLabel.text = hotels[indexPath.row].name
+        cell.hotelNomLabel.text = acco.name
         
-        cell.hotelImage.image = UIImage( data: (hotels[indexPath.row].photoA)!, scale: 0.1)
-        cell.hotelHorLabel.text = (hotels[indexPath.row].getTimeDeb())+" - \(hotels[indexPath.row].getTimeFin())"
+        cell.hotelImage.image = UIImage( data: (acco.photoA)!, scale: 0.1)
+        cell.hotelHorLabel.text = (acco.getTimeDeb())+" - \(acco.getTimeFin())"
         return cell
     }
 
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if let index1 = self.hotelTableView.indexPathForSelectedRow?.row
+        if let index1 = self.hotelTableView.indexPathForSelectedRow
         {
             
             if let identifier = segue.identifier{
                 switch identifier{
                 case "hotelSegue":
                     let SecondVC = segue.destinationViewController as! DisplayHotelViewController
-                    
-                    SecondVC.receved = self.hotels[index1]
+                          let acco = frc.objectAtIndexPath(index1) as! Accomodation
+                    SecondVC.receved = acco
                     
                 default: break
                 }
             }
             
             
-        }}
+        }
+    }
 }

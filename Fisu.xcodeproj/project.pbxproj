@@ -270,9 +270,9 @@
 		D4BBB5451CB5364000C69A6A /* Hotel */ = {
 			isa = PBXGroup;
 			children = (
-				172611951CA7B62F001DCA2F /* HotelTableViewCell.swift */,
 				D42C47F41CA447170009F6AE /* HotelViewController.swift */,
 				1752FC2E1CA98BFF00454022 /* DisplayHotelViewController.swift */,
+				172611951CA7B62F001DCA2F /* HotelTableViewCell.swift */,
 			);
 			name = Hotel;
 			sourceTree = "<group>";

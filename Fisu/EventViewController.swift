@@ -19,16 +19,6 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     @IBOutlet weak var myTableView: UITableView!
     
-    /*lazy var fetchedResultsController: NSFetchedResultsController = {
-    let dayFetchRequest = NSFetchRequest ( entityName: "Day")
-    let sortDescriptor = NSSortDescriptor(key: "day", ascending: true)
-    dayFetchRequest.sortDescriptors = [ sortDescriptor]
-    let frc = NSFetchedResultsController(fetchRequest: dayFetchRequest, managedObjectContext: self.context, sectionNameKeyPath: "day", cacheName: nil )
-    frc.delegate = self
-    return frc
-    
-    }()*/
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         frc = Day.getDayFetchedResultController("Day", key: "keyDay")
@@ -64,8 +54,6 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return currentSection.numberOfObjects
         }
         return 0
-        //days.count
-        
     }
     
     
@@ -73,10 +61,10 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("DayId", forIndexPath: indexPath) as!
         ScheduleTableViewCell  //on force le downCast avec
+        
         let jour = frc.objectAtIndexPath(indexPath) as! Day
         cell.dayLabel.text = jour.day
         //days[indexPath.row].day
-        
         
         return cell
     }

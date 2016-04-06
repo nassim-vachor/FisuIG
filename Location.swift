@@ -13,7 +13,23 @@ import UIKit
 
 class Location: NSManagedObject {
 
-
+    
+    // RequestDB (interaction with DB)
+    class  func FetchRequest( c : String  , key : String ) -> NSFetchRequest{
+        let FetchRequest = NSFetchRequest ( entityName:c)
+        let sortDescriptor = NSSortDescriptor(key: key, ascending: true)
+        FetchRequest.sortDescriptors = [ sortDescriptor]
+        return FetchRequest
+    }
+    
+    // get result from location table  with NSFetchedResultsController
+    class func getLocationFetchedResultController(  c : String  , key : String ) -> NSFetchedResultsController {
+        let context = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        let frc = NSFetchedResultsController(fetchRequest: FetchRequest(c, key: key), managedObjectContext: context, sectionNameKeyPath: nil , cacheName: nil )
+        return frc
+    }
+    
+    
     
     // methode de classe pour l'insertion d'une nouvelle Location
     class func  insertNewLocation( context: NSManagedObjectContext ,id: NSNumber, address: String, lat: NSNumber, long: NSNumber) -> Location?{

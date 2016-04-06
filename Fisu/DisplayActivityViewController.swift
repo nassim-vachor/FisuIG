@@ -9,7 +9,6 @@
 import UIKit
 import CoreData
 class DisplayActivityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
-    
     @IBOutlet weak var activityTableView: UITableView!
     
     var frc : NSFetchedResultsController = NSFetchedResultsController()
@@ -30,7 +29,9 @@ class DisplayActivityViewController: UIViewController, UITableViewDelegate, UITa
         self.activityTableView.delegate = self
         self.activityTableView.dataSource = self
         
+        
     }
+    
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         if let sections = frc.sections{

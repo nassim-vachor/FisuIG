@@ -39,15 +39,14 @@ class DetailActivityViewController: UIViewController, NSFetchedResultsController
     @IBOutlet weak var adresseLabel: UILabel!
     
     @IBOutlet weak var speakButton: UIButton!
-      
-    let managedObjectContext = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    
      var frc : NSFetchedResultsController = NSFetchedResultsController()
      
         
       override func viewDidLoad() {
             super.viewDidLoad()
         
-        // get all activity for day = receved ( the day selected in the previous view)
+        // get detailActivity for the activity selected
         frc = Activity.getDetailActivityFetchedResultController("Activity", key: "idAct", predicat: "idAct=%@", args: (receved?.idAct)!)
         frc.delegate = self
         do {
@@ -56,8 +55,8 @@ class DetailActivityViewController: UIViewController, NSFetchedResultsController
             print("An error occured")
         }
         
-        let indexPath = NSIndexPath(index: 0)
-        let act = frc.objectAtIndexPath(indexPath) as! Activity
+        let indexPath = NSIndexPath(forItem: 0, inSection: 0)
+        let act = frc.objectAtIndexPath(indexPath)  as! Activity
        
             NomActLabel.text =  act.nomAct  
             DescLabel.text = "About This Event : \(act.descriptionAct)"
