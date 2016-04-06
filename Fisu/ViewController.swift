@@ -22,15 +22,15 @@ class ViewController: UIViewController {
         //
         //
   // ************************************* LIEUX DES ACTIVITÉS *******************************
-        let day1 = Day.insertNewDay(moc, id: 1, day: "Day 1")
+      /*  let day1 = Day.insertNewDay(moc, id: 1, day: "Day 1")
         let day2 = Day.insertNewDay(moc, id: 2, day: "Day 2")
         let day3 = Day.insertNewDay(moc, id: 3, day: "Day 3")
         let day4 = Day.insertNewDay(moc, id: 4, day: "Day 4")
         let day5 = Day.insertNewDay(moc, id: 5, day: "Day 5")
-        let day6 = Day.insertNewDay(moc, id: 6, day: "Day 6")
+        let day6 = Day.insertNewDay(moc, id: 6, day: "Day 6")*/
  // ************************************* LIEUX DES ACTIVITÉS *******************************
     // LIEUX DES ACTIVITÉS
-    let Loc1 = Location.insertNewLocation(moc, id: 1, address: "Law Faculty" , lat: 43.61, long: 3.87)
+   /* let Loc1 = Location.insertNewLocation(moc, id: 1, address: "Law Faculty" , lat: 43.61, long: 3.87)
     let Loc2 = Location.insertNewLocation(moc, id: 2, address: "Saint Charles" , lat: 43.61, long: 3.87)
     let Loc3 = Location.insertNewLocation(moc, id: 3, address: "Triolet" , lat: 43.61, long: 3.87)
     let Loc4 = Location.insertNewLocation(moc, id: 4, address: "Rectorat" , lat: 43.61, long: 3.87)
@@ -56,12 +56,12 @@ class ViewController: UIViewController {
     let Speak4 = Speaker.insertNewSpeaker(moc, id: 4, nom: "Sala", prenom: "Michel", biograp: "A teacher in conception and information system at Polytech MOntpellier", tel: "0675021143", photo: "Sala")
         
    
-        
+        */
         
         
         // LIEUX DES Restaurants
         
-        let LocRes1 = Location.insertNewLocation(moc, id: 16 , address: "19 Quai des Tanneurs, 34000 Montpellier" , lat: 43.6157714, long: 3.8770789)
+      /*  let LocRes1 = Location.insertNewLocation(moc, id: 16 , address: "19 Quai des Tanneurs, 34000 Montpellier" , lat: 43.6157714, long: 3.8770789)
         
         let LocRes2 = Location.insertNewLocation(moc, id: 17 , address: "20 Rue de la Méditerranée, 34000 Montpellier" , lat: 43.6053301, long: 3.8835284)
         
@@ -105,14 +105,14 @@ class ViewController: UIViewController {
         
         let LocAcco9 = Location.insertNewLocation(moc, id: 16 , address: "7 Boulevard Frédéric Fabrèges, 34250 Palavas-les-Flot" , lat: 43.5278046, long: 3.9264076)
         
-        let LocAcco10 = Location.insertNewLocation(moc, id: 15 , address: "Rue Robert Schuman, 34430 Saint-Jean-de-Védas" , lat: 43.5675590, long: 3.8375420)
+        let LocAcco10 = Location.insertNewLocation(moc, id: 15 , address: "Rue Robert Schuman, 34430 Saint-Jean-de-Védas" , lat: 43.5675590, long: 3.8375420)*/
         
 //******************************************Day1**********************************************************
         // création des activité du Day1 gràce à la methode de classe insertNewActivity
      
         
         
-        let Activity1 = Activity.insertNewActivity(moc, id: 1, nom: "Open Ceremony", desc: "Open Ceremony for the FISU", dateD: "04/07/2016, 09:00", dateF: "04/07/2016, 12:30", lieu: Loc1, speak: Speak1, photo: "ceremony", day: day1)
+    /*    let Activity1 = Activity.insertNewActivity(moc, id: 1, nom: "Open Ceremony", desc: "Open Ceremony for the FISU", dateD: "04/07/2016, 09:00", dateF: "04/07/2016, 12:30", lieu: Loc1, speak: Speak1, photo: "ceremony", day: day1)
         
        
         
@@ -128,7 +128,7 @@ class ViewController: UIViewController {
         let Activity5 = Activity.insertNewActivity(moc, id: 5, nom: "Projet working group", desc: "woking team in professionnal world", dateD :"04/07/2016, 15:30", dateF:"04/07/2016, 16:30", lieu: Loc1, speak: Speak4, photo: "team", day: day1)
    
         
-        let Activity6 = Activity.insertNewActivity(moc, id: 6, nom: "Boules/Pétanque", desc: "playing and take a rest", dateD :"04/07/2016, 17:00", dateF:"04/07/2016, 19:00", lieu: Loc3, speak: nil, photo: "boule", day: day1)
+        let Activity6 = Activity.insertNewActivity(moc, id: 6, nom: "Boules/Pétanque", desc: "playing and take a rest", dateD :"04/07/2016, 17:00", dateF:"04/07/2016, 19:00", lieu: Loc3, speak: nil, photo: "boule", day: day1)*/
       
         //hjhtgtg
    
@@ -136,7 +136,7 @@ class ViewController: UIViewController {
         //********************************************Day2***********************************************************
         // création des activité du Day2 gràce à la methode de classe insertNewActivity
       
-        let Activity7 = Activity.insertNewActivity(moc, id: 7, nom: "Plenary session", desc: "Values/Ethics/Integrity", dateD: "05/07/2016, 09:00", dateF: "05/07/2016, 10:00", lieu: Loc1, speak: Speak1, photo: "plenary", day: day2)
+  /*      let Activity7 = Activity.insertNewActivity(moc, id: 7, nom: "Plenary session", desc: "Values/Ethics/Integrity", dateD: "05/07/2016, 09:00", dateF: "05/07/2016, 10:00", lieu: Loc1, speak: Speak1, photo: "plenary", day: day2)
         
      
         let Activity8 = Activity.insertNewActivity(moc, id: 8, nom: "Projet Working", desc: "explain by scientist", dateD: "05/07/2016, 11:30", dateF: "05/07/2016, 12:30", lieu: Loc2, speak: Speak3, photo: "team" , day: day2)
@@ -145,12 +145,12 @@ class ViewController: UIViewController {
       
         let Activity9 = Activity.insertNewActivity(moc, id: 9, nom: "Visit of Montpellier", desc: "Montpellier City", dateD :"05/07/2016, 16:30", dateF:"05/07/2016, 18:30", lieu: Loc2, speak: nil, photo: "montpell", day: day2)
         
-      
+      */
     
         //********************************************Day2finish******************************************************
         //*********************************************Day3***********************************************************
         // création des activité du Day3 gràce à la methode de classe insertNewActivity
-           let Activity10 = Activity.insertNewActivity(moc, id: 10, nom: "Plenary session", desc: "LeaderShip", dateD: "06/07/2016, 09:00", dateF: "06/07/2016, 10:00", lieu: Loc1, speak: Speak1, photo: "plenary", day: day3)
+   /*        let Activity10 = Activity.insertNewActivity(moc, id: 10, nom: "Plenary session", desc: "LeaderShip", dateD: "06/07/2016, 09:00", dateF: "06/07/2016, 10:00", lieu: Loc1, speak: Speak1, photo: "plenary", day: day3)
         
 
         let Activity11 = Activity.insertNewActivity(moc, id: 11, nom: "Projet Working Session", desc: "explain by scientist", dateD: "06/07/2016, 11:30", dateF: "06/07/2016, 12:30", lieu: Loc2, speak: Speak3, photo: "project", day: day3)
@@ -158,13 +158,13 @@ class ViewController: UIViewController {
 
         let Activity12 = Activity.insertNewActivity(moc, id: 12, nom: "Rumba", desc: "Come on and enjoying dancing", dateD :"06/07/2016, 16:30", dateF:"06/07/2016, 17:30", lieu: Loc6, speak: nil, photo: "rumba", day: day3)
    
-
+*/
         //********************************************Day3finish******************************************************
         //*********************************************Day4***********************************************************
        
   
         
-        let Activity13 = Activity.insertNewActivity(moc, id:13, nom: "HandBall", desc:"Sport", dateD: "07/07/2016, 08:00", dateF: "07/07/2016, 10:30", lieu: Loc12, speak: nil, photo: "hand", day: day4)
+     /*   let Activity13 = Activity.insertNewActivity(moc, id:13, nom: "HandBall", desc:"Sport", dateD: "07/07/2016, 08:00", dateF: "07/07/2016, 10:30", lieu: Loc12, speak: nil, photo: "hand", day: day4)
         
         let Activity14 = Activity.insertNewActivity(moc, id: 14, nom: "Volley", desc: "Sport", dateD: "07/07/2016, 10:30", dateF: "07/07/2016, 13:00", lieu: Loc12, speak:nil, photo: "volley", day: day4)
        
@@ -174,25 +174,25 @@ class ViewController: UIViewController {
          let Activity16 = Activity.insertNewActivity(moc, id: 16, nom: "Shopping", desc: "Doing shopping in your free time",dateD :"07/07/2016, 19:00", dateF:"07/07/2016, 19:45", lieu: Loc7, speak: nil, photo: "shopping", day: day4)
     
       
-        let Activity17 = Activity.insertNewActivity(moc, id: 17, nom: "Party", desc: "Enjoy the party and relax you",dateD :"07/07/2016, 23:00", dateF:"07/07/2016, 03:45", lieu: Loc7, speak: nil, photo: "party", day: day4)
+        let Activity17 = Activity.insertNewActivity(moc, id: 17, nom: "Party", desc: "Enjoy the party and relax you",dateD :"07/07/2016, 23:00", dateF:"07/07/2016, 03:45", lieu: Loc7, speak: nil, photo: "party", day: day4)*/
    
 
         //***********************************************Day4finish***************************************************
         //************************************************Day5******************************************************
        
-        let Activity18 = Activity.insertNewActivity(moc, id: 18, nom: "Equitation", desc: "Riding horses", dateD: "08/07/2016, 09:00", dateF: "08/07/2016, 11:00", lieu: Loc1, speak: nil , photo: "equit", day: day5)
+     /*   let Activity18 = Activity.insertNewActivity(moc, id: 18, nom: "Equitation", desc: "Riding horses", dateD: "08/07/2016, 09:00", dateF: "08/07/2016, 11:00", lieu: Loc1, speak: nil , photo: "equit", day: day5)
        
 
         let Activity19 = Activity.insertNewActivity(moc, id: 19, nom: "Visit of Montpellier", desc: "Montpellier city", dateD: "08/07/2016, 18:30", dateF: "08/07/2016, 19:45", lieu:Loc2, speak:nil, photo: "montpell", day: day5)
         
         let Activity20 = Activity.insertNewActivity(moc, id: 20, nom: "Running", desc: "Run", dateD: "08/07/2016, 19:45", dateF: "08/07/2016, 21:00", lieu: Loc7, speak: nil, photo: "run", day: day5)
-       
+       */
 
         ///***********************************************Day5finish***************************************************
         //************************************************Day6******************************************************
       
        
-        let Activity21 = Activity.insertNewActivity(moc, id: 21, nom: "Hiking", desc: "Morning hiking", dateD: "09/07/2016, 11:00", dateF: "09/07/2016, 11:30", lieu: Loc1, speak: nil, photo: "hiking", day: day6)
+    /*    let Activity21 = Activity.insertNewActivity(moc, id: 21, nom: "Hiking", desc: "Morning hiking", dateD: "09/07/2016, 11:00", dateF: "09/07/2016, 11:30", lieu: Loc1, speak: nil, photo: "hiking", day: day6)
         
       
        
@@ -208,12 +208,12 @@ class ViewController: UIViewController {
          let Activity26 = Activity.insertNewActivity(moc, id: 26, nom: "Party", desc: "Come on and enjoy the party", dateD :"09/07/2016, 19:30", dateF:"09/07/2016, 23:30", lieu: Loc5, speak: nil, photo: "party", day: day6)
         
         
-        
+        */
         
         
         //***********************************************Accomodation***************************************************
         
-        let Acco1 = Accomodation.insertNewAccomodation(moc, id: 1, nom: "Novotel", desc: "Contemporary hotel with a terrace coffee ,a bar , an outdoor pool and a playground ", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco1, tel: "04 99 52 34 34", photo: "novotel" )
+   /*     let Acco1 = Accomodation.insertNewAccomodation(moc, id: 1, nom: "Novotel", desc: "Contemporary hotel with a terrace coffee ,a bar , an outdoor pool and a playground ", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco1, tel: "04 99 52 34 34", photo: "novotel" )
         
         let Acco2 = Accomodation.insertNewAccomodation(moc, id: 2, nom: "Ibis", desc: "Ibis is located close to Comedie place,Come and relax you in this beautiful hotel.", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco2, tel: "04 67 64 06 64", photo: "ibis")
         
@@ -233,11 +233,11 @@ class ViewController: UIViewController {
         
         let Acco10 = Accomodation.insertNewAccomodation(moc, id: 10, nom: "Hotel Prime", desc: "a hotel with outdoor pool offering simple but functional rooms", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco10, tel: "04 67 07 59 59", photo: "PrimeHotel")
         
-        
+        */
         
         
         //***********************************************Restauration***************************************************
-        
+   /*
         let Resto1 = Restaurant.insertNewRestaurant(moc, id: 1, nom: "Domino's Pizza", spec:"Pizza", dateD :"04/07/2016, 11:00", dateF:"01/07/2016, 23:30", adresse: LocRes1, tel: "06 67 79 29 20", photo: "Domino's")
         
         let Resto2 = Restaurant.insertNewRestaurant(moc, id: 2, nom: "Pizza Marsala", spec:"Pizza", dateD :"04/07/2016, 11:30", dateF:"01/07/2016, 23:00", adresse: LocRes2, tel: "09 52 54 54 22", photo:"PizzaMarsala" )
@@ -259,7 +259,7 @@ class ViewController: UIViewController {
        let Resto10 = Restaurant.insertNewRestaurant(moc, id: 10, nom: "Restaurant Boutonnet", spec:"Kebbab", dateD :"01/07/2016, 11:30", dateF:"04/07/2016, 14:00", adresse: LocRes10 , tel: "04 67 63 52 06", photo: "RestoU")
 
         let Resto11 = Restaurant.insertNewRestaurant(moc, id: 11, nom: "Georges Café", spec:"Coffee", dateD :"04/07/2016, 15:00", dateF:"04/07/2016, 19:00", adresse: LocRes11 , tel: "04 67 66 01 63", photo: "GeorgesCafe")
-        
+        */
        /* let Activity67 = Activity.insertNewActivity(moc, id: 67, nom: "Closing Ceremony", desc: "eating and relax", dateD :"09/07/2016, 19:30", dateF:"09/07/2016, 21:30", lieu: Loc5, speak: nil, photo : "AmeriqueHotel")
         let Activity68 = Activity.insertNewActivity(moc, id: 68, nom: "Closing Ceremony", desc: "eating and relax", dateD :"09/07/2016, 19:30", dateF:"09/07/2016, 21:30", lieu: Loc5, speak: nil, photo : "Domino's")*/
         
@@ -268,9 +268,9 @@ class ViewController: UIViewController {
         let imageView = UIImageView ( image: a!)
         imageView.frame = CGRect (x: 220, y: 150, width: 40, height: 50)
         view.addSubview(imageView)*/
-       print(Acco9?.getTimeDeb())
+  /*     print(Acco9?.getTimeDeb())
     
-       print(Resto9?.getTimeDeb())
+       print(Resto9?.getTimeDeb())*/
     }
    override func viewWillAppear(animated: Bool) {
         navigationController?.navigationBarHidden = true
