@@ -13,14 +13,7 @@ import UIKit
 
 class Location: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
-  /*  @NSManaged var address: String?
-    @NSManaged var idLoc: NSNumber?
-    @NSManaged var latitude: NSNumber?
-    @NSManaged var longitude: NSNumber?
-    @NSManaged var correspond: NSSet?
-    @NSManaged var correspond2: NSSet?
-    @NSManaged var correspond3: NSSet?*/
+
     
     // methode de classe pour l'insertion d'une nouvelle Location
     class func  insertNewLocation( context: NSManagedObjectContext ,id: NSNumber, address: String, lat: NSNumber, long: NSNumber) -> Location?{

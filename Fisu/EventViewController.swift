@@ -9,40 +9,40 @@
 import UIKit
 import CoreData
 
-class EventViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    let managedObjectContext = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-    var days = [ Day ]()
+class EventViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
+    
+    var frc : NSFetchedResultsController = NSFetchedResultsController()
     
     
     @IBAction func home(sender: AnyObject) {
-         self.navigationController?.dismissViewControllerAnimated(true, completion: nil )
+        self.navigationController?.dismissViewControllerAnimated(true, completion: nil )
     }
     @IBOutlet weak var myTableView: UITableView!
     
+    /*lazy var fetchedResultsController: NSFetchedResultsController = {
+    let dayFetchRequest = NSFetchRequest ( entityName: "Day")
+    let sortDescriptor = NSSortDescriptor(key: "day", ascending: true)
+    dayFetchRequest.sortDescriptors = [ sortDescriptor]
+    let frc = NSFetchedResultsController(fetchRequest: dayFetchRequest, managedObjectContext: self.context, sectionNameKeyPath: "day", cacheName: nil )
+    frc.delegate = self
+    return frc
+    
+    }()*/
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let fetchRequest = NSFetchRequest ( entityName: "Day")
-        // fetchRequest.returnsDistinctResults = true
-        //    fetchRequest.propertiesToFetch = ["dayIs"]
-        //fetchRequest.propertiesToGroupBy = ["dayIs"]
+        frc = Day.getDayFetchedResultController("Day", key: "keyDay")
+        frc.delegate = self
         do {
-            let fetchResult = try managedObjectContext.executeFetchRequest(fetchRequest) as! [Day]
-            days = fetchResult
-            
-            
-            
-        } catch let error as NSError{
-            print("Could not fecth \(error), \(error.userInfo)")
-            
+            try frc.performFetch()
+        } catch {
+            print("An error occured")
         }
+        
         self.myTableView.delegate = self
         self.myTableView.dataSource = self
         
     }
-    
-    
-    
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -52,12 +52,19 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        if let sections = frc.sections{
+            return sections.count
+        }
+        return 0
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return days.count
+        if let sections = frc.sections {
+            let currentSection = sections[section]
+            return currentSection.numberOfObjects
+        }
+        return 0
+        //days.count
         
     }
     
@@ -66,8 +73,9 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("DayId", forIndexPath: indexPath) as!
         ScheduleTableViewCell  //on force le downCast avec
-        
-        cell.dayLabel.text = days[indexPath.row].day
+        let jour = frc.objectAtIndexPath(indexPath) as! Day
+        cell.dayLabel.text = jour.day
+        //days[indexPath.row].day
         
         
         return cell
@@ -75,20 +83,23 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if let index1 = self.myTableView.indexPathForSelectedRow?.row
+        if let index1 = self.myTableView.indexPathForSelectedRow
         {
             
             if let identifier = segue.identifier{
                 switch identifier{
                 case "firstSegue":
                     let SecondVC = segue.destinationViewController as! DisplayActivityViewController
+                    let daySelected = self.frc.objectAtIndexPath(index1) as! Day
                     
-                    SecondVC.receved = self.days[index1]
+                    SecondVC.receved = daySelected
                     
                 default: break
                 }
             }
             
             
-        }}
+        }
+    }
+    
 }

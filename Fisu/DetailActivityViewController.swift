@@ -11,11 +11,10 @@ import CoreData
 import MapKit
 import CoreLocation
 
-class DetailActivityViewController: UIViewController {
+class DetailActivityViewController: UIViewController, NSFetchedResultsControllerDelegate {
   
     var receved: Activity? = nil
-   // var receved2: Speaker? = nil
-    var activity = [ Activity ]()
+
     
 
    
@@ -42,60 +41,57 @@ class DetailActivityViewController: UIViewController {
     @IBOutlet weak var speakButton: UIButton!
       
     let managedObjectContext = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
- 
+     var frc : NSFetchedResultsController = NSFetchedResultsController()
      
         
       override func viewDidLoad() {
             super.viewDidLoad()
-            let fetchRequest = NSFetchRequest( entityName: "Activity")
-            let predicat = NSPredicate(format: "idAct=%@", (receved?.idAct)!)
-            fetchRequest.predicate = predicat
-            
-            do {
-                let fetchResult = try managedObjectContext.executeFetchRequest(fetchRequest) as! [Activity]
-                activity = fetchResult
-                
-                
-                
-            } catch let error as NSError{
-                print("Could not fecth \(error), \(error.userInfo)")
-                
-            }
-            NomActLabel.text = activity[0].nomAct
-            DescLabel.text = "About This Event : \(activity[0].descriptionAct!)"
+        
+        // get all activity for day = receved ( the day selected in the previous view)
+        frc = Activity.getDetailActivityFetchedResultController("Activity", key: "idAct", predicat: "idAct=%@", args: (receved?.idAct)!)
+        frc.delegate = self
+        do {
+            try frc.performFetch()
+        } catch {
+            print("An error occured")
+        }
+        
+        let indexPath = NSIndexPath(index: 0)
+        let act = frc.objectAtIndexPath(indexPath) as! Activity
+       
+            NomActLabel.text =  act.nomAct  
+            DescLabel.text = "About This Event : \(act.descriptionAct)"
             //[descLabel.text.: "About This Restaurant" ]
-            HeureActLabel.text = "\(activity[0].getDay())"
-            horaireLabel.text = "\(activity[0].getTimeDeb())"+" - \(activity[0].getTimeFin())"
+            HeureActLabel.text = "\(act.getDay())"
+            horaireLabel.text = "\(act.getTimeDeb())"+" - \(act.getTimeFin())"
         
         
-        if ( activity[0].isPresented == nil){
+        if ( act.isPresented == nil){
             speakLabel.hidden = true
             speakButton.hidden = true
             
             
         } else {
             speakLabel.text = "Speaker :  "
-            let surname = activity[0].isPresented!.surname!
-            let buttonTitle = String(surname[surname.startIndex]) + ". " + activity[0].isPresented!.name! + ""
+            let surname = act.isPresented!.surname!
+            let buttonTitle = String(surname[surname.startIndex]) + ". " + act.isPresented!.name! + ""
             speakButton.setTitle(buttonTitle, forState: UIControlState.Normal)
         }
         
-            adresseLabel?.text = "Location Map : \((activity[0].isLocated3!).address!)"
-            imageAct.image = UIImage(data: (activity[0].photoActi)!, scale: 0.1)
-            let location =  CLLocationCoordinate2D(latitude: CLLocationDegrees( (activity[0].isLocated3?.latitude)! ), longitude: CLLocationDegrees((activity[0].isLocated3?.longitude)! ))
+            adresseLabel?.text = "Location Map : \((act.isLocated3!).address!)"
+            imageAct.image = UIImage(data: (act.photoActi)!, scale: 0.1)
+            let location =  CLLocationCoordinate2D(latitude: CLLocationDegrees( (act.isLocated3?.latitude)! ), longitude: CLLocationDegrees((act.isLocated3?.longitude)! ))
             let span = MKCoordinateSpanMake(0.05, 0.05)
             let region = MKCoordinateRegion(center: location, span: span)
             actiMap.setRegion(region, animated: true)
             
             let annotation = MKPointAnnotation()
             annotation.coordinate = location
-            annotation.title = activity[0].isLocated3?.address!
+            annotation.title = act.isLocated3?.address!
             annotation.subtitle = "Montpellier"
             actiMap.addAnnotation(annotation)
         
-            
-            
-            // Do any additional setup after loading the view.
+        
     }
     
 
@@ -104,7 +100,7 @@ class DetailActivityViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+       
     }
     
     

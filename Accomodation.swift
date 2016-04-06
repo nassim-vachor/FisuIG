@@ -54,12 +54,6 @@ class Accomodation: NSManagedObject {
         let timeString = formatter.stringFromDate(self.fermeture!)
         return timeString
     }
-   /* @NSManaged var descAcco: String?
-    @NSManaged var idAcco: NSNumber?
-    @NSManaged var name: String?
-    @NSManaged var phoneAcco: String?
-    @NSManaged var photoA: NSData?
-    @NSManaged var isLocated: Location?*/
     
     // methode de classe pour l'insertion d'une nouvelle Accomodation
     class func  insertNewAccomodation( context: NSManagedObjectContext ,id: NSNumber, nom: String, desc: String,  dateD: String, dateF: String,adresse: Location?, tel: String, photo: String?) -> Accomodation?{

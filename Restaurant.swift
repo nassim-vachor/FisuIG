@@ -117,12 +117,3 @@ class Restaurant: NSManagedObject {
 
 }
 
-/*
-@NSManaged var hourdeb: NSDate?
-@NSManaged var hourFin: NSDate?
-@NSManaged var idRes: NSNumber?
-@NSManaged var nameRes: String?
-@NSManaged var phoneRes: String?
-@NSManaged var speciality: String?
-@NSManaged var photoRes: NSData?
-@NSManaged var isLocated2: Location?*/
