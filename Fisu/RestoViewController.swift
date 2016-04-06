@@ -9,32 +9,29 @@
 import UIKit
 import CoreData
 
-class RestoViewController: UIViewController , UITableViewDelegate, UITableViewDataSource {
-    let managedObjectContext = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-    var resto = [ Restaurant]()
-    
+class RestoViewController: UIViewController , UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
+     var frc : NSFetchedResultsController = NSFetchedResultsController()
 
     @IBAction func home(sender: AnyObject) {
          self.navigationController?.dismissViewControllerAnimated(true, completion: nil )
     }
 
     @IBOutlet weak var restoTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let fetchRequest = NSFetchRequest ( entityName: "Restaurant")
-     
+        
+        frc = Restaurant.getRestoFetchedResultController("Restaurant", key: "idRes")
+        frc.delegate = self
         do {
-            let fetchResult = try managedObjectContext.executeFetchRequest(fetchRequest) as! [Restaurant]
-            resto = fetchResult
-            
-            
-            
-        } catch let error as NSError{
-            print("Could not fecth \(error), \(error.userInfo)")
-            
+            try frc.performFetch()
+        } catch {
+            print("An error occured")
         }
+        
         self.restoTableView.delegate = self
         self.restoTableView.dataSource = self
+     
         
     }
 
@@ -47,24 +44,30 @@ class RestoViewController: UIViewController , UITableViewDelegate, UITableViewDa
     
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        if let sections = frc.sections{
+            return sections.count
+        }
+        return 0
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return resto.count
+        if let sections = frc.sections {
+            let currentSection = sections[section]
+            return currentSection.numberOfObjects
+        }
+        return 0
         
     }
     
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("RestoId", forIndexPath: indexPath) as! RestoTableViewCell
-        //on force le downCast avec
-        
-        cell.restoLabel.text = resto[indexPath.row].nameRes
-        cell.restoImage.image = UIImage( data: (resto[indexPath.row].photoRes)!, scale: 0.1)
-        cell.restoHorLabel.text = (resto[indexPath.row].getTimeDeb())+" - \(resto[indexPath.row].getTimeFin())"
+        let cell = tableView.dequeueReusableCellWithIdentifier("RestoId", forIndexPath: indexPath) as! RestoTableViewCell //on force le downCast avec
+           let res = frc.objectAtIndexPath(indexPath) as! Restaurant
+        cell.restoLabel.text = res.nameRes
+        cell.restoImage.image = UIImage( data: (res.photoRes)!, scale: 0.1)
+        cell.restoHorLabel.text = (res.getTimeDeb())+" - \(res.getTimeFin())"
        
         return cell
     }
@@ -73,15 +76,16 @@ class RestoViewController: UIViewController , UITableViewDelegate, UITableViewDa
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if let index1 = self.restoTableView.indexPathForSelectedRow?.row
+        if let index1 = self.restoTableView.indexPathForSelectedRow
         {
             
             if let identifier = segue.identifier{
                 switch identifier{
                 case "restoSegue":
                     let SecondVC = segue.destinationViewController as! DisplayRestoViewController
+                    let res = frc.objectAtIndexPath(index1) as! Restaurant
                     
-                    SecondVC.receved = self.resto[index1]
+                    SecondVC.receved = res
                    
                     
                 default: break

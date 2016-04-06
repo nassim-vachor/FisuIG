@@ -12,58 +12,49 @@ import MapKit
 import CoreLocation
 
 
-class MapViewController: UIViewController , MKMapViewDelegate {
+class MapViewController: UIViewController , MKMapViewDelegate, NSFetchedResultsControllerDelegate  {
     
-     let managedObjectContext = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+     var frc : NSFetchedResultsController = NSFetchedResultsController()
+    
     @IBAction func home(sender: AnyObject) {
          self.navigationController?.dismissViewControllerAnimated(true, completion: nil )
     }
    
     @IBOutlet weak var mapView: MKMapView!
-    var lieu = [ Location ]()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let fetchRequest = NSFetchRequest ( entityName: "Location")
-       
+        frc = Location.getLocationFetchedResultController("Location", key: "idLoc")
+        frc.delegate = self
         do {
-            let fetchResult = try managedObjectContext.executeFetchRequest(fetchRequest) as! [Location]
-            lieu = fetchResult
+            try frc.performFetch()
+        } catch {
             
+                print("An error occured")
+            }
             
-        } catch let error as NSError{
-            print("Could not fecth \(error), \(error.userInfo)")
+        let sections = frc.sections
+        let currentSection = sections![0]
+          print( currentSection.numberOfObjects)
+            // parcours de location
+        for var i = 0; i < currentSection.numberOfObjects; i++    {
+            let indexPath = NSIndexPath(forItem: i , inSection: 0)
+            let loc = frc.objectAtIndexPath(indexPath)  as! Location
             
-        }
-        self.mapView.delegate = self
-      //  self.mapView.dataSource = self
-        
-        // Do any additional setup after loading the view.
-        for var i = 0; i < lieu.count; i++    {
-            
- let location =  CLLocationCoordinate2D(latitude: CLLocationDegrees( lieu[i].latitude!), longitude: CLLocationDegrees(lieu[i].longitude! ))
+            let location =  CLLocationCoordinate2D(latitude: CLLocationDegrees(loc.latitude!), longitude: CLLocationDegrees(loc.longitude! ))
             let span = MKCoordinateSpanMake(0.05, 0.05)
             let region = MKCoordinateRegion(center: location, span: span)
             mapView.setRegion(region, animated: true)
-            
             let annotation = MKPointAnnotation()
             annotation.coordinate = location
-            annotation.title = lieu[i].address
+            annotation.title = loc.address
             annotation.subtitle = "Montpellier"
             mapView.addAnnotation(annotation)
 
-            
-            
         }
-        
     }
     
-    
-    // parcours de location
-
-  
-    
-
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -71,28 +62,10 @@ class MapViewController: UIViewController , MKMapViewDelegate {
     }
     
     
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
+  
     
 }
 
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 

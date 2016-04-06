@@ -10,10 +10,9 @@ import CoreData
 import MapKit
 import CoreLocation
 
-class DisplayHotelViewController: UIViewController {
-    let managedObjectContext = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+class DisplayHotelViewController: UIViewController, NSFetchedResultsControllerDelegate {
     var receved: Accomodation? = nil
-    var hotel = [ Accomodation ]()
+    
     
     @IBOutlet weak var nomLabel: UILabel!
     
@@ -28,37 +27,36 @@ class DisplayHotelViewController: UIViewController {
     
     @IBOutlet weak var mapHotel: MKMapView!
     
-
+    var frc : NSFetchedResultsController = NSFetchedResultsController()
     override func viewDidLoad() {
         super.viewDidLoad()
-        let fetchRequest = NSFetchRequest( entityName: "Accomodation")
-        let predicat = NSPredicate(format: "idAcco=%@", (receved?.idAcco)!)
-        fetchRequest.predicate = predicat
-        
+        // get detailAcco for the acco selected
+        frc = Activity.getDetailActivityFetchedResultController("Accomodation", key: "idAcco", predicat: "idAcco=%@", args: (receved?.idAcco)!)
+        frc.delegate = self
         do {
-            let fetchResult = try managedObjectContext.executeFetchRequest(fetchRequest) as! [Accomodation]
-            hotel = fetchResult
-            
-        } catch let error as NSError{
-            print("Could not fecth \(error), \(error.userInfo)")
-            
+            try frc.performFetch()
+        } catch {
+            print("An error occured")
         }
-        nomLabel.text = hotel[0].name
-        descLabel.text = "About This Restaurant : \(hotel[0].descAcco!)"
-        print ( hotel[0].getTimeDeb())
-        //[descLabel.text.: "About This Restaurant" ]
-        heurLabel.text = "Openning Hours\n\(hotel[0].getTimeDeb())"+" - \(hotel[0].getTimeFin())"
-        telLabel.text = "Phone : \(hotel[0].phoneAcco!)"
-        adresseLabel?.text = "Location Map : \((hotel[0].isLocated!).address!)"
-        imageHotel.image = UIImage(data: (hotel[0].photoA)!, scale: 0.1)
-        let location =  CLLocationCoordinate2D(latitude: CLLocationDegrees( (hotel[0].isLocated?.latitude)! ), longitude: CLLocationDegrees((hotel[0].isLocated?.longitude)! ))
+        
+        let indexPath = NSIndexPath(forItem: 0, inSection: 0)
+        let acco = frc.objectAtIndexPath(indexPath)  as! Accomodation
+    
+        nomLabel.text = acco.name
+        descLabel.text = "About This Restaurant : \(acco.descAcco!)"
+        
+        heurLabel.text = "Openning Hours\n\(acco.getTimeDeb())"+" - \(acco.getTimeFin())"
+        telLabel.text = "Phone : \(acco.phoneAcco!)"
+        adresseLabel?.text = "Location Map : \((acco.isLocated!).address!)"
+        imageHotel.image = UIImage(data: (acco.photoA)!, scale: 0.1)
+        let location =  CLLocationCoordinate2D(latitude: CLLocationDegrees( (acco.isLocated?.latitude)! ), longitude: CLLocationDegrees((acco.isLocated?.longitude)! ))
         let span = MKCoordinateSpanMake(0.05, 0.05)
         let region = MKCoordinateRegion(center: location, span: span)
         mapHotel.setRegion(region, animated: true)
         
         let annotation = MKPointAnnotation()
         annotation.coordinate = location
-        annotation.title = hotel[0].name
+        annotation.title = acco.name
         annotation.subtitle = "Montpellier"
         mapHotel.addAnnotation(annotation)
         
@@ -72,14 +70,6 @@ class DisplayHotelViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

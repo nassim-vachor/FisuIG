@@ -13,6 +13,27 @@ import UIKit
 @objc(Activity)
 class Activity: NSManagedObject {
     
+    
+    // Request DB with Predicat
+    
+    class  func FetchRequestWithPredicat( c : String  , key : String, predicat: String, args: CVarArgType ) -> NSFetchRequest{
+        let FetchRequest = NSFetchRequest ( entityName:c)
+        let predicat = NSPredicate(format: predicat, args)
+        FetchRequest.predicate = predicat
+        let sortDescriptor = NSSortDescriptor(key: key, ascending: true)
+        FetchRequest.sortDescriptors = [ sortDescriptor]
+        return FetchRequest
+    }
+    
+    
+    // get datil activity for activity selected in the view
+    class func getDetailActivityFetchedResultController(  c : String  , key : String, predicat: String, args: CVarArgType   ) -> NSFetchedResultsController {
+        let context = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        let frc = NSFetchedResultsController(fetchRequest: FetchRequestWithPredicat(c , key: key, predicat: predicat, args: args), managedObjectContext: context, sectionNameKeyPath: nil , cacheName: nil )
+        return frc
+    }
+    
+    
     //- methode de classe pour convertir un string en Nsdate
     class  func convertStringToNSDate(dateString: String) -> NSDate
     {
@@ -58,7 +79,7 @@ class Activity: NSManagedObject {
     //
     
     // methode de classe pour l'insertion d'une nouvelle activity
-    class func  insertNewActivity( context: NSManagedObjectContext ,id: NSNumber, nom: String, desc: String, dateD: String, dateF: String, lieu: Location?, speak: Speaker?, photo : String?, day: Day?) -> Activity?{
+    class func  insertNewActivity( context: NSManagedObjectContext ,id: NSNumber, nom: String, desc: String, dateD: String, dateF: String, lieu: Location?, speak: Speaker?, photo : String?, day: Day?, selected:Bool) -> Activity?{
         let ActivityDescription = NSEntityDescription.entityForName( "Activity", inManagedObjectContext : context)
         let request = NSFetchRequest()
         request.entity = ActivityDescription
@@ -78,6 +99,7 @@ class Activity: NSManagedObject {
                 newActivity.descriptionAct = desc
                 newActivity.dateDeb = convertStringToNSDate(dateD)
                 newActivity.dateFin = convertStringToNSDate(dateF)
+                newActivity.selected = selected
                 newActivity.setValue( lieu , forKeyPath: "isLocated3")
                 newActivity.setValue(speak, forKeyPath: "isPresented")
                 newActivity.setValue(day, forKeyPath: "dayIs")
@@ -113,17 +135,6 @@ class Activity: NSManagedObject {
 }
 
 
-    /*   @NSManaged var dateDeb: NSDate?
-    @NSManaged var dateFin: NSDate?
-    @NSManaged var descriptionAct: String?
-    @NSManaged var idAct: NSNumber?
-    @NSManaged var nomAct: String?
-    @NSManaged var selected: NSNumber?
-    @NSManaged var photoActi: NSData?
-    @NSManaged var isLocated3: Location?
-    @NSManaged var isPresented: Speaker?
-    
-    */
 }
 
     

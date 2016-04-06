@@ -8,49 +8,44 @@
 
 import UIKit
 import CoreData
-class DisplayActivityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    let managedObjectContext = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+class DisplayActivityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
     @IBOutlet weak var activityTableView: UITableView!
+    
+    var frc : NSFetchedResultsController = NSFetchedResultsController()
     var receved: Day? = nil
-     var act = [ Activity ]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.activityTableView.delegate = self
-          self.activityTableView.dataSource = self
-        let fetchRequest = NSFetchRequest ( entityName: "Activity")
-        let predicat = NSPredicate(format: "dayIs=%@", receved!)
-        fetchRequest.predicate = predicat
-        // fetchRequest.returnsDistinctResults = true
-        //    fetchRequest.propertiesToFetch = ["dayIs"]
-        //fetchRequest.propertiesToGroupBy = ["dayIs"]
+        
+        // get all activity for day = receved ( the day selected in the previous view)
+        frc = Day.getActivityFetchedResultController("Activity", key: "idAct", predicat: "dayIs=%@", args: receved!)
+        frc.delegate = self
         do {
-            let fetchResult = try managedObjectContext.executeFetchRequest(fetchRequest) as! [Activity]
-            act = fetchResult
-            
-            
-            
-        } catch let error as NSError{
-            print("Could not fecth \(error), \(error.userInfo)")
-            
+            try frc.performFetch()
+        } catch {
+            print("An error occured")
         }
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        self.activityTableView.delegate = self
+        self.activityTableView.dataSource = self
+        
+        
     }
     
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        if let sections = frc.sections{
+            return sections.count
+        }
+        return 0
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return act.count
-        
+        if let sections = frc.sections {
+            let currentSection = sections[section]
+            return currentSection.numberOfObjects
+        }
+        return 0
     }
     
     
@@ -58,30 +53,28 @@ class DisplayActivityViewController: UIViewController, UITableViewDelegate, UITa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cellAct", forIndexPath: indexPath) as!
         DisplayActivityTableViewCell  //on force le downCast avec
+        let act = frc.objectAtIndexPath(indexPath) as! Activity
         
-        cell.ActivityLabel.text = act[indexPath.row].nomAct
-        cell.activityImage.image = UIImage(data: (act[indexPath.row].photoActi)!, scale: 0.1)
-        cell.heureLabel.text = (act[indexPath.row].getTimeDeb())+" - \(act[indexPath.row].getTimeFin())"
-        
-        
-    
+        cell.ActivityLabel.text = act.nomAct     //act[indexPath.row].nomAct
+        cell.activityImage.image = UIImage(data: (act.photoActi)!, scale: 0.1)
+        cell.heureLabel.text = (act.getTimeDeb())+" - \(act.getTimeFin())"
         
         return cell
     }
     
     
-  
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if let index1 = self.activityTableView.indexPathForSelectedRow?.row
+        if let index1 = self.activityTableView.indexPathForSelectedRow
         {
             
             if let identifier = segue.identifier{
                 switch identifier{
                 case "ActSegue":
                     let SecondVC = segue.destinationViewController as! DetailActivityViewController
-                    
-                    SecondVC.receved = self.act[index1]
+                    let act = frc.objectAtIndexPath(index1) as! Activity
+                    SecondVC.receved = act
                     
                 default: break
                 }
@@ -89,5 +82,5 @@ class DisplayActivityViewController: UIViewController, UITableViewDelegate, UITa
             
             
         }}
-
+    
 }

@@ -13,7 +13,48 @@ import UIKit
 
 
 class Restaurant: NSManagedObject {
-
+    
+    
+    // RequestDB (interaction with DB)
+    class  func FetchRequest( c : String  , key : String ) -> NSFetchRequest{
+        let FetchRequest = NSFetchRequest ( entityName:c)
+        let sortDescriptor = NSSortDescriptor(key: key, ascending: true)
+        FetchRequest.sortDescriptors = [ sortDescriptor]
+        return FetchRequest
+    }
+    
+    // Request DB with Predicat
+    
+    class  func FetchRequestWithPredicat( c : String  , key : String, predicat: String, args: CVarArgType ) -> NSFetchRequest{
+        let FetchRequest = NSFetchRequest ( entityName:c)
+        let predicat = NSPredicate(format: predicat, args)
+        FetchRequest.predicate = predicat
+        let sortDescriptor = NSSortDescriptor(key: key, ascending: true)
+        FetchRequest.sortDescriptors = [ sortDescriptor]
+        return FetchRequest
+    }
+    
+    // get detailResto from DB wich concerne resto "x"
+    class func getDetailRestoFetchedResultController(  c : String  , key : String, predicat: String, args: CVarArgType   ) -> NSFetchedResultsController {
+        let context = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        let frc = NSFetchedResultsController(fetchRequest: FetchRequestWithPredicat(c , key: key, predicat: predicat, args: args), managedObjectContext: context, sectionNameKeyPath: nil , cacheName: nil )
+        return frc
+    }
+    
+    
+    // get result from Accomodation table  with NSFetchedResultsController
+    class func getRestoFetchedResultController(  c : String  , key : String ) -> NSFetchedResultsController {
+        let context = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        let frc = NSFetchedResultsController(fetchRequest: FetchRequest(c, key: key), managedObjectContext: context, sectionNameKeyPath: nil , cacheName: nil )
+        return frc
+    }
+    
+    
+    
+    
+    
+    
+    
     class  func convertStringToNSDate(dateString: String) -> NSDate
     {
         let formatter = NSDateFormatter()
@@ -117,12 +158,3 @@ class Restaurant: NSManagedObject {
 
 }
 
-/*
-@NSManaged var hourdeb: NSDate?
-@NSManaged var hourFin: NSDate?
-@NSManaged var idRes: NSNumber?
-@NSManaged var nameRes: String?
-@NSManaged var phoneRes: String?
-@NSManaged var speciality: String?
-@NSManaged var photoRes: NSData?
-@NSManaged var isLocated2: Location?*/
