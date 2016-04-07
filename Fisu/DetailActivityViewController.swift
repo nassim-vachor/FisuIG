@@ -76,7 +76,7 @@ class DetailActivityViewController: UIViewController, NSFetchedResultsController
         let act = frc.objectAtIndexPath(indexPath)  as! Activity
        
             NomActLabel.text =  act.nomAct  
-            DescLabel.text = "About This Event : \(act.descriptionAct)"
+            DescLabel.text = "About This Event : \(act.descriptionAct!)"
             //[descLabel.text.: "About This Restaurant" ]
             HeureActLabel.text = "\(act.getDay())"
             horaireLabel.text = "\(act.getTimeDeb())"+" - \(act.getTimeFin())"
