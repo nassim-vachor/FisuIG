@@ -60,7 +60,7 @@ class HotelViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return currentSection.numberOfObjects
         }
         return 0
-        //mm
+       
     }
     
 

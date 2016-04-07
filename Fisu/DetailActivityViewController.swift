@@ -19,10 +19,27 @@ class DetailActivityViewController: UIViewController, NSFetchedResultsController
 
    
     @IBOutlet weak var theSwitch: UISwitch!
-    
+ 
     @IBAction func switchOnOff(sender: AnyObject) {
+    
+        if theSwitch.on {
+            receved?.updateData(1, id: (receved?.idAct)!)
+            
+        }
+        else {
+            receved?.updateData(0, id: (receved?.idAct)!)
+        }
+        
+        self.reloadInputViews()
+        NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil )
     }
 
+    
+    
+    
+    
+    
+    
     @IBOutlet weak var horaireLabel: UILabel!
 
     @IBAction func biography(sender: AnyObject) {
@@ -45,7 +62,7 @@ class DetailActivityViewController: UIViewController, NSFetchedResultsController
         
       override func viewDidLoad() {
             super.viewDidLoad()
-        
+      
         // get detailActivity for the activity selected
         frc = Activity.getDetailActivityFetchedResultController("Activity", key: "idAct", predicat: "idAct=%@", args: (receved?.idAct)!)
         frc.delegate = self
@@ -89,7 +106,7 @@ class DetailActivityViewController: UIViewController, NSFetchedResultsController
             annotation.title = act.isLocated3?.address!
             annotation.subtitle = "Montpellier"
             actiMap.addAnnotation(annotation)
-        
+     
         
     }
     
@@ -101,7 +118,15 @@ class DetailActivityViewController: UIViewController, NSFetchedResultsController
         super.didReceiveMemoryWarning()
        
     }
-    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if self.receved?.selected == true {
+            theSwitch.setOn(true, animated: true)
+        }
+        else{
+            theSwitch.setOn(false, animated: true)
+        }
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
