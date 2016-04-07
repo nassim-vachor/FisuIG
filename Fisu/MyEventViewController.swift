@@ -71,9 +71,10 @@ class MyEventViewController: UIViewController, UITableViewDelegate, UITableViewD
         MyEventTableViewCell  //on force le downCast avec
         let act = frc.objectAtIndexPath(indexPath) as! Activity
         
-        cell.myLabel1.text = act.nomAct
+        cell.myLabel1.text = "\(act.getDay())"
         cell.myImage.image = UIImage(data: (act.photoActi)!, scale: 0.1)
-        cell.myLabel2.text = (act.getTimeDeb())+" - \(act.getTimeFin())"
+        cell.myLabel2.text = act.nomAct
+        cell.myLabel3.text = (act.getTimeDeb())+" - \(act.getTimeFin())"
         
         return cell
     }
@@ -85,6 +86,23 @@ class MyEventViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if let index1 = self.myEventTableView.indexPathForSelectedRow
+        {
+            
+            if let identifier = segue.identifier{
+                switch identifier{
+                case "myevent":
+                    let SecondVC = segue.destinationViewController as! DetailActivityViewController
+                    let act = frc.objectAtIndexPath(index1) as! Activity
+                    SecondVC.receved = act
+                    
+                default: break
+                }
+            }
+        }
+    }
 
 
 }

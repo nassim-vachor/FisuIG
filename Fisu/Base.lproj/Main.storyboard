@@ -334,16 +334,22 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MTm-oR-YQS">
                                                     <rect key="frame" x="8" y="8" width="110" height="93"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIK-Dl-pDC">
-                                                    <rect key="frame" x="126" y="55" width="166" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WKK-t4-Byd">
+                                                    <rect key="frame" x="126" y="23" width="166" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WKK-t4-Byd">
-                                                    <rect key="frame" x="126" y="26" width="166" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIK-Dl-pDC">
+                                                    <rect key="frame" x="126" y="46" width="166" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PY8-rz-15v">
+                                                    <rect key="frame" x="126" y="64" width="166" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -352,6 +358,8 @@
                                             <outlet property="myImage" destination="MTm-oR-YQS" id="lHB-CJ-6n3"/>
                                             <outlet property="myLabel1" destination="WIK-Dl-pDC" id="qQ5-Se-Fwq"/>
                                             <outlet property="myLabel2" destination="WKK-t4-Byd" id="bI0-WK-7r0"/>
+                                            <outlet property="myLabel3" destination="PY8-rz-15v" id="fUZ-cQ-rsG"/>
+                                            <segue destination="IEM-CM-6Mb" kind="show" identifier="myevent" id="qJD-4g-Ona"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -378,7 +386,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9dg-Xw-TS9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6357" y="-401"/>
+            <point key="canvasLocation" x="6393" y="-385"/>
         </scene>
         <!--Hotel View Controller-->
         <scene sceneID="nBG-AS-Xaf">
@@ -451,7 +459,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yab-3a-ErC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6391" y="338"/>
+            <point key="canvasLocation" x="6151" y="426"/>
         </scene>
         <!--Display Hotel View Controller-->
         <scene sceneID="hcB-W0-RxX">
@@ -1086,4 +1094,7 @@
         <image name="myEvent" width="35" height="35"/>
         <image name="resto" width="45" height="45"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="qJD-4g-Ona"/>
+    </inferredMetricsTieBreakers>
 </document>

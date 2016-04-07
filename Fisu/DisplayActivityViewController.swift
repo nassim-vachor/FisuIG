@@ -79,8 +79,7 @@ class DisplayActivityViewController: UIViewController, UITableViewDelegate, UITa
                 default: break
                 }
             }
-            
-            
-        }}
+        }
+    }
     
 }
