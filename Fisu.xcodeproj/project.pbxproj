@@ -66,6 +66,7 @@
 		D47D0EF51CB07E4700867F28 /* DetailActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47D0EF31CB07E4700867F28 /* DetailActivityViewController.swift */; };
 		D49A15351CA6E4430066E478 /* Day+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49A15331CA6E4430066E478 /* Day+CoreDataProperties.swift */; };
 		D49A15361CA6E4430066E478 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49A15341CA6E4430066E478 /* Day.swift */; };
+		D4BBB5491CB5D1A200C69A6A /* MyEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BBB5481CB5D1A200C69A6A /* MyEventTableViewCell.swift */; };
 		D4EFE8E61CB4707C000CFB73 /* InitDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EFE8E51CB4707C000CFB73 /* InitDB.swift */; };
 		D4EFE8E71CB4707C000CFB73 /* InitDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EFE8E51CB4707C000CFB73 /* InitDB.swift */; };
 /* End PBXBuildFile section */
@@ -133,6 +134,7 @@
 		D47D0EF31CB07E4700867F28 /* DetailActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailActivityViewController.swift; sourceTree = "<group>"; };
 		D49A15331CA6E4430066E478 /* Day+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Day+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D49A15341CA6E4430066E478 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		D4BBB5481CB5D1A200C69A6A /* MyEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyEventTableViewCell.swift; sourceTree = "<group>"; };
 		D4EFE8E51CB4707C000CFB73 /* InitDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InitDB.swift; path = Fisu/InitDB.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -253,6 +255,7 @@
 				D47D0EF31CB07E4700867F28 /* DetailActivityViewController.swift */,
 				176654471CB1BB540078E632 /* SpeakerBiographyViewController.swift */,
 				D42C47FA1CA447BC0009F6AE /* MyEventViewController.swift */,
+				D4BBB5481CB5D1A200C69A6A /* MyEventTableViewCell.swift */,
 			);
 			name = Event;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				9130FCA71C9AB66C0056A8C8 /* Location+CoreDataProperties.swift in Sources */,
 				9130FCA51C9AB66C0056A8C8 /* Accomodation.swift in Sources */,
 				9130FCA31C9AB66C0056A8C8 /* Accomodation+CoreDataProperties.swift in Sources */,
+				D4BBB5491CB5D1A200C69A6A /* MyEventTableViewCell.swift in Sources */,
 				9130FC631C9AA1390056A8C8 /* ViewController.swift in Sources */,
 				9130FC611C9AA1390056A8C8 /* AppDelegate.swift in Sources */,
 				9130FCAB1C9AB66C0056A8C8 /* Speaker+CoreDataProperties.swift in Sources */,

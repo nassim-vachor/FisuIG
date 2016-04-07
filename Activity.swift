@@ -76,8 +76,39 @@ class Activity: NSManagedObject {
     }
     //
     
-    //
+    // update 
     
+    internal func updateData ( select: NSNumber , id: NSNumber){
+        let context = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        let ActivityDescription = NSEntityDescription.entityForName( "Activity", inManagedObjectContext : context)
+        let request = NSFetchRequest()
+        request.entity = ActivityDescription
+        let pred = NSPredicate(format: "(idAct = %@)", id)
+        request.predicate = pred
+        do{
+            let result = try context.executeFetchRequest(request)
+            // on vérifie que l'activité n'existe pas déja dans la base
+            
+            if result.count != 0 {
+                let manage = result[0]
+                manage.setValue( select , forKeyPath: "selected")
+                do{
+                    try context.save()   //newActivity.managedObjectContext?.save()
+                    print("data updated")
+                } catch{
+                    print("there was an error saving data")
+                    
+                }
+
+            }
+        }
+            catch {
+                let updateError = error as NSError
+                print("\(updateError), \(updateError.userInfo)")
+                
+            }
+    }
+
     // methode de classe pour l'insertion d'une nouvelle activity
     class func  insertNewActivity( context: NSManagedObjectContext ,id: NSNumber, nom: String, desc: String, dateD: String, dateF: String, lieu: Location?, speak: Speaker?, photo : String?, day: Day?, selected:Bool) -> Activity?{
         let ActivityDescription = NSEntityDescription.entityForName( "Activity", inManagedObjectContext : context)

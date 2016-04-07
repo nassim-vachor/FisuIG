@@ -55,7 +55,7 @@ class DisplayActivityViewController: UIViewController, UITableViewDelegate, UITa
         DisplayActivityTableViewCell  //on force le downCast avec
         let act = frc.objectAtIndexPath(indexPath) as! Activity
         
-        cell.ActivityLabel.text = act.nomAct     //act[indexPath.row].nomAct
+        cell.ActivityLabel.text = act.nomAct     
         cell.activityImage.image = UIImage(data: (act.photoActi)!, scale: 0.1)
         cell.heureLabel.text = (act.getTimeDeb())+" - \(act.getTimeFin())"
         
