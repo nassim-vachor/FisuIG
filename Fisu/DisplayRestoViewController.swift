@@ -42,7 +42,7 @@ class DisplayRestoViewController: UIViewController, NSFetchedResultsControllerDe
         nomLabel.text = res.nameRes
         descLabel.text = "About This Restaurant : \(res.speciality!)"
 
-        heurLabel.text = "Openning Hours\n \(res.getTimeDeb())"+" - \(res.getTimeFin())"
+        heurLabel.text = "Openning Hours\n\(res.getTimeDeb())"+" - \(res.getTimeFin())"
         telLabel.text = "Phone : \(res.phoneRes!)"
         adresseLabel?.text = "Location Map : \((res.isLocated2!).address!)"
         imageResto.image = UIImage(data: (res.photoRes)!, scale: 0.1)
