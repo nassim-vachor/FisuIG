@@ -25,26 +25,28 @@ class InitDB {
         let day6 = Day.insertNewDay(moc, id: 6, day: "Day 6")
         // ************************************* LIEUX DES ACTIVITÉS *******************************
         // LIEUX DES ACTIVITÉS
-        let Loc1 = Location.insertNewLocation(moc, id: 1, address: "Law Faculty" , lat: 43.61, long: 3.87)
-        let Loc2 = Location.insertNewLocation(moc, id: 2, address: "Saint Charles" , lat: 43.61, long: 3.87)
-        let Loc3 = Location.insertNewLocation(moc, id: 3, address: "Triolet" , lat: 43.61, long: 3.87)
-        let Loc4 = Location.insertNewLocation(moc, id: 4, address: "Rectorat" , lat: 43.61, long: 3.87)
-        let Loc5 = Location.insertNewLocation(moc, id: 5, address: "Town Hall" , lat: 43.61, long: 3.87)
-        let Loc6 = Location.insertNewLocation(moc, id: 6, address: "Palis Universitaire Veyrassi" , lat: 43.6398876, long: 3.8456186)
-        let Loc7 = Location.insertNewLocation(moc, id: 7, address: "La Grande Motte" , lat: 43.5607040, long: 4.0860720)
-        let Loc11 = Location.insertNewLocation(moc, id: 27 , address: " chemin Sauzèdes BP 1, 34190 Saint-Bauzille-de-Putois" , lat: 43.8957750, long: 3.7375290)
-        let Loc12 = Location.insertNewLocation(moc, id: 28 , address: "542 Rue Auguste Broussonnet, 34090 Montpellier" , lat: 43.6174383, long: 3.8678763)
+        let Loc1 = Location.insertNewLocation(moc, id: 1,name: "Law Faculty", address: "39 Rue de l'Université, 34060 Montpellier" , lat: 43.6142019, long: 3.8763830)
+        let Loc2 = Location.insertNewLocation(moc, id: 2, name: "Saint Charles", address: "Avenue Saint-Charles, 34090 Montpellier" , lat: 43.6174404, long: 3.87155929)
+        let Loc3 = Location.insertNewLocation(moc, id: 3, name : "Triolet" ,address: "14 Rue du Triolet, 34090 Montpellier" , lat: 43.6235879, long: 3.86385080)
+        let Loc4 = Location.insertNewLocation(moc, id: 4, name: "Rectorat", address: "Rue Alfred Nobel, Montpellier" , lat: 43.613109, long: 3.8769220)
+        let Loc5 = Location.insertNewLocation(moc, id: 5, name: "Town Hall" , address: "Place Georges Frêche, Montpellier" , lat: 43.613109, long: 3.8769220)
+        let Loc6 = Location.insertNewLocation(moc, id: 6, name :"Palis Universitaire Veyrassi" , address: "700 av du Pic Saint-Loup, 34090 Montpellier" , lat: 43.6398876, long: 3.8456186)
+        let Loc7 = Location.insertNewLocation(moc, id: 7, name : "Plage du Couchant", address: " 34280 La Grande-Motte" , lat: 43.560704, long: 4.086072)
+          let Loc8 = Location.insertNewLocation(moc, id: 8, name : "Place de la Comedie", address: "Place de la Comedie, 34000 Montpellier" , lat: 43.6089427, long: 3.88030370)
+        let Loc11 = Location.insertNewLocation(moc, id: 27, name : "Canoë Le Pont Suspendu" ,address: "Chemin Sauzèdes BP 1, 34190 Saint-Bauzille-de-Putois" , lat: 43.8957750, long: 3.7375290)
+        let Loc12 = Location.insertNewLocation(moc, id: 28 , name : "Stade Philippides", address: "542 Rue Auguste Broussonnet, 34090 Montpellier" , lat: 43.6174383, long: 3.8678763)
+        
         
         // speaker des actvité du Day
-        let Speak1 = Speaker.insertNewSpeaker(moc, id: 1, nom: "Fiorio", prenom: "Christophe", biograp: "A teacher in computer science at Polytech MOntpellier", tel: "0675026923", photo:"Fiorio")
+        let Speak1 = Speaker.insertNewSpeaker(moc, id: 1, nom: "Fiorio", prenom: "Christophe", biograp: "A teacher in computer science at Polytech Montpellier", tel: "06 75 02 69 23", photo:"Fiorio")
         
         
-        let Speak2 = Speaker.insertNewSpeaker(moc, id: 2, nom: "Revel", prenom: "Laurent", biograp: "A teacher in Business intelligence at Polytech MOntpellier", tel: "0675021123", photo: "revel")
+        let Speak2 = Speaker.insertNewSpeaker(moc, id: 2, nom: "Revel", prenom: "Laurent", biograp: "A teacher in Business intelligence at Polytech MOntpellier", tel: "06 75 02 11 23", photo: "revel")
         
         
-        let Speak3 = Speaker.insertNewSpeaker(moc, id: 3, nom: "Stratulat", prenom: "Tiberiu", biograp: "A teacher in software engineering", tel: "0675021144", photo: "tibi")
+        let Speak3 = Speaker.insertNewSpeaker(moc, id: 3, nom: "Stratulat", prenom: "Tiberiu", biograp: "A teacher in software engineering", tel: "06 75 02 11 44", photo: "tibi")
         
-        let Speak4 = Speaker.insertNewSpeaker(moc, id: 4, nom: "Sala", prenom: "Michel", biograp: "A teacher in conception and information system at Polytech MOntpellier", tel: "0675021143", photo: "Sala")
+        let Speak4 = Speaker.insertNewSpeaker(moc, id: 4, nom: "Sala", prenom: "Michel", biograp: "A teacher in conception and information system at Polytech Montpellier", tel: "06 75 02 11 43", photo: "Sala")
         
         
         
@@ -52,89 +54,89 @@ class InitDB {
         
         // LIEUX DES Restaurants
         
-        let LocRes1 = Location.insertNewLocation(moc, id: 16 , address: "19 Quai des Tanneurs, 34000 Montpellier" , lat: 43.6157714, long: 3.8770789)
+        let LocRes1 = Location.insertNewLocation(moc, id: 16 , name : nil , address: "19 Quai des Tanneurs, 34000 Montpellier" , lat: 43.6157714, long: 3.8770789)
         
-        let LocRes2 = Location.insertNewLocation(moc, id: 17 , address: "20 Rue de la Méditerranée, 34000 Montpellier" , lat: 43.6053301, long: 3.8835284)
+        let LocRes2 = Location.insertNewLocation(moc, id: 17 , name : nil ,address: "20 Rue de la Méditerranée, 34000 Montpellier" , lat: 43.6053301, long: 3.8835284)
         
-        let LocRes3 = Location.insertNewLocation(moc, id: 18 , address: "5 Place Jean Jaurès, 34000 Montpellier" , lat: 43.6097992, long: 3.8782359)
+        let LocRes3 = Location.insertNewLocation(moc, id: 18 , name : nil , address: "5 Place Jean Jaurès, 34000 Montpellier" , lat: 43.6097992, long: 3.8782359)
         
-        let LocRes4 = Location.insertNewLocation(moc, id: 19 , address: "7 Place de la Comédie, 34967 Montpellier" , lat: 43.6086772, long: 3.8793435)
+        let LocRes4 = Location.insertNewLocation(moc, id: 19 ,name : nil , address: "7 Place de la Comédie, 34967 Montpellier" , lat: 43.6086772, long: 3.8793435)
         
-        let LocRes5 = Location.insertNewLocation(moc, id: 20 , address: "6 Rue Boussairolles, 34000 Montpellier" , lat: 43.6083063, long: 3.8807284)
+        let LocRes5 = Location.insertNewLocation(moc, id: 20 ,name : nil , address: "6 Rue Boussairolles, 34000 Montpellier" , lat: 43.6083063, long: 3.8807284)
         
-        let LocRes6 = Location.insertNewLocation(moc, id: 21 , address: " 3 Rue de Verdun, 34000 Montpellier" , lat: 43.6079210, long: 3.8802011)
+        let LocRes6 = Location.insertNewLocation(moc, id: 21 ,name : nil , address: " 3 Rue de Verdun, 34000 Montpellier" , lat: 43.6079210, long: 3.8802011)
         
-        let LocRes7 = Location.insertNewLocation(moc, id: 22 , address: " 20 Rue Jacques Cœur, 34000 Montpellier" , lat: 43.6100917, long: 3.8794508)
+        let LocRes7 = Location.insertNewLocation(moc, id: 22 ,name : nil , address: " 20 Rue Jacques Cœur, 34000 Montpellier" , lat: 43.6100917, long: 3.8794508)
         
-        let LocRes8 = Location.insertNewLocation(moc, id: 23 , address: "6 Rue Jules Latreilhe, 34000 Montpellier" , lat: 43.6080059, long: 3.8762998)
+        let LocRes8 = Location.insertNewLocation(moc, id: 23 , name : nil ,address: "6 Rue Jules Latreilhe, 34000 Montpellier" , lat: 43.6080059, long: 3.8762998)
         
-        let LocRes9 = Location.insertNewLocation(moc, id: 24 , address: "45-47 Rue de l'Aiguillerie, 34000 Montpellier" , lat: 43.6121216, long: 3.8789372)
+        let LocRes9 = Location.insertNewLocation(moc, id: 24 , name : nil ,address: "45-47 Rue de l'Aiguillerie, 34000 Montpellier" , lat: 43.6121216, long: 3.8789372)
         
-        let LocRes10 = Location.insertNewLocation(moc, id: 25 , address: "2 Rue Emile Duployé, 34000 Montpellier" , lat: 43.6237209, long: 3.8691886)
+        let LocRes10 = Location.insertNewLocation(moc, id: 25 , name : nil ,address: "2 Rue Emile Duployé, 34000 Montpellier" , lat: 43.6237209, long: 3.8691886)
         
-        let LocRes11 = Location.insertNewLocation(moc, id: 26 , address: "11 Rue de la Loge, 34000 Montpellier" , lat: 43.6096455, long: 3.8780622)
+        let LocRes11 = Location.insertNewLocation(moc, id: 26 ,name : nil , address: "11 Rue de la Loge, 34000 Montpellier" , lat: 43.6096455, long: 3.8780622)
         
         
-        ///jjjj
+        
         
         // LIEUX DES Accomodations
-        let LocAcco1 = Location.insertNewLocation(moc, id: 8, address: "125 bis Avenue de Palavas, 34000 Montpellier" , lat: 43.5896828, long: 3.8925621)
+        let LocAcco1 = Location.insertNewLocation(moc, id: 8,name : nil , address: "125 bis Avenue de Palavas, 34000 Montpellier" , lat: 43.5896828, long: 3.8925621)
         
-        let LocAcco2 = Location.insertNewLocation(moc, id: 9, address: "95, PLACE VAUBAN BOULEVARD D'ANTIGONE 34000 - MONTPELLIER" , lat: 43.6092224, long: 3.8878104)
+        let LocAcco2 = Location.insertNewLocation(moc, id: 9, name : nil ,address: "95, PLACE VAUBAN BOULEVARD D'ANTIGONE 34000 - Montpellier" , lat: 43.6092224, long: 3.8878104)
         
-        let LocAcco3 = Location.insertNewLocation(moc, id: 10, address: " Tournezy, 135 Rue Jugurtha, 34070 Montpellier" , lat: 43.5698050, long: 3.9041710	)
+        let LocAcco3 = Location.insertNewLocation(moc, id: 10, name : nil ,address: " Tournezy, 135 Rue Jugurtha, 34070 Montpellier" , lat: 43.5698050, long: 3.9041710	)
         
-        let LocAcco4 = Location.insertNewLocation(moc, id: 11, address: "22 Boulevard Victor Hugo, 34000 Montpellier" , lat: 43.6075496, long: 3.8790840)
+        let LocAcco4 = Location.insertNewLocation(moc, id: 11, name : nil ,address: "22 Boulevard Victor Hugo, 34000 Montpellier" , lat: 43.6075496, long: 3.8790840)
         
-        let LocAcco5 = Location.insertNewLocation(moc, id: 12, address: "8 Rue de Maguelone, 34000 Montpellier" , lat: 43.6065812, long: 3.8796857)
+        let LocAcco5 = Location.insertNewLocation(moc, id: 12, name : nil ,address: "8 Rue de Maguelone, 34000 Montpellier" , lat: 43.6065812, long: 3.8796857)
         
-        let LocAcco6 = Location.insertNewLocation(moc, id: 13, address: "4, rue du Cheval Blanc, Montpellier, France" , lat: 43.6073588, long: 3.8770755)
+        let LocAcco6 = Location.insertNewLocation(moc, id: 13, name : nil , address: "4, rue du Cheval Blanc, Montpellier" , lat: 43.6073588, long: 3.8770755)
         
-        let LocAcco7 = Location.insertNewLocation(moc, id: 14, address: "Rue des Écoles Laïques 34000 Montpellier - France" , lat: 43.6138184, long: 3.8790588)
+        let LocAcco7 = Location.insertNewLocation(moc, id: 14,name : nil , address: "Rue des Écoles Laïques 34000 Montpellier" , lat: 43.6138184, long: 3.8790588)
         
-        let LocAcco8 = Location.insertNewLocation(moc, id: 15 , address: "4 rue de la republique, montpellier, france" , lat: 43.6058772, long: 3.8776912)
+        let LocAcco8 = Location.insertNewLocation(moc, id: 15 ,name : nil , address: "4 rue de la republique, Montpellier" , lat: 43.6058772, long: 3.8776912)
         
-        let LocAcco9 = Location.insertNewLocation(moc, id: 16 , address: "7 Boulevard Frédéric Fabrèges, 34250 Palavas-les-Flot" , lat: 43.5278046, long: 3.9264076)
+        let LocAcco9 = Location.insertNewLocation(moc, id: 16 , name : nil ,address: "7 Boulevard Frédéric Fabrèges, 34250 Palavas-les-Flot" , lat: 43.5278046, long: 3.9264076)
         
-        let LocAcco10 = Location.insertNewLocation(moc, id: 15 , address: "Rue Robert Schuman, 34430 Saint-Jean-de-Védas" , lat: 43.5675590, long: 3.8375420)
+        let LocAcco10 = Location.insertNewLocation(moc, id: 15 ,name : nil , address: "Rue Robert Schuman, 34430 Saint-Jean-de-Védas" , lat: 43.5675590, long: 3.8375420)
         
         //******************************************Day1**********************************************************
         // création des activité du Day1 gràce à la methode de classe insertNewActivity
-        Activity.insertNewActivity(moc, id: 1, nom: "Open Ceremony", desc: "Open Ceremony for the FISU", dateD: "04/07/2016, 09:00", dateF: "04/07/2016, 12:30", lieu: Loc1, speak: Speak1, photo: "ceremony", day: day1, selected: false)
+        Activity.insertNewActivity(moc, id: 1, nom: "Open Ceremony", desc: "Openning Ceremony speech for the FISU", dateD: "04/07/2016, 09:00", dateF: "04/07/2016, 12:30", lieu: Loc1, speak: Speak1, photo: "ceremony", day: day1, selected: false)
         
-        Activity.insertNewActivity(moc, id: 2, nom: "UNESCO session", desc: "UNESCO will speak about the importance of FISU", dateD: "04/07/2016, 13:45", dateF: "04/07/2016, 14:30", lieu: Loc3, speak: Speak2, photo: "unesco", day: day1, selected: false)
+        Activity.insertNewActivity(moc, id: 2, nom: "UNESCO session", desc: "UNESCO will speak about the importance of FISU", dateD: "04/07/2016, 13:45", dateF: "04/07/2016, 14:30", lieu: Loc2, speak: Speak2, photo: "unesco", day: day1, selected: false)
         
-        Activity.insertNewActivity(moc, id: 3, nom: "Football", desc: "Sport", dateD: "04/07/2016, 14:00", dateF: "04/07/2016, 17:00", lieu: Loc12, speak: Speak2, photo: "foot", day: day1, selected: false)
+        Activity.insertNewActivity(moc, id: 3, nom: "Football", desc: "A collective sport that oppose 2 teams of 11 players, each defends goals at opposite ends of a field h", dateD: "04/07/2016, 14:00", dateF: "04/07/2016, 17:00", lieu: Loc12, speak: nil, photo: "foot", day: day1, selected: false)
         
-        Activity.insertNewActivity(moc, id: 4, nom: "Salsa session", desc: "Dance", dateD: "04/07/2016, 14:00", dateF: "04/07/2016, 17:00", lieu: Loc12, speak: Speak2, photo: "salsa", day: day1, selected: false)
+        Activity.insertNewActivity(moc, id: 4, nom: "Salsa session", desc: "Popular music of Latin American origin that has absorbed characteristics of rhythm and blues, jazz, and rock", dateD: "04/07/2016, 14:00", dateF: "04/07/2016, 17:00", lieu: Loc6, speak: nil , photo: "salsa", day: day1, selected: false)
         
-        Activity.insertNewActivity(moc, id: 5, nom: "Projet working group", desc: "woking team in professionnal world", dateD :"04/07/2016, 15:30", dateF:"04/07/2016, 16:30", lieu: Loc1, speak: Speak4, photo: "team", day: day1, selected: false)
+        Activity.insertNewActivity(moc, id: 5, nom: "Project working group", desc: "Learning to work in real situation explain by scientist", dateD :"04/07/2016, 15:30", dateF:"04/07/2016, 16:30", lieu: Loc3, speak: Speak4, photo: "team", day: day1, selected: false)
         
-        Activity.insertNewActivity(moc, id: 6, nom: "Boules/Pétanque", desc: "playing and take a rest", dateD :"04/07/2016, 17:00", dateF:"04/07/2016, 19:00", lieu: Loc3, speak: nil, photo: "boule", day: day1, selected: false)
+        Activity.insertNewActivity(moc, id: 6, nom: "Boules/Pétanque", desc: "Playing and take a rest", dateD :"04/07/2016, 17:00", dateF:"04/07/2016, 19:00", lieu: Loc12, speak: nil, photo: "boule", day: day1, selected: false)
         
         //**********************************************Day1finish****************************************************
         //********************************************Day2***********************************************************
         // création des activité du Day2 gràce à la methode de classe insertNewActivity
         
-        Activity.insertNewActivity(moc, id: 7, nom: "Plenary session", desc: "Values/Ethics/Integrity", dateD: "05/07/2016, 09:00", dateF: "05/07/2016, 10:00", lieu: Loc1, speak: Speak1, photo: "plenary", day: day2, selected: false)
+        Activity.insertNewActivity(moc, id: 7, nom: "Plenary session", desc: "Conference about Values/Ethics/Integrity", dateD: "05/07/2016, 09:00", dateF: "05/07/2016, 10:00", lieu: Loc4, speak: Speak1, photo: "plenary", day: day2, selected: false)
         
         
-        Activity.insertNewActivity(moc, id: 8, nom: "Projet Working", desc: "explain by scientist", dateD: "05/07/2016, 11:30", dateF: "05/07/2016, 12:30", lieu: Loc2, speak: Speak3, photo: "team" , day: day2, selected: false)
+        Activity.insertNewActivity(moc, id: 8, nom: "Project Working", desc: "Woking team in professionnal world", dateD: "05/07/2016, 11:30", dateF: "05/07/2016, 12:30", lieu: Loc3, speak: Speak3, photo: "team" , day: day2, selected: false)
         
         
         
-        Activity.insertNewActivity(moc, id: 9, nom: "Visit of Montpellier", desc: "Montpellier City", dateD :"05/07/2016, 16:30", dateF:"05/07/2016, 18:30", lieu: Loc2, speak: nil, photo: "montpell", day: day2, selected: false)
+        Activity.insertNewActivity(moc, id: 9, nom: "Visit of Montpellier", desc: "Come on and discover Montpellier, a wonderful city with its beautiful places", dateD :"05/07/2016, 16:30", dateF:"05/07/2016, 18:30", lieu: Loc8, speak: nil, photo: "montpell", day: day2, selected: false)
         
         //********************************************Day2finish******************************************************
         //*********************************************Day3***********************************************************
         // création des activité du Day3 gràce à la methode de classe insertNewActivity
-        Activity.insertNewActivity(moc, id: 10, nom: "Plenary session", desc: "LeaderShip", dateD: "06/07/2016, 09:00", dateF: "06/07/2016, 10:00", lieu: Loc1, speak: Speak1, photo: "plenary", day: day3, selected: false)
+        Activity.insertNewActivity(moc, id: 10, nom: "Plenary session", desc: "Conference about leaderShip", dateD: "06/07/2016, 09:00", dateF: "06/07/2016, 10:00", lieu: Loc4, speak: Speak1, photo: "plenary", day: day3, selected: false)
         
         
-        Activity.insertNewActivity(moc, id: 11, nom: "Projet Working Session", desc: "explain by scientist", dateD: "06/07/2016, 11:30", dateF: "06/07/2016, 12:30", lieu: Loc2, speak: Speak3, photo: "project", day: day3, selected: false)
+        Activity.insertNewActivity(moc, id: 11, nom: "Project Working Session", desc: "Learning to work in real situation explain by scientist", dateD: "06/07/2016, 11:30", dateF: "06/07/2016, 12:30", lieu: Loc3, speak: Speak3, photo: "project", day: day3, selected: false)
         
         
-        Activity.insertNewActivity(moc, id: 12, nom: "Rumba", desc: "Come on and enjoying dancing", dateD :"06/07/2016, 16:30", dateF:"06/07/2016, 17:30", lieu: Loc6, speak: nil, photo: "rumba", day: day3, selected: false)
+        Activity.insertNewActivity(moc, id: 12, nom: "Rumba", desc: "A dance of Cuban origin, combining complex footwork with a pronounced movement of the hips.", dateD :"06/07/2016, 16:30", dateF:"06/07/2016, 17:30", lieu: Loc6, speak: nil, photo: "rumba", day: day3, selected: false)
         
         
         //********************************************Day3finish******************************************************
@@ -142,41 +144,42 @@ class InitDB {
         
         
         
-        Activity.insertNewActivity(moc, id:13, nom: "HandBall", desc:"Sport", dateD: "07/07/2016, 08:00", dateF: "07/07/2016, 10:30", lieu: Loc12, speak: nil, photo: "hand", day: day4, selected: false)
+        Activity.insertNewActivity(moc, id:13, nom: "HandBall", desc:"A team game similar to football in which the ball is hit with the hands rather than kicked.", dateD: "07/07/2016, 08:00", dateF: "07/07/2016, 10:30", lieu: Loc12, speak: nil, photo: "hand", day: day4, selected: false)
         
-        Activity.insertNewActivity(moc, id: 14, nom: "Volley", desc: "Sport", dateD: "07/07/2016, 10:30", dateF: "07/07/2016, 13:00", lieu: Loc12, speak:nil, photo: "volley", day: day4, selected: false)
+        Activity.insertNewActivity(moc, id: 14, nom: "Volley", desc: "A team sport in which two teams of six players are separated by a net", dateD: "07/07/2016, 10:30", dateF: "07/07/2016, 13:00", lieu: Loc12, speak:nil, photo: "volley", day: day4, selected: false)
         
         
-        Activity.insertNewActivity(moc, id: 15, nom:  "Theather", desc: "Comedie", dateD :"07/07/2016, 13:45", dateF:"07/07/2016, 14:45", lieu: Loc2, speak: nil, photo: "theatre", day: day4, selected: false)
-        Activity.insertNewActivity(moc, id: 16, nom: "Shopping", desc: "Doing shopping in your free time",dateD :"07/07/2016, 19:00", dateF:"07/07/2016, 19:45", lieu: Loc7, speak: nil, photo: "shopping", day: day4, selected: false)
+        Activity.insertNewActivity(moc, id: 15, nom:  "Theather", desc: "You love theather, come on and enjoy yourself watching comedy and tragedy", dateD :"07/07/2016, 13:45", dateF:"07/07/2016, 14:45", lieu: Loc8, speak: nil, photo: "theatre", day: day4, selected: false)
+        Activity.insertNewActivity(moc, id: 16, nom: "Shopping", desc: "Doing shopping in your free time",dateD :"07/07/2016, 19:00", dateF:"07/07/2016, 19:45", lieu: Loc8, speak: nil, photo: "shopping", day: day4, selected: false)
         
         Activity.insertNewActivity(moc, id: 17, nom: "Party", desc: "Enjoy the party and relax you",dateD :"07/07/2016, 23:00", dateF:"07/07/2016, 03:45", lieu: Loc7, speak: nil, photo: "party", day: day4, selected: false)
         
         
         //***********************************************Day4finish***************************************************
         //************************************************Day5******************************************************
-        Activity.insertNewActivity(moc, id: 18, nom: "Equitation", desc: "Riding horses", dateD: "08/07/2016, 09:00", dateF: "08/07/2016, 11:00", lieu: Loc1, speak: nil , photo: "equit", day: day5, selected: false)
+        Activity.insertNewActivity(moc, id: 18, nom: "Equitation", desc: "Come on and discover the art and practice of horsemanship and horse riding", dateD: "08/07/2016, 09:00", dateF: "08/07/2016, 11:00", lieu: Loc12, speak: nil , photo: "equit", day: day5, selected: false)
         
         
-        Activity.insertNewActivity(moc, id: 19, nom: "Visit of Montpellier", desc: "Montpellier city", dateD: "08/07/2016, 18:30", dateF: "08/07/2016, 19:45", lieu:Loc2, speak:nil, photo: "montpell", day: day5, selected: false)
+        Activity.insertNewActivity(moc, id: 19, nom: "Visit of Montpellier", desc: "Come on and discover Montpellier, a wonderful city with its beautiful places", dateD: "08/07/2016, 18:30", dateF: "08/07/2016, 19:45", lieu:Loc8, speak:nil, photo: "montpell", day: day5, selected: false)
         
-        Activity.insertNewActivity(moc, id: 20, nom: "Running", desc: "Run", dateD: "08/07/2016, 19:45", dateF: "08/07/2016, 21:00", lieu: Loc7, speak: nil, photo: "run", day: day5, selected: false)
+        Activity.insertNewActivity(moc, id: 20, nom: "Running", desc: "Move at a speed faster than a walk and enjoy yourself", dateD: "08/07/2016, 19:45", dateF: "08/07/2016, 21:00", lieu: Loc12, speak: nil, photo: "run", day: day5, selected: false)
         
         
         ///***********************************************Day5finish***************************************************
         //************************************************Day6******************************************************
         
-        Activity.insertNewActivity(moc, id: 21, nom: "Hiking", desc: "Morning hiking", dateD: "09/07/2016, 11:00", dateF: "09/07/2016, 11:30", lieu: Loc1, speak: nil, photo: "hiking", day: day6, selected: false)
+        Activity.insertNewActivity(moc, id: 21, nom: "Hiking", desc: "Hiking is your favorite sport? Come on and don't miss this morning hiking", dateD: "09/07/2016, 11:00", dateF: "09/07/2016, 11:30", lieu: Loc12, speak: nil, photo: "hiking", day: day6, selected: false)
         
         
-        Activity.insertNewActivity(moc, id: 22, nom: "Canoe Kayyak", desc:"Sport", dateD :"09/07/2016, 17:00", dateF:"09/07/2016, 18:00", lieu: Loc11, speak: nil, photo: "canoe", day: day6, selected: false)
-        Activity.insertNewActivity(moc, id: 23, nom: "Tennis", desc:"Sport", dateD :"09/07/2016, 17:00", dateF:"09/07/2016, 18:00", lieu: Loc12, speak: nil, photo: "tennis", day: day6, selected: false)
+        Activity.insertNewActivity(moc, id: 22, nom: "Canoe Kayak", desc:"Come and discover Montpellier landscapes by canoeing", dateD :"09/07/2016, 17:00", dateF:"09/07/2016, 18:00", lieu: Loc11, speak: nil, photo: "canoe", day: day6, selected: false)
+        Activity.insertNewActivity(moc, id: 23, nom: "Tennis", desc:"A game in which two or four players strike a ball with rackets over a net stretched across a court.", dateD :"09/07/2016, 17:00", dateF:"09/07/2016, 18:00", lieu: Loc12, speak: nil, photo: "tennis", day: day6, selected: false)
         
         
-        Activity.insertNewActivity(moc, id: 24, nom: "Closing Ceremony", desc: "eating and relax", dateD :"09/07/2016, 09:30", dateF:"09/07/2016, 11:30", lieu: Loc5, speak: Speak4, photo: "ceremony", day: day6, selected: false)
-        Activity.insertNewActivity(moc, id: 25, nom: "Beach", desc: "swimming and relax", dateD :"09/07/2016, 14:30", dateF:"09/07/2016, 17:30", lieu: Loc7, speak: nil, photo: "beach", day: day6, selected: false)
+        Activity.insertNewActivity(moc, id: 24, nom: "Closing Ceremony", desc: "A ceremony to celebrate the end of these wonderful days at Montpellier", dateD :"09/07/2016, 09:30", dateF:"09/07/2016, 11:30", lieu: Loc5, speak: Speak4, photo: "ceremony", day: day6, selected: false)
         
-        Activity.insertNewActivity(moc, id: 26, nom: "Party", desc: "Come on and enjoy the party", dateD :"09/07/2016, 19:30", dateF:"09/07/2016, 23:30", lieu: Loc5, speak: nil, photo: "party", day: day6, selected: false)
+        Activity.insertNewActivity(moc, id: 25, nom: "Beach", desc: "Swimming and relaxing at Palavas Beach", dateD :"09/07/2016, 14:30", dateF:"09/07/2016, 17:30", lieu: Loc7, speak: nil, photo: "beach", day: day6, selected: false)
+        
+        Activity.insertNewActivity(moc, id: 26, nom: "Party", desc: "Come on and enjoy at this party celebrating the end of FISU", dateD :"09/07/2016, 19:30", dateF:"09/07/2016, 23:30", lieu: Loc5, speak: nil, photo: "party", day: day6, selected: false)
         
         //***********************************************Accomodation***************************************************
         Accomodation.insertNewAccomodation(moc, id: 1, nom: "Novotel", desc: "Contemporary hotel with a terrace coffee ,a bar , an outdoor pool and a playground ", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco1, tel: "04 99 52 34 34", photo: "novotel" )

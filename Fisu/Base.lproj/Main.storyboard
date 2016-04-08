@@ -745,10 +745,10 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rY8-4z-KhC">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gKI-e5-tet">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gKI-e5-tet">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="282"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZBa-je-u7T">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZBa-je-u7T">
                                                 <rect key="frame" x="8" y="8" width="584" height="266"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ci5-Co-xPN">
@@ -800,17 +800,20 @@
                                                             <constraint firstAttribute="height" constant="140" id="MSd-WJ-5SZ"/>
                                                         </constraints>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="-420" translatesAutoresizingMaskIntoConstraints="NO" id="OA3-iz-YFL">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="-420" translatesAutoresizingMaskIntoConstraints="NO" id="OA3-iz-YFL">
                                                         <rect key="frame" x="0.0" y="171" width="584" height="50"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4g-G9-zlY">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4g-G9-zlY">
                                                                 <rect key="frame" x="0.0" y="0.0" width="502" height="50"/>
                                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4T0-iR-nLY">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4T0-iR-nLY">
                                                                 <rect key="frame" x="82" y="0.0" width="502" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="xb9-O3-ajv"/>
+                                                                </constraints>
                                                                 <fontDescription key="fontDescription" name="IcoMoon-Free" family="IcoMoon-Free" pointSize="17"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <connections>
@@ -823,7 +826,7 @@
                                                             <constraint firstItem="4T0-iR-nLY" firstAttribute="leading" secondItem="j4g-G9-zlY" secondAttribute="trailing" constant="-420" id="gVO-hk-GMH"/>
                                                         </constraints>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Lie-ji-of5">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Lie-ji-of5">
                                                         <rect key="frame" x="0.0" y="221" width="584" height="45"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uN-8A-KwZ">
@@ -851,7 +854,7 @@
                                             <constraint firstAttribute="trailingMargin" secondItem="ZBa-je-u7T" secondAttribute="trailing" id="pyh-Pu-usg"/>
                                         </constraints>
                                     </view>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1XJ-zM-kap">
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1XJ-zM-kap">
                                         <rect key="frame" x="0.0" y="287" width="600" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="KaR-zZ-XmQ"/>
@@ -862,7 +865,6 @@
                                     <constraint firstItem="gKI-e5-tet" firstAttribute="leading" secondItem="rY8-4z-KhC" secondAttribute="leading" id="JXW-lM-7jV"/>
                                     <constraint firstAttribute="trailing" secondItem="gKI-e5-tet" secondAttribute="trailing" id="XMl-5m-Zrc"/>
                                     <constraint firstItem="gKI-e5-tet" firstAttribute="leading" secondItem="rY8-4z-KhC" secondAttribute="leading" id="eIA-HR-g04"/>
-                                    <constraint firstItem="1XJ-zM-kap" firstAttribute="top" secondItem="gKI-e5-tet" secondAttribute="bottom" constant="5" id="ew0-2F-9GB"/>
                                     <constraint firstItem="gKI-e5-tet" firstAttribute="top" secondItem="rY8-4z-KhC" secondAttribute="top" id="rS7-2B-aWj"/>
                                 </constraints>
                             </stackView>

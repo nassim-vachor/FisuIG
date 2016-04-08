@@ -32,7 +32,7 @@ class Location: NSManagedObject {
     
     
     // methode de classe pour l'insertion d'une nouvelle Location
-    class func  insertNewLocation( context: NSManagedObjectContext ,id: NSNumber, address: String, lat: NSNumber, long: NSNumber) -> Location?{
+    class func  insertNewLocation( context: NSManagedObjectContext ,id: NSNumber, name : String?, address: String, lat: NSNumber, long: NSNumber) -> Location?{
         let LocationDescription = NSEntityDescription.entityForName( "Location", inManagedObjectContext : context)
         let request = NSFetchRequest()
         request.entity = LocationDescription
@@ -48,6 +48,7 @@ class Location: NSManagedObject {
                 
                 let newLocation = NSEntityDescription.insertNewObjectForEntityForName("Location", inManagedObjectContext:context ) as! Location
                 newLocation.idLoc = id
+                newLocation.nomLoc = name
                 newLocation.address = address
                 newLocation.latitude = lat
                 newLocation.longitude = long
