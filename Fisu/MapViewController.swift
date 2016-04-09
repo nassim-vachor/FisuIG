@@ -36,7 +36,7 @@ class MapViewController: UIViewController , MKMapViewDelegate, NSFetchedResultsC
             
         let sections = frc.sections
         let currentSection = sections![0]
-          print( currentSection.numberOfObjects)
+      
             // parcours de location
         for var i = 0; i < currentSection.numberOfObjects; i++    {
             let indexPath = NSIndexPath(forItem: i , inSection: 0)

@@ -106,7 +106,6 @@ class DetailActivityViewController: UIViewController, NSFetchedResultsController
             annotation.title = act.isLocated3?.address!
             annotation.subtitle = "Montpellier"
             actiMap.addAnnotation(annotation)
-     
         
     }
     
