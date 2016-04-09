@@ -53,6 +53,7 @@ class DisplayHotelViewController: UIViewController, NSFetchedResultsControllerDe
         let span = MKCoordinateSpanMake(0.05, 0.05)
         let region = MKCoordinateRegion(center: location, span: span)
         mapHotel.setRegion(region, animated: true)
+       
         
         let annotation = MKPointAnnotation()
         annotation.coordinate = location

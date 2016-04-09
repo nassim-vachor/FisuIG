@@ -32,6 +32,7 @@
         <attribute name="idLoc" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="nomLoc" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="correspond" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Accomodation" inverseName="isLocated" inverseEntity="Accomodation" syncable="YES"/>
         <relationship name="correspond2" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Restaurant" inverseName="isLocated2" inverseEntity="Restaurant" syncable="YES"/>
         <relationship name="correspond3" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="isLocated3" inverseEntity="Activity" syncable="YES"/>
@@ -58,9 +59,9 @@
     <elements>
         <element name="Accomodation" positionX="288" positionY="333" width="128" height="165"/>
         <element name="Activity" positionX="196" positionY="98" width="128" height="193"/>
-        <element name="Location" positionX="-108" positionY="468" width="128" height="150"/>
+        <element name="Day" positionX="-63" positionY="378" width="128" height="88"/>
+        <element name="Location" positionX="-108" positionY="468" width="128" height="165"/>
         <element name="Restaurant" positionX="297" positionY="594" width="128" height="165"/>
         <element name="Speaker" positionX="-135" positionY="-16" width="128" height="150"/>
-        <element name="Day" positionX="-63" positionY="378" width="128" height="88"/>
     </elements>
 </model>

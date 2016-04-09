@@ -94,7 +94,7 @@ class DetailActivityViewController: UIViewController, NSFetchedResultsController
             speakButton.setTitle(buttonTitle, forState: UIControlState.Normal)
         }
         
-            adresseLabel?.text = "Location Map : \((act.isLocated3!).address!)"
+            adresseLabel?.text = "Location Map : \((act.isLocated3!).nomLoc!)"
             imageAct.image = UIImage(data: (act.photoActi)!, scale: 0.1)
             let location =  CLLocationCoordinate2D(latitude: CLLocationDegrees( (act.isLocated3?.latitude)! ), longitude: CLLocationDegrees((act.isLocated3?.longitude)! ))
             let span = MKCoordinateSpanMake(0.05, 0.05)
