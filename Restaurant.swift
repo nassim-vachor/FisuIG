@@ -14,8 +14,10 @@ import UIKit
 
 class Restaurant: NSManagedObject {
     
-    
-    // RequestDB (interaction with DB)
+    /// methode de classe--
+    /// Request DB
+    /// - parameter c:le nom de la classe, key: la clé du tri
+    /// - returns: la requete
     class  func FetchRequest( c : String  , key : String ) -> NSFetchRequest{
         let FetchRequest = NSFetchRequest ( entityName:c)
         let sortDescriptor = NSSortDescriptor(key: key, ascending: true)
@@ -23,8 +25,10 @@ class Restaurant: NSManagedObject {
         return FetchRequest
     }
     
-    // Request DB with Predicat
-    
+    /// methode de classe--
+    /// Request DB with Predicat
+    /// - parameter c:le nom de la classe, key: la clé du tri, (predicat, args): la clause where de la requete
+    /// - returns: la requete
     class  func FetchRequestWithPredicat( c : String  , key : String, predicat: String, args: CVarArgType ) -> NSFetchRequest{
         let FetchRequest = NSFetchRequest ( entityName:c)
         let predicat = NSPredicate(format: predicat, args)
@@ -34,7 +38,12 @@ class Restaurant: NSManagedObject {
         return FetchRequest
     }
     
-    // get detailResto from DB wich concerne resto "x"
+    /// methode de classe--
+    /// get detail resto for resto selected in the view
+    /// fonction qui sera appeler par le viewController
+    /// - parameter c:le nom de la classe, key: la clé du tri, (predicat, args): la clause where de la requete
+    /// - precondition: elle fait appel à la fonction FetchRequestWithPredicat
+    /// - returns: le résultat de la requete
     class func getDetailRestoFetchedResultController(  c : String  , key : String, predicat: String, args: CVarArgType   ) -> NSFetchedResultsController {
         let context = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         let frc = NSFetchedResultsController(fetchRequest: FetchRequestWithPredicat(c , key: key, predicat: predicat, args: args), managedObjectContext: context, sectionNameKeyPath: nil , cacheName: nil )
@@ -42,7 +51,9 @@ class Restaurant: NSManagedObject {
     }
     
     
-    // get result from Accomodation table  with NSFetchedResultsController
+    /// get all resto from DB 
+    /// - parameter c:le nom de la classe, key: la clé du tri
+    /// - returns: tous les restaurant existant dans la BD
     class func getRestoFetchedResultController(  c : String  , key : String ) -> NSFetchedResultsController {
         let context = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         let frc = NSFetchedResultsController(fetchRequest: FetchRequest(c, key: key), managedObjectContext: context, sectionNameKeyPath: nil , cacheName: nil )
@@ -54,7 +65,9 @@ class Restaurant: NSManagedObject {
     
     
     
-    
+    /// methode de classe pour convertir un string en Nsdate
+    /// - parameter dateString: string de la forme "dd/MM/yyyy, HH:mm"
+    /// - rerurns: le  NSDate correspondant au string saisi
     class  func convertStringToNSDate(dateString: String) -> NSDate
     {
         let formatter = NSDateFormatter()
@@ -65,8 +78,8 @@ class Restaurant: NSManagedObject {
     }
     //
     
-    // fonction permmettant d'afficher le jour, date, année
-    
+    /// fonction permmettant d'afficher le jour, mois, année ( Monday, July 4, 2016)
+    /// - rerurns: la date correspondante
     func getDay() -> String
     {
         
@@ -78,7 +91,8 @@ class Restaurant: NSManagedObject {
         
     }
     
-    // fonction permettant d'avoir l'heure d'ouverture d'un restau
+    ///fonction permettant d'avoir l'heure d'ouverture d'un resto
+    /// - rerurns: l'heure correspondante
     func getTimeDeb() -> String
     {
         let formatter = NSDateFormatter()
@@ -86,7 +100,8 @@ class Restaurant: NSManagedObject {
         let timeString = formatter.stringFromDate(self.hourdeb!)
         return timeString
     }
-    // fonction permettant d'avoir l'heure de fermeture d'un restau
+    ///fonction permettant d'avoir l'heure de fermeture d'un resto
+    /// - rerurns: l'heure correspondante
     func getTimeFin() -> String
     {
         let formatter = NSDateFormatter()
@@ -96,7 +111,9 @@ class Restaurant: NSManagedObject {
     }
     
     
-    // methode de classe pour l'insertion d'une nouvelle Restaurant
+    /// methode de classe pour l'insertion d'un nouveau Resto
+    /// elle prend en parametre tous les champs de la classe Resto
+    /// - returns: le resto inseré si elle existe pas, sinon le resto  même si il existe déja
     class func  insertNewRestaurant( context: NSManagedObjectContext ,id: NSNumber, nom: String, spec: String,  dateD: String, dateF: String,adresse: Location?, tel: String, photo: String?) -> Restaurant?{
         let RestaurantDescription = NSEntityDescription.entityForName( "Restaurant", inManagedObjectContext : context)
         let request = NSFetchRequest()

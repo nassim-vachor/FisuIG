@@ -13,18 +13,11 @@ import UIKit
 
 class Speaker: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
 
- /*
-    @NSManaged var biography: String?
-    @NSManaged var idSpeaker: NSNumber?
-    @NSManaged var name: String?
-    @NSManaged var phone: String?
-    @NSManaged var photoSpe: NSData?
-    @NSManaged var surname: String?
-    @NSManaged var participate: NSSet?
     
-    */
+    /// methode de classe pour l'insertion d'une nouveau speaker
+    /// elle prend en parametre tous les champs de la classe speaker
+    /// - returns: speaker inseré si elle existe pas, sinon le speaker même si il existe déja
     class func  insertNewSpeaker( context: NSManagedObjectContext ,id: NSNumber, nom: String, prenom: String, biograp: String, tel: String, photo: String) -> Speaker?{
         let SpeakerDescription = NSEntityDescription.entityForName( "Speaker", inManagedObjectContext : context)
         let request = NSFetchRequest()

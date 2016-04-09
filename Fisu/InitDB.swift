@@ -82,7 +82,7 @@ class InitDB {
         // LIEUX DES Accomodations
         let LocAcco1 = Location.insertNewLocation(moc, id: 8,name : nil , address: "125 bis Avenue de Palavas, 34000 Montpellier" , lat: 43.5896828, long: 3.8925621)
         
-        let LocAcco2 = Location.insertNewLocation(moc, id: 9, name : nil ,address: "95, PLACE VAUBAN BOULEVARD D'ANTIGONE 34000 - Montpellier" , lat: 43.6092224, long: 3.8878104)
+        let LocAcco2 = Location.insertNewLocation(moc, id: 9, name : nil ,address: "95, Place Vauban Boulevard d'Antigone, 34000 Montpellier" , lat: 43.6092224, long: 3.8878104)
         
         let LocAcco3 = Location.insertNewLocation(moc, id: 10, name : nil ,address: " Tournezy, 135 Rue Jugurtha, 34070 Montpellier" , lat: 43.5698050, long: 3.9041710	)
         
@@ -102,9 +102,9 @@ class InitDB {
         
         //******************************************Day1**********************************************************
         // création des activité du Day1 gràce à la methode de classe insertNewActivity
-        Activity.insertNewActivity(moc, id: 1, nom: "Open Ceremony", desc: "Openning Ceremony speech for the FISU", dateD: "04/07/2016, 09:00", dateF: "04/07/2016, 12:30", lieu: Loc1, speak: Speak1, photo: "ceremony", day: day1, selected: false)
+        Activity.insertNewActivity(moc, id: 1, nom: "Open Ceremony", desc: "Speech about FISU and all events", dateD: "04/07/2016, 09:00", dateF: "04/07/2016, 12:30", lieu: Loc1, speak: Speak1, photo: "ceremony", day: day1, selected: false)
         
-        Activity.insertNewActivity(moc, id: 2, nom: "UNESCO session", desc: "UNESCO will speak about the importance of FISU", dateD: "04/07/2016, 13:45", dateF: "04/07/2016, 14:30", lieu: Loc2, speak: Speak2, photo: "unesco", day: day1, selected: false)
+        Activity.insertNewActivity(moc, id: 2, nom: "UNESCO session", desc: "UNESCO will speak about the importance of world heritage", dateD: "04/07/2016, 13:45", dateF: "04/07/2016, 14:30", lieu: Loc2, speak: Speak2, photo: "unesco", day: day1, selected: false)
         
         Activity.insertNewActivity(moc, id: 3, nom: "Football", desc: "A collective sport that oppose 2 teams of 11 players, each defends goals at opposite ends of a field h", dateD: "04/07/2016, 14:00", dateF: "04/07/2016, 17:00", lieu: Loc12, speak: nil, photo: "foot", day: day1, selected: false)
         

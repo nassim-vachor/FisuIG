@@ -13,8 +13,10 @@ import UIKit
 class Accomodation: NSManagedObject {
     
 
-    
-    // RequestDB (interaction with DB)
+    /// methode de classe--
+    /// Request DB
+    /// - parameter c:le nom de la classe, key: la clé du tri
+    /// - returns: la requete
     class  func FetchRequest( c : String  , key : String ) -> NSFetchRequest{
         let FetchRequest = NSFetchRequest ( entityName:c)
         let sortDescriptor = NSSortDescriptor(key: key, ascending: true)
@@ -22,8 +24,10 @@ class Accomodation: NSManagedObject {
         return FetchRequest
     }
     
-    // Request DB with Predicat
-    
+    /// methode de classe--
+    /// Request DB with Predicat
+    /// - parameter c:le nom de la classe, key: la clé du tri, (predicat, args): la clause where de la requete
+    /// - returns: la requete
     class  func FetchRequestWithPredicat( c : String  , key : String, predicat: String, args: CVarArgType ) -> NSFetchRequest{
         let FetchRequest = NSFetchRequest ( entityName:c)
         let predicat = NSPredicate(format: predicat, args)
@@ -33,7 +37,12 @@ class Accomodation: NSManagedObject {
         return FetchRequest
     }
     
-    // get datilAcco from DB wich concerne acco "x"
+    /// methode de classe--
+    /// get detil accomodation for acco selected in the view
+    /// fonction qui sera appeler par le viewController
+    /// - parameter c:le nom de la classe, key: la clé du tri, (predicat, args): la clause where de la requete
+    /// - precondition: elle fait appel à la fonction FetchRequestWithPredicat
+    /// - returns: le résultat de la requete
     class func getDetailAccoFetchedResultController(  c : String  , key : String, predicat: String, args: CVarArgType   ) -> NSFetchedResultsController {
         let context = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         let frc = NSFetchedResultsController(fetchRequest: FetchRequestWithPredicat(c , key: key, predicat: predicat, args: args), managedObjectContext: context, sectionNameKeyPath: nil , cacheName: nil )
@@ -41,7 +50,9 @@ class Accomodation: NSManagedObject {
     }
     
     
-    // get result from Accomodation table  with NSFetchedResultsController
+    /// get all accomodation from DB
+    /// - parameter c:le nom de la classe, key: la clé du tri
+    /// - returns: toutes les accomodations existante dans la BD
     class func getAccoFetchedResultController(  c : String  , key : String ) -> NSFetchedResultsController {
         let context = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         let frc = NSFetchedResultsController(fetchRequest: FetchRequest(c, key: key), managedObjectContext: context, sectionNameKeyPath: nil , cacheName: nil )
@@ -61,7 +72,9 @@ class Accomodation: NSManagedObject {
     }
     
     
-    // fonction permmettant d'afficher le jour, date, année
+    /// methode de classe pour convertir un string en Nsdate
+    /// - parameter dateString: string de la forme "dd/MM/yyyy, HH:mm"
+    /// - rerurns: le  NSDate correspondant au string saisi
     
     func getDay() -> String
     {
@@ -73,8 +86,8 @@ class Accomodation: NSManagedObject {
         
         
     }
-    
-    // fonction permettant d'avoir l'heure d'ouverture d'un restau
+    ///fonction permettant d'avoir l'heure d'ouverture d'un hotel
+    /// - rerurns: l'heure correspondante
     func getTimeDeb() -> String
     {
         let formatter = NSDateFormatter()
@@ -82,7 +95,9 @@ class Accomodation: NSManagedObject {
         let timeString = formatter.stringFromDate(self.ouverture!)
         return timeString
     }
-    // fonction permettant d'avoir l'heure de fermeture d'un restau
+    ///fonction permettant d'avoir l'heure de fermeture d'un hotel
+    /// - rerurns: l'heure correspondante
+
     func getTimeFin() -> String
     {
         let formatter = NSDateFormatter()
@@ -90,8 +105,9 @@ class Accomodation: NSManagedObject {
         let timeString = formatter.stringFromDate(self.fermeture!)
         return timeString
     }
-    
-    // methode de classe pour l'insertion d'une nouvelle Accomodation
+    /// methode de classe pour l'insertion d'une nouvelle accomodation
+    /// elle prend en parametre tous les champs de la classe acco
+    /// - returns: l'acco inseré si elle existe pas, sinon l'acco  même si elle existe déja
     class func  insertNewAccomodation( context: NSManagedObjectContext ,id: NSNumber, nom: String, desc: String,  dateD: String, dateF: String,adresse: Location?, tel: String, photo: String?) -> Accomodation?{
         let AccomodationDescription = NSEntityDescription.entityForName( "Accomodation", inManagedObjectContext : context)
         let request = NSFetchRequest()

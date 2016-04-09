@@ -17,7 +17,11 @@ import CoreData
 
 class Day: NSManagedObject, NSFetchedResultsControllerDelegate{
     
-    // RequestDB (interaction with DB)
+    /// methode de classe--
+    /// Request DB
+    /// - parameter c:le nom de la classe, key: la clé du tri
+    /// - returns: la requete
+   
     class  func FetchRequest( c : String  , key : String ) -> NSFetchRequest{
         let FetchRequest = NSFetchRequest ( entityName:c)
         let sortDescriptor = NSSortDescriptor(key: key, ascending: true)
@@ -25,8 +29,10 @@ class Day: NSManagedObject, NSFetchedResultsControllerDelegate{
         return FetchRequest
     }
     
-    // Request DB with Predicat
-    
+    /// methode de classe--
+    /// Request DB with Predicat
+    /// - parameter c:le nom de la classe, key: la clé du tri, (predicat, args): la clause where de la requete
+    /// - returns: la requete
     class  func FetchRequestWithPredicat( c : String  , key : String, predicat: String, args: CVarArgType ) -> NSFetchRequest{
         let FetchRequest = NSFetchRequest ( entityName:c)
         let predicat = NSPredicate(format: predicat, args)
@@ -36,7 +42,9 @@ class Day: NSManagedObject, NSFetchedResultsControllerDelegate{
         return FetchRequest
     }
     
-    // get activity from DB wich concerne Day "x" 
+    /// get activities from DB wich concerne Day "x"
+    /// - parameter c:le nom de la classe, key: la clé du tri, (predicat, args): la clause where de la requete*
+    /// - returns: les activités correspondantes au jour selectionnées
     class func getActivityFetchedResultController(  c : String  , key : String, predicat: String, args: CVarArgType   ) -> NSFetchedResultsController {
         let context = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         let frc = NSFetchedResultsController(fetchRequest: FetchRequestWithPredicat(c , key: key, predicat: predicat, args: args), managedObjectContext: context, sectionNameKeyPath: nil , cacheName: nil )
@@ -45,12 +53,18 @@ class Day: NSManagedObject, NSFetchedResultsControllerDelegate{
     
     
    // get result from Day table  with NSFetchedResultsController
+    /// - parameter c:le nom de la classe, key: la clé du tri
+    /// - returns: les jours existants dans la base ( day1, day2...........day6)
     class func getDayFetchedResultController(  c : String  , key : String ) -> NSFetchedResultsController {
         let context = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
          let frc = NSFetchedResultsController(fetchRequest: FetchRequest(c, key: key), managedObjectContext: context, sectionNameKeyPath: nil , cacheName: nil )
         return frc
     }
     
+    
+    /// methode de classe pour l'insertion d'une nouveau jour
+    /// elle prend en parametre tous les champs de la classe activité
+    /// - returns: le jour inserée si elle existe pas, sinon le jour emême si il existe déja
     class func  insertNewDay( context: NSManagedObjectContext ,id: NSNumber, day: String) -> Day?{
         let DayDescription = NSEntityDescription.entityForName( "Day", inManagedObjectContext : context)
         let request = NSFetchRequest()

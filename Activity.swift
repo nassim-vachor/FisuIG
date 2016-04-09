@@ -13,9 +13,10 @@ import UIKit
 @objc(Activity)
 class Activity: NSManagedObject {
     
-    
-    // Request DB with Predicat
-    
+    /// methode de classe--
+    /// Request DB with Predicat
+    /// - parameter c:le nom de la classe, key: la clé du tri, (predicat, args): la clause where de la requete
+    /// - returns: la requete
     class  func FetchRequestWithPredicat( c : String  , key : String, predicat: String, args: CVarArgType ) -> NSFetchRequest{
         let FetchRequest = NSFetchRequest ( entityName:c)
         let predicat = NSPredicate(format: predicat, args)
@@ -26,15 +27,24 @@ class Activity: NSManagedObject {
     }
     
     
-    // get datil activity for activity selected in the view
+    
+    /// methode de classe--
+    /// get detil activity for activity selected in the view
+    /// fonction qui sera appeler par le viewController
+    /// - parameter c:le nom de la classe, key: la clé du tri, (predicat, args): la clause where de la requete
+    /// - precondition: elle fait appel à la fonction FetchRequestWithPredicat
+    /// - returns: le résultat de la requete
     class func getDetailActivityFetchedResultController(  c : String  , key : String, predicat: String, args: CVarArgType   ) -> NSFetchedResultsController {
         let context = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        // recuperation du résultat de la requete FetchRequestWithPredicat
         let frc = NSFetchedResultsController(fetchRequest: FetchRequestWithPredicat(c , key: key, predicat: predicat, args: args), managedObjectContext: context, sectionNameKeyPath: nil , cacheName: nil )
         return frc
     }
     
     
-    //- methode de classe pour convertir un string en Nsdate
+    /// methode de classe pour convertir un string en Nsdate
+    /// - parameter dateString: string de la forme "dd/MM/yyyy, HH:mm"
+    /// - rerurns: le  NSDate correspondant au string saisi
     class  func convertStringToNSDate(dateString: String) -> NSDate
     {
         let formatter = NSDateFormatter()
@@ -44,9 +54,9 @@ class Activity: NSManagedObject {
         return dates!
     }
     
-
-    // fonction permmettant d'afficher le jour, date, année
     
+    /// fonction permmettant d'afficher le jour, mois, année ( Monday, July 4, 2016)
+    /// - rerurns: la date correspondante
     func getDay() -> String
     {
         
@@ -58,7 +68,8 @@ class Activity: NSManagedObject {
         
     }
     
-    // fonction permettant d'avoir l'heure du debut d'une activité
+    ///fonction permettant d'avoir l'heure du debut d'une activité
+    /// - rerurns: l'heure correspondante
     func getTimeDeb() -> String
     {
         let formatter = NSDateFormatter()
@@ -67,6 +78,7 @@ class Activity: NSManagedObject {
         return timeString
     }
     // fonction permettant d'avoir l'heure de fin  d'une activité
+    /// - rerurns: l'heure correspondante
     func getTimeFin() -> String
     {
         let formatter = NSDateFormatter()
@@ -74,11 +86,14 @@ class Activity: NSManagedObject {
         let timeString = formatter.stringFromDate(self.dateFin!)
         return timeString
     }
-    //
+
     
-    // update 
     
-    internal func updateData ( select: NSNumber , id: NSNumber){
+    
+    /// fonction permettant de mettre à jour la BD--
+    /// utiliser notamment quand l'utilisateur s'incrit à une activité
+    /// - parameter select:la colonne à modifier, id: utiliser dans la clause where afin de selectionner la bonne activité
+        func updateData ( select: NSNumber , id: NSNumber){
         let context = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         let ActivityDescription = NSEntityDescription.entityForName( "Activity", inManagedObjectContext : context)
         let request = NSFetchRequest()
@@ -99,17 +114,20 @@ class Activity: NSManagedObject {
                     print("there was an error saving data")
                     
                 }
-
-            }
-        }
-            catch {
-                let updateError = error as NSError
-                print("\(updateError), \(updateError.userInfo)")
                 
             }
+        }
+        catch {
+            let updateError = error as NSError
+            print("\(updateError), \(updateError.userInfo)")
+            
+        }
     }
-
-    // methode de classe pour l'insertion d'une nouvelle activity
+    
+    /// methode de classe pour l'insertion d'une nouvelle activity
+    /// elle prend en parametre tous les champs de la classe activité
+    /// - returns: l'activité inserée si elle existe pas, sinon l'activité elle même si elle existe déja
+    
     class func  insertNewActivity( context: NSManagedObjectContext ,id: NSNumber, nom: String, desc: String, dateD: String, dateF: String, lieu: Location?, speak: Speaker?, photo : String?, day: Day?, selected:Bool) -> Activity?{
         let ActivityDescription = NSEntityDescription.entityForName( "Activity", inManagedObjectContext : context)
         let request = NSFetchRequest()
@@ -137,7 +155,7 @@ class Activity: NSManagedObject {
                 // Pour rajouter l'image on prends une image et le transforme en NSData
                 let newImage = UIImage ( named : photo!)
                 newActivity.photoActi = UIImageJPEGRepresentation(newImage!, 1.0)
-        
+                
                 activity = newActivity
                 do{
                     try context.save()   //newActivity.managedObjectContext?.save()
@@ -147,8 +165,7 @@ class Activity: NSManagedObject {
                     
                 }
                 
-            }
-            else {
+         } else {
                 // pour recuperer l activite qui est deja dans la bd
                 let activ = result[0] as! Activity
                 return activ
@@ -163,9 +180,9 @@ class Activity: NSManagedObject {
         
         return activity
         
-}
-
-
+    }
+    
+    
 }
 
     

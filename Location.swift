@@ -13,8 +13,10 @@ import UIKit
 
 class Location: NSManagedObject {
 
-    
-    // RequestDB (interaction with DB)
+    /// methode de classe--
+    /// Request DB
+    /// - parameter c:le nom de la classe, key: la clé du tri
+    /// - returns: la requete
     class  func FetchRequest( c : String  , key : String ) -> NSFetchRequest{
         let FetchRequest = NSFetchRequest ( entityName:c)
         let sortDescriptor = NSSortDescriptor(key: key, ascending: true)
@@ -31,7 +33,9 @@ class Location: NSManagedObject {
     
     
     
-    // methode de classe pour l'insertion d'une nouvelle Location
+    /// methode de classe pour l'insertion d'une nouvelle location
+    /// elle prend en parametre tous les champs de la classe location
+    /// - returns: location inseré si elle existe pas, sinon la location même si elle existe déja
     class func  insertNewLocation( context: NSManagedObjectContext ,id: NSNumber, name : String?, address: String, lat: NSNumber, long: NSNumber) -> Location?{
         let LocationDescription = NSEntityDescription.entityForName( "Location", inManagedObjectContext : context)
         let request = NSFetchRequest()
