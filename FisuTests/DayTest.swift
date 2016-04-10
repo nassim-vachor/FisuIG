@@ -37,10 +37,11 @@ class DayTest: XCTestCase {
     {
         let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
         
-        let day8 = Day.insertNewDay(moc, id: 8, day: "Day 8")
         ///- l'insertion d'un nouveau day
+        let day8 = Day.insertNewDay(moc, id: 8, day: "Day 8")
         XCTAssertNotNil(day8, "L'insertion de Day8 c'est bien passee")
          let day9 = Day.insertNewDay(moc, id: 8, day: "Day 8")
+        
         ///- Si jamais on insere un day qui a deja ete insere, il n y pas d erreur ni de nouvelle insertion: le day qui avait ete insere est juste retourne
         XCTAssertEqual(day8, day9, "Le day8 et le day9 correspondent au meme Day")
          
@@ -51,6 +52,8 @@ class DayTest: XCTestCase {
         let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
         
         let day8 = Day.insertNewDay(moc, id: 8, day: "Day 8")
+        
+        ///- recuperation des activites correspondant a Day8
         let activityDay8 = Day.getActivityFetchedResultController("Activity", key: "idAct", predicat: "dayIs=%@", args: (day8)!)
             XCTAssertNil(activityDay8.sections, "il n ya pas d activite pour Day8")
         
@@ -58,13 +61,15 @@ class DayTest: XCTestCase {
     
     func testGetDayFetchedResultController()
     {
+        let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
         
+        Day.insertNewDay(moc, id: 8, day: "Day 8")
         let frc = Day.getDayFetchedResultController("Day", key: "keyDay")
+
+        //XCTAssertNil(frc.sections)
+        
         XCTAssertNotNil(frc)
         
-        
     }
-   /* func
-    Day.getActivityFetchedResultController("Activity", key: "idAct", predicat: "dayIs=%@", args: receved!)
-    Day.getDayFetchedResultController("Day", key: "keyDay")*/
+
 }
