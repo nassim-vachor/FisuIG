@@ -72,9 +72,7 @@ class ActivityTest: XCTestCase {
         let day8 = Day.insertNewDay(moc, id: 8, day: "Day 8")
         
         let activite1 = Activity.insertNewActivity(moc, id: 100, nom: "Open Ceremony", desc: "Speech about FISU and all events", dateD: "04/07/2016, 09:00", dateF: "04/07/2016, 12:30", lieu: nil, speak: nil, photo: "ceremony", day: day8, selected: false)
-        let hr = "04/07/2016, 09:00"
-        
-        let nsD = Activity.convertStringToNSDate(hr)
+        let nsD = Activity.convertStringToNSDate("04/07/2016, 09:00")
         
          XCTAssertEqual(activite1!.getTimeDeb(),nsD)
         
