@@ -9,13 +9,9 @@ import UIKit
 
 import Foundation
 import CoreData
-/*
-@NSManaged var keyDay: NSNumber?
-@NSManaged var day: String?
-@NSManaged var dayActivity: NSSet?
-*/
 
-class Day: NSManagedObject, NSFetchedResultsControllerDelegate{
+
+class Day: NSManagedObject{
     
     /// methode de classe--
     /// Request DB
