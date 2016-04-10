@@ -58,8 +58,7 @@ class DayTest: XCTestCase {
         let day8 = Day.insertNewDay(moc, id: 8, day: "Day 8")
         
         ///- recuperation des activites correspondant a Day8
-        let activityDay8 = Day.getActivityFetchedResultController("Activity", key: "idAct", predicat: "dayIs=%@", args: (day8)!)
-            XCTAssertNil(activityDay8.sections, "il n ya pas d activite pour Day8")
+        let frc = Day.getActivityFetchedResultController("Activity", key: "idAct", predicat: "dayIs=%@", args: (day8)!)
         
         do {
             try frc.performFetch()
