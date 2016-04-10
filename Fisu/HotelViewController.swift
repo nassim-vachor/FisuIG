@@ -71,7 +71,6 @@ class HotelViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let acco = frc.objectAtIndexPath(indexPath) as! Accomodation
         
         cell.hotelNomLabel.text = acco.name
-        
         cell.hotelImage.image = UIImage( data: (acco.photoA)!, scale: 0.1)
         cell.hotelHorLabel.text = (acco.getTimeDeb())+" - \(acco.getTimeFin())"
         return cell

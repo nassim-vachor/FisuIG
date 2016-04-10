@@ -48,6 +48,7 @@
 		D49A15351CA6E4430066E478 /* Day+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49A15331CA6E4430066E478 /* Day+CoreDataProperties.swift */; };
 		D49A15361CA6E4430066E478 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49A15341CA6E4430066E478 /* Day.swift */; };
 		D4BBB5491CB5D1A200C69A6A /* MyEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BBB5481CB5D1A200C69A6A /* MyEventTableViewCell.swift */; };
+		D4C485C01CBAFFE700D5B043 /* DayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170035D11CBAE6F200DFFF71 /* DayTest.swift */; };
 		D4EFE8E61CB4707C000CFB73 /* InitDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EFE8E51CB4707C000CFB73 /* InitDB.swift */; };
 /* End PBXBuildFile section */
 
@@ -445,7 +446,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				170035D21CBAE6F200DFFF71 /* DayTest.swift in Sources */,
+				D4C485C01CBAFFE700D5B043 /* DayTest.swift in Sources */,
 				9130FC791C9AA1390056A8C8 /* FisuTests.swift in Sources */,
 				170035D41CBB11E300DFFF71 /* ActivityTest.swift in Sources */,
 			);

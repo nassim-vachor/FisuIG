@@ -33,6 +33,7 @@ class DayTest: XCTestCase {
         }
     }
     
+    // test de la fonction qui insere des nouveau day
     func testDayInsert()
     {
         let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
@@ -47,18 +48,33 @@ class DayTest: XCTestCase {
          
     }
     
+    
+    // test de la fonction qui renvoie toutes les activités d'un jour donné
     func testGetActivityFetchedResultController()
     {
-        let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
         
+        
+        let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
         let day8 = Day.insertNewDay(moc, id: 8, day: "Day 8")
         
         ///- recuperation des activites correspondant a Day8
         let activityDay8 = Day.getActivityFetchedResultController("Activity", key: "idAct", predicat: "dayIs=%@", args: (day8)!)
             XCTAssertNil(activityDay8.sections, "il n ya pas d activite pour Day8")
         
+        do {
+            try frc.performFetch()
+        } catch {
+            
+            print("An error occured")
+        }
+        let sections = frc.sections
+        let currentSection = sections![0]
+        
+        XCTAssertEqual( currentSection.numberOfObjects, 1,   "il n ya pas d activite pour Day8")
+  
     }
     
+    // test de la fonction qui renvoie tous les jours existants dans la base
     func testGetDayFetchedResultController()
     {
         let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext

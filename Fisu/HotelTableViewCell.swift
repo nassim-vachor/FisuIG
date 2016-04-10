@@ -21,6 +21,7 @@ class HotelTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+
     @IBOutlet weak var hotelNomLabel: UILabel!
     
     @IBOutlet weak var hotelHorLabel: UILabel!

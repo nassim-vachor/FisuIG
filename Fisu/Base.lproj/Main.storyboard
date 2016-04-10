@@ -824,13 +824,13 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Lie-ji-of5">
                                                         <rect key="frame" x="0.0" y="179" width="584" height="80"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uN-8A-KwZ">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uN-8A-KwZ">
                                                                 <rect key="frame" x="0.0" y="0.0" width="584" height="35"/>
                                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="100" horizontalCompressionResistancePriority="721" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khw-En-bIc">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="100" horizontalCompressionResistancePriority="721" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khw-En-bIc">
                                                                 <rect key="frame" x="0.0" y="45" width="584" height="35"/>
                                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -838,7 +838,7 @@
                                                             </label>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="xkE-q1-Rhw"/>
+                                                            <constraint firstAttribute="height" constant="80" id="xkE-q1-Rhw"/>
                                                         </constraints>
                                                     </stackView>
                                                 </subviews>
@@ -851,6 +851,7 @@
                                         <constraints>
                                             <constraint firstItem="ZBa-je-u7T" firstAttribute="leading" secondItem="gKI-e5-tet" secondAttribute="leadingMargin" id="1co-sb-q2R"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="ZBa-je-u7T" secondAttribute="bottom" id="53D-vg-Gxl"/>
+                                            <constraint firstItem="ZBa-je-u7T" firstAttribute="top" secondItem="gKI-e5-tet" secondAttribute="topMargin" id="e18-w7-MmM"/>
                                             <constraint firstItem="ZBa-je-u7T" firstAttribute="top" secondItem="gKI-e5-tet" secondAttribute="top" id="lZ9-Hu-Jky"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="ZBa-je-u7T" secondAttribute="trailing" id="pyh-Pu-usg"/>
                                         </constraints>

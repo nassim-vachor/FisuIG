@@ -9,13 +9,9 @@ import UIKit
 
 import Foundation
 import CoreData
-/*
-@NSManaged var keyDay: NSNumber?
-@NSManaged var day: String?
-@NSManaged var dayActivity: NSSet?
-*/
 
-class Day: NSManagedObject, NSFetchedResultsControllerDelegate{
+
+class Day: NSManagedObject{
     
     /// methode de classe--
     /// Request DB
@@ -33,6 +29,7 @@ class Day: NSManagedObject, NSFetchedResultsControllerDelegate{
     /// Request DB with Predicat
     /// - parameter c:le nom de la classe, key: la clé du tri, (predicat, args): la clause where de la requete
     /// - returns: la requete
+    
     class  func FetchRequestWithPredicat( c : String  , key : String, predicat: String, args: CVarArgType ) -> NSFetchRequest{
         let FetchRequest = NSFetchRequest ( entityName:c)
         let predicat = NSPredicate(format: predicat, args)
@@ -45,6 +42,7 @@ class Day: NSManagedObject, NSFetchedResultsControllerDelegate{
     /// get activities from DB wich concerne Day "x"
     /// - parameter c:le nom de la classe, key: la clé du tri, (predicat, args): la clause where de la requete*
     /// - returns: les activités correspondantes au jour selectionnées
+    
     class func getActivityFetchedResultController(  c : String  , key : String, predicat: String, args: CVarArgType   ) -> NSFetchedResultsController {
         let context = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         let frc = NSFetchedResultsController(fetchRequest: FetchRequestWithPredicat(c , key: key, predicat: predicat, args: args), managedObjectContext: context, sectionNameKeyPath: nil , cacheName: nil )
@@ -55,6 +53,7 @@ class Day: NSManagedObject, NSFetchedResultsControllerDelegate{
    // get result from Day table  with NSFetchedResultsController
     /// - parameter c:le nom de la classe, key: la clé du tri
     /// - returns: les jours existants dans la base ( day1, day2...........day6)
+    
     class func getDayFetchedResultController(  c : String  , key : String ) -> NSFetchedResultsController {
         let context = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
          let frc = NSFetchedResultsController(fetchRequest: FetchRequest(c, key: key), managedObjectContext: context, sectionNameKeyPath: nil , cacheName: nil )
@@ -65,6 +64,7 @@ class Day: NSManagedObject, NSFetchedResultsControllerDelegate{
     /// methode de classe pour l'insertion d'une nouveau jour
     /// elle prend en parametre tous les champs de la classe activité
     /// - returns: le jour inserée si elle existe pas, sinon le jour emême si il existe déja
+    
     class func  insertNewDay( context: NSManagedObjectContext ,id: NSNumber, day: String) -> Day?{
         let DayDescription = NSEntityDescription.entityForName( "Day", inManagedObjectContext : context)
         let request = NSFetchRequest()
