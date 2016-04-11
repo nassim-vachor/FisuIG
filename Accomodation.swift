@@ -105,6 +105,40 @@ class Accomodation: NSManagedObject {
         let timeString = formatter.stringFromDate(self.fermeture!)
         return timeString
     }
+    
+    
+    /// fonction permettant supprimer une ligne de la table Accomodation
+    /// - parameter id : id de la colonne à supprimer
+    class  func deleteData (id: NSNumber) {
+        let context = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        let ActivityDescription = NSEntityDescription.entityForName( "Accomodation", inManagedObjectContext : context)
+        let request = NSFetchRequest()
+        request.entity = ActivityDescription
+        let pred = NSPredicate(format: "(idAcco = %@)", id)
+        request.predicate = pred
+        do{
+            let result = try context.executeFetchRequest(request)
+            // on vérifie que l'activité n'existe pas déja dans la base
+            
+            if let entityToDelete = result.first{
+                context.deleteObject(entityToDelete as! NSManagedObject)
+                do{
+                    try context.save()   //newActivity.managedObjectContext?.save()
+                    print("data deleted")
+                } catch{
+                    print("there was an error saving data")
+                    
+                }
+                
+            }
+        }
+        catch {
+            let deleteError = error as NSError
+            print("\(deleteError), \(deleteError.userInfo)")
+            
+        }
+    }
+    
     /// methode de classe pour l'insertion d'une nouvelle accomodation
     /// elle prend en parametre tous les champs de la classe acco
     /// - returns: l'acco inseré si elle existe pas, sinon l'acco  même si elle existe déja

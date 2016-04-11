@@ -92,7 +92,7 @@ class Activity: NSManagedObject {
     
     /// fonction permettant de mettre à jour la BD--
     /// utiliser notamment quand l'utilisateur s'incrit à une activité
-    /// - parameter select:la colonne à modifier, id: utiliser dans la clause where afin de selectionner la bonne activité
+    /// - parameter select:la nouvelle valeur, KeyPath: la colonne à modifier,  id: utiliser dans la clause where afin de selectionner la bonne activité
    class  func updateData ( select: NSNumber ,KeyPath: String, id: NSNumber) {
         let context = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         let ActivityDescription = NSEntityDescription.entityForName( "Activity", inManagedObjectContext : context)
@@ -123,6 +123,11 @@ class Activity: NSManagedObject {
             
         }
     }
+    
+    
+    /// fonction permettant supprimer une ligne de la table Activity
+    /// - parameter id : id de la colonne à supprimer
+    
    class  func deleteData (id: NSNumber) {
         let context = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         let ActivityDescription = NSEntityDescription.entityForName( "Activity", inManagedObjectContext : context)
@@ -138,7 +143,7 @@ class Activity: NSManagedObject {
                 context.deleteObject(entityToDelete as! NSManagedObject)
                 do{
                     try context.save()   //newActivity.managedObjectContext?.save()
-                    print("data updated")
+                    print("data deleted")
                 } catch{
                     print("there was an error saving data")
                     

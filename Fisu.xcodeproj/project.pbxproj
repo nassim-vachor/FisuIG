@@ -213,8 +213,8 @@
 				9130FC781C9AA1390056A8C8 /* FisuTests.swift */,
 				170035D11CBAE6F200DFFF71 /* DayTest.swift */,
 				170035D31CBB11E300DFFF71 /* ActivityTest.swift */,
-				9130FC7A1C9AA1390056A8C8 /* Info.plist */,
 				D4C485C11CBBDDFB00D5B043 /* LocationTest.swift */,
+				9130FC7A1C9AA1390056A8C8 /* Info.plist */,
 			);
 			path = FisuTests;
 			sourceTree = "<group>";
