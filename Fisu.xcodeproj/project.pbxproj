@@ -214,6 +214,7 @@
 		9130FC771C9AA1390056A8C8 /* FisuTests */ = {
 			isa = PBXGroup;
 			children = (
+				9130FC781C9AA1390056A8C8 /* FisuTests.swift */,
 				170035DC1CBBEAD800DFFF71 /* AccomodationTest.swift */,
 				170035DA1CBBEACD00DFFF71 /* RestaurantTest.swift */,
 				170035D11CBAE6F200DFFF71 /* DayTest.swift */,
