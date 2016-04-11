@@ -56,7 +56,8 @@ class DayTest: XCTestCase {
         
         let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
         let day8 = Day.insertNewDay(moc, id: 8, day: "Day 8")
-        
+        let act = Activity.insertNewActivity(moc, id: 100, nom: "test", desc: "testing", dateD: "04/08/2016, 12:00", dateF: "04/08/2016, 13:00", lieu: nil, speak:  nil , photo: "McDonald's" , day: day8, selected: false )
+        XCTAssertEqual(act?.dayIs?.day, "Day 8",  "L'insertion de act c'est bien passee")
         ///- recuperation des activites correspondant a Day8
         let frc = Day.getActivityFetchedResultController("Activity", key: "idAct", predicat: "dayIs=%@", args: (day8)!)
         
@@ -76,14 +77,17 @@ class DayTest: XCTestCase {
     // test de la fonction qui renvoie tous les jours existants dans la base
     func testGetDayFetchedResultController()
     {
-        let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
-        
-        Day.insertNewDay(moc, id: 8, day: "Day 8")
-        let frc = Day.getDayFetchedResultController("Day", key: "keyDay")
-
-        //XCTAssertNil(frc.sections)
-        
-        XCTAssertNotNil(frc)
+       let   frc = Day.getDayFetchedResultController("Day", key: "keyDay")
+        do {
+        try frc.performFetch()
+               } catch {
+    
+               print("An error occured")
+           }
+           let sections = frc.sections
+           let currentSection = sections![0]
+            // On avait 6 day à la base , comme on insere un autre dans la fonction precedente on se retrouve avec 7 day
+           XCTAssertEqual( currentSection.numberOfObjects, 7,   "le nombre de jour existant est faux")
         
     }
 
