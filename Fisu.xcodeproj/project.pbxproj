@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		170035D41CBB11E300DFFF71 /* ActivityTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170035D31CBB11E300DFFF71 /* ActivityTest.swift */; };
-		170035D71CBBE24C00DFFF71 /* AccomodationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170035D61CBBE24C00DFFF71 /* AccomodationTest.swift */; };
-		170035D91CBBE27500DFFF71 /* RestaurantTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170035D81CBBE27500DFFF71 /* RestaurantTest.swift */; };
 		170451891CA8AFE50002006D /* DisplayRestoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170451881CA8AFE50002006D /* DisplayRestoViewController.swift */; };
 		172611941CA79414001DCA2F /* RestoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172611931CA79414001DCA2F /* RestoTableViewCell.swift */; };
 		172611961CA7B62F001DCA2F /* HotelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172611951CA7B62F001DCA2F /* HotelTableViewCell.swift */; };
@@ -51,6 +49,7 @@
 		D4BBB5491CB5D1A200C69A6A /* MyEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BBB5481CB5D1A200C69A6A /* MyEventTableViewCell.swift */; };
 		D4C485C01CBAFFE700D5B043 /* DayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170035D11CBAE6F200DFFF71 /* DayTest.swift */; };
 		D4C485C21CBBDDFB00D5B043 /* LocationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C485C11CBBDDFB00D5B043 /* LocationTest.swift */; };
+		D4C485C41CBBEC8800D5B043 /* SpeakerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C485C31CBBEC8800D5B043 /* SpeakerTest.swift */; };
 		D4EFE8E61CB4707C000CFB73 /* InitDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EFE8E51CB4707C000CFB73 /* InitDB.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,8 +73,6 @@
 /* Begin PBXFileReference section */
 		170035D11CBAE6F200DFFF71 /* DayTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayTest.swift; sourceTree = "<group>"; };
 		170035D31CBB11E300DFFF71 /* ActivityTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTest.swift; sourceTree = "<group>"; };
-		170035D61CBBE24C00DFFF71 /* AccomodationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccomodationTest.swift; sourceTree = "<group>"; };
-		170035D81CBBE27500DFFF71 /* RestaurantTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTest.swift; sourceTree = "<group>"; };
 		170451881CA8AFE50002006D /* DisplayRestoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayRestoViewController.swift; sourceTree = "<group>"; };
 		172611931CA79414001DCA2F /* RestoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestoTableViewCell.swift; sourceTree = "<group>"; };
 		172611951CA7B62F001DCA2F /* HotelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelTableViewCell.swift; sourceTree = "<group>"; };
@@ -123,6 +120,7 @@
 		D49A15341CA6E4430066E478 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Day.swift; path = ../Day.swift; sourceTree = "<group>"; };
 		D4BBB5481CB5D1A200C69A6A /* MyEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyEventTableViewCell.swift; sourceTree = "<group>"; };
 		D4C485C11CBBDDFB00D5B043 /* LocationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTest.swift; sourceTree = "<group>"; };
+		D4C485C31CBBEC8800D5B043 /* SpeakerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerTest.swift; sourceTree = "<group>"; };
 		D4EFE8E51CB4707C000CFB73 /* InitDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitDB.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -218,6 +216,7 @@
 				170035D11CBAE6F200DFFF71 /* DayTest.swift */,
 				170035D31CBB11E300DFFF71 /* ActivityTest.swift */,
 				D4C485C11CBBDDFB00D5B043 /* LocationTest.swift */,
+				D4C485C31CBBEC8800D5B043 /* SpeakerTest.swift */,
 				9130FC7A1C9AA1390056A8C8 /* Info.plist */,
 			);
 			path = FisuTests;
@@ -453,6 +452,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4C485C01CBAFFE700D5B043 /* DayTest.swift in Sources */,
+				D4C485C41CBBEC8800D5B043 /* SpeakerTest.swift in Sources */,
 				9130FC791C9AA1390056A8C8 /* FisuTests.swift in Sources */,
 				D4C485C21CBBDDFB00D5B043 /* LocationTest.swift in Sources */,
 				170035D41CBB11E300DFFF71 /* ActivityTest.swift in Sources */,

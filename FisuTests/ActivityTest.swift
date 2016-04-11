@@ -52,7 +52,7 @@ class ActivityTest: XCTestCase {
         Day.deleteData(8)
     }
     
-    
+    // test de la fonction qui retourne un string sous forme "Monday, July 4, 2016"
     func testgetDay()
     {
         let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
@@ -113,5 +113,27 @@ class ActivityTest: XCTestCase {
     
     }
     
+    func testgetDetailActivity(){
+        
+        let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
+        
+         let activite1 = Activity.insertNewActivity(moc, id: 1003, nom: "Open Ceremony", desc: "Speech about FISU and all events", dateD: "04/08/2016, 12:00", dateF: "04/08/2016, 13:00", lieu: nil, speak: nil, photo: "ceremony", day: nil, selected: false)
+        let frc = Activity.getDetailActivityFetchedResultController("Activity", key: "idAct", predicat: "idAct=%@", args: (activite1?.idAct)!)
+        
+        do {
+            try frc.performFetch()
+        } catch {
+            
+            print("An error occured")
+        }
+        
+        let indexPath = NSIndexPath(forItem: 0, inSection: 0)
+        let act = frc.objectAtIndexPath(indexPath)  as! Activity
+      //  let sections = frc.sections
+        //let currentSection = sections![0]
+        XCTAssertEqual(activite1?.nomAct,act.nomAct, " les noms ne sont pas pareils")
+        // nettoyage de la base apres les test
+        Activity.deleteData(1003)
+    }
     
 }
