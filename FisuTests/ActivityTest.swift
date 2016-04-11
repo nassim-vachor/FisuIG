@@ -33,6 +33,7 @@ class ActivityTest: XCTestCase {
         }
     }
     
+    
     func testActivtyInsert()
     {
         let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
@@ -45,7 +46,7 @@ class ActivityTest: XCTestCase {
         
         
         ///- Si jamais on insere une activity qui a deja ete insere, il n y pas d erreur ni de nouvelle insertion: l'activity qui avait ete insere est juste retourne
-        XCTAssertEqual(activite1, activite2, "L activite1 et l activite2 correspondent au meme activity")
+        XCTAssertEqual(activite1, activite2, "L activite1 et l activite2 ne correspondent pas au meme activity")
         
     }
     
