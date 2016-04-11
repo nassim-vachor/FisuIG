@@ -91,13 +91,13 @@ class ActivityTest: XCTestCase {
     
     }
 // fonction permettant de tester la foction  getTimeDeb et getTimeFin, qui retourne la date de debut d'une activite sous forme de String
-  func testgetTimeDebFin()
+
+ func testgetTimeDebFin()
    {
     
     let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
     
     let day8 = Day.insertNewDay(moc, id: 8, day: "Day 8")
-    
     // initialisation d une activity ayant lieu le 8eme jour
     let activite1 = Activity.insertNewActivity(moc, id: 1003, nom: "Open Ceremony", desc: "Speech about FISU and all events", dateD: "04/08/2016, 12:00", dateF: "04/08/2016, 13:00", lieu: nil, speak: nil, photo: "ceremony", day: day8, selected: false)
     
@@ -113,28 +113,5 @@ class ActivityTest: XCTestCase {
     
     }
     
-    
-    // test de la fonction update de activity
-    func testUpdate()
-    {
-        
-        let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
-        let day8 = Day.insertNewDay(moc, id: 8, day: "Day 8")
-        
-        // initialisation d une activity ayant lieu le 8eme jour
-        let activite1 = Activity.insertNewActivity(moc, id: 1003, nom: "Open Ceremony", desc: "Speech about FISU and all events", dateD: "04/08/2016, 12:00", dateF: "04/08/2016, 13:00", lieu: nil, speak: nil, photo: "ceremony", day: day8, selected: false)
-        
-        // modification du champ selected de activite1
-        Activity.updateData(1, KeyPath: "selected" , id: 1003)
-        
-        XCTAssertEqual(activite1?.selected, 1)
-        // nettoyage de la base apres les test
-         Activity.deleteData(1003)
-        Day.deleteData(8)
-   
-        
-    }
-    
-
     
 }

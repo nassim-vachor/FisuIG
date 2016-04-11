@@ -61,7 +61,38 @@ class Restaurant: NSManagedObject {
     }
     
     
-    
+    /// fonction permettant supprimer une ligne de la table Restau
+    /// - parameter id : id de la colonne à supprimer
+    class  func deleteData (id: NSNumber) {
+        let context = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        let ActivityDescription = NSEntityDescription.entityForName( "Restaurant", inManagedObjectContext : context)
+        let request = NSFetchRequest()
+        request.entity = ActivityDescription
+        let pred = NSPredicate(format: "(idRes = %@)", id)
+        request.predicate = pred
+        do{
+            let result = try context.executeFetchRequest(request)
+            // on vérifie que l'activité n'existe pas déja dans la base
+            
+            if let entityToDelete = result.first{
+                context.deleteObject(entityToDelete as! NSManagedObject)
+                do{
+                    try context.save()   //newActivity.managedObjectContext?.save()
+                    print("data deleted")
+                } catch{
+                    print("there was an error saving data")
+                    
+                }
+                
+            }
+        }
+        catch {
+            let deleteError = error as NSError
+            print("\(deleteError), \(deleteError.userInfo)")
+            
+        }
+    }
+
     
     
     

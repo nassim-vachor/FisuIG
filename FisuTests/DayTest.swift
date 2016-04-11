@@ -34,9 +34,6 @@ class DayTest: XCTestCase {
     }
     
     // test de la fonction qui insere des nouveau day
-
-    
-
     func testDayInsert()
     {
         let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
@@ -51,7 +48,7 @@ class DayTest: XCTestCase {
         // nettoyage de la base apres les test
         Day.deleteData(8)
     }
-
+    
     
     /// test de la fonction qui renvoie toutes les activités d'un jour donné
     func testGetActivityFetchedResultController()

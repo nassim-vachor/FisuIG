@@ -32,6 +32,36 @@ class Location: NSManagedObject {
     }
     
     
+    class  func deleteData (id: NSNumber) {
+        let context = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        let ActivityDescription = NSEntityDescription.entityForName( "Location", inManagedObjectContext : context)
+        let request = NSFetchRequest()
+        request.entity = ActivityDescription
+        let pred = NSPredicate(format: "(idLoc = %@)", id)
+        request.predicate = pred
+        do{
+            let result = try context.executeFetchRequest(request)
+            // on vérifie que l'activité n'existe pas déja dans la base
+            
+            if let entityToDelete = result.first{
+                context.deleteObject(entityToDelete as! NSManagedObject)
+                do{
+                    try context.save()   //newActivity.managedObjectContext?.save()
+                    print("data deleted")
+                } catch{
+                    print("there was an error saving data")
+                    
+                }
+                
+            }
+        }
+        catch {
+            let deleteError = error as NSError
+            print("\(deleteError), \(deleteError.userInfo)")
+            
+        }
+    }
+    
     
     /// methode de classe pour l'insertion d'une nouvelle location
     /// elle prend en parametre tous les champs de la classe location

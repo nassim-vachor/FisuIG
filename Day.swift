@@ -60,6 +60,9 @@ class Day: NSManagedObject{
         return frc
     }
     
+    
+    /// fonction permettant supprimer une ligne de la table Day
+    /// - parameter id : id de la colonne à supprimer
     class  func deleteData (id: NSNumber) {
         let context = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         let ActivityDescription = NSEntityDescription.entityForName( "Day", inManagedObjectContext : context)
@@ -75,7 +78,7 @@ class Day: NSManagedObject{
                 context.deleteObject(entityToDelete as! NSManagedObject)
                 do{
                     try context.save()   //newActivity.managedObjectContext?.save()
-                    print("data updated")
+                    print("data deleted")
                 } catch{
                     print("there was an error saving data")
                     
