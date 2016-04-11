@@ -50,7 +50,7 @@ class RestaurantTest: XCTestCase {
         XCTAssertEqual(res1, res2, "res1 et res2 ne correspondent pas au meme restaurant")
         
         // nettoyage de la base apres les test
-     //   Restaurant.deleteData(1000)
+        Restaurant.deleteData(1000)
       
         
     }
@@ -67,7 +67,7 @@ class RestaurantTest: XCTestCase {
         XCTAssertEqual(res1!.getDay(),"Monday, July 4, 2016")
         
         // nettoyage de la base apres les test
-     //   Restaurant.deleteData(1000)
+        Restaurant.deleteData(1000)
 
         
     }
@@ -84,7 +84,7 @@ class RestaurantTest: XCTestCase {
         XCTAssertEqual(res1!.hourdeb ,Restaurant.convertStringToNSDate("04/07/2016, 11:00"), " ces deux NSDate ne sont pas egales")
         
         // nettoyage de la base apres les test
-   //     Restaurant.deleteData(1003)
+      Restaurant.deleteData(1000)
        
         
         
@@ -98,15 +98,14 @@ class RestaurantTest: XCTestCase {
         // initialisation d une Restaurant ayant lieu le 8eme jour
         let res1 =  Restaurant.insertNewRestaurant(moc, id: 1000, nom: "Domino's Pizza", spec:"Pizza", dateD :"04/07/2016, 11:00", dateF:"01/07/2016, 23:30", adresse: nil , tel: "06 67 79 29 20", photo: "Domino's")
         
-        // verification de l egalite entre "12:00 PM" (correspondant a dateD de res1) et la date de debut de res1
-        XCTAssertEqual(res1!.getTimeDeb(),"12:00 PM")
+        // verification de l egalite entre "11:00 PM" (correspondant a dateD de res1) et la date de debut de res1
+        XCTAssertEqual(res1!.getTimeDeb(),"11:00 AM")
         
-        /// verification de l egalite entre "1:00 PM" (correspondant a dateF de res1) et la date de fin de res1
-        XCTAssertEqual(res1!.getTimeFin(),"1:00 PM")
+        /// verification de l egalite entre "23:30 PM" (correspondant a dateF de res1) et la date de fin de res1
+        XCTAssertEqual(res1!.getTimeFin(),"11:30 PM")
         
         // nettoyage de la base apres les test
-     //   Restaurant.deleteData(1003)
-      
+       Restaurant.deleteData(1000)
         
     }
     
