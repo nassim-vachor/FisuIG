@@ -16,7 +16,8 @@ class DetailActivityViewController: UIViewController, NSFetchedResultsController
     var receved: Activity? = nil
 
     
-
+    @IBOutlet weak var register: UIBarButtonItem!
+    
    
     @IBOutlet weak var theSwitch: UISwitch!
  

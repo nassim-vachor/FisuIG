@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="IcoMoon-Free.ttf">
@@ -751,24 +752,18 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZBa-je-u7T">
                                                 <rect key="frame" x="8" y="0.0" width="584" height="259"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="-21" translatesAutoresizingMaskIntoConstraints="NO" id="Ci5-Co-xPN">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="Ci5-Co-xPN">
                                                         <rect key="frame" x="0.0" y="0.0" width="584" height="31"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXK-Jr-l2Z">
-                                                                <rect key="frame" x="0.0" y="0.0" width="556" height="31"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXK-Jr-l2Z">
+                                                                <rect key="frame" x="0.0" y="0.0" width="584" height="31"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 <color key="textColor" red="0.60392156860000001" green="0.17274130209999999" blue="0.12743489559999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="w5V-Pf-KFN">
-                                                                <rect key="frame" x="535" y="0.0" width="51" height="31"/>
-                                                                <connections>
-                                                                    <action selector="switchOnOff:" destination="IEM-CM-6Mb" eventType="valueChanged" id="blq-L0-aYL"/>
-                                                                </connections>
-                                                            </switch>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Pu4-JD-uoh">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Pu4-JD-uoh">
                                                         <rect key="frame" x="0.0" y="31" width="584" height="119"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6f0-eB-Nlq">
@@ -804,13 +799,13 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="-432" translatesAutoresizingMaskIntoConstraints="NO" id="OA3-iz-YFL">
                                                         <rect key="frame" x="0.0" y="150" width="584" height="29"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4g-G9-zlY">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4g-G9-zlY">
                                                                 <rect key="frame" x="0.0" y="0.0" width="508" height="29"/>
                                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4T0-iR-nLY">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4T0-iR-nLY">
                                                                 <rect key="frame" x="76" y="0.0" width="508" height="29"/>
                                                                 <fontDescription key="fontDescription" name="IcoMoon-Free" family="IcoMoon-Free" pointSize="17"/>
                                                                 <state key="normal" title="Button"/>
@@ -875,6 +870,22 @@
                             <constraint firstItem="rY8-4z-KhC" firstAttribute="leading" secondItem="N6y-ge-5GU" secondAttribute="leadingMargin" constant="-20" id="oZi-fM-OLy"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="0gI-R4-5FM">
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" id="XFe-WM-4Ek">
+                                <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="w5V-Pf-KFN">
+                                    <rect key="frame" x="531" y="6" width="51" height="31"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <connections>
+                                        <action selector="switchOnOff:" destination="IEM-CM-6Mb" eventType="valueChanged" id="blq-L0-aYL"/>
+                                    </connections>
+                                </switch>
+                            </barButtonItem>
+                            <barButtonItem enabled="NO" title="Register" id="NaJ-mB-uGX">
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="DescLabel" destination="9uN-8A-KwZ" id="3ye-yR-ZMh"/>
                         <outlet property="HeureActLabel" destination="Qg7-t1-d6i" id="PSh-QX-O9Q"/>
@@ -883,6 +894,7 @@
                         <outlet property="adresseLabel" destination="khw-En-bIc" id="0y3-RE-8qn"/>
                         <outlet property="horaireLabel" destination="INa-mu-4t1" id="qHm-lF-PL6"/>
                         <outlet property="imageAct" destination="6f0-eB-Nlq" id="DG3-nr-8jA"/>
+                        <outlet property="register" destination="NaJ-mB-uGX" id="gZc-O7-hyn"/>
                         <outlet property="speakButton" destination="4T0-iR-nLY" id="avO-uZ-WGW"/>
                         <outlet property="speakLabel" destination="j4g-G9-zlY" id="gWb-kS-Xo1"/>
                         <outlet property="theSwitch" destination="w5V-Pf-KFN" id="pqW-Jw-pbm"/>
