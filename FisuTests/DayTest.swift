@@ -34,7 +34,7 @@ class DayTest: XCTestCase {
     }
     
     // test de la fonction qui insere des nouveau day
-    func testDayInsert()
+ /*   func testDayInsert()
     {
         let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
         
@@ -44,20 +44,20 @@ class DayTest: XCTestCase {
          let day9 = Day.insertNewDay(moc, id: 8, day: "Day 8")
         
         ///- Si jamais on insere un day qui a deja ete insere, il n y pas d erreur ni de nouvelle insertion: le day qui avait ete insere est juste retourne
-        XCTAssertEqual(day8, day9, "Le day8 et le day9 correspondent au meme Day")
-         
+        XCTAssertEqual(day8, day9, "Le day8 et le day9  ne correspondent pas au meme Day")
+        // nettoyage de la base apres les test
+        Day.deleteData(8)
     }
-    
+    */
     
     /// test de la fonction qui renvoie toutes les activités d'un jour donné
     func testGetActivityFetchedResultController()
     {
-        
-        
         let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
-        let day8 = Day.insertNewDay(moc, id: 8, day: "Day 8")
+        let day8 = Day.insertNewDay(moc, id: 7, day: "Day 8")
         let act = Activity.insertNewActivity(moc, id: 100, nom: "test", desc: "testing", dateD: "04/08/2016, 12:00", dateF: "04/08/2016, 13:00", lieu: nil, speak:  nil , photo: "McDonald's" , day: day8, selected: false )
-        XCTAssertEqual(act?.dayIs?.day, "Day 8",  "L'insertion de act c'est bien passee")
+        XCTAssertEqual(act?.dayIs?.keyDay, 7,  "le day 8 ne correspond pas a cette activité")
+        
         ///- recuperation des activites correspondant a Day8
         let frc = Day.getActivityFetchedResultController("Activity", key: "idAct", predicat: "dayIs=%@", args: (day8)!)
         
@@ -71,7 +71,9 @@ class DayTest: XCTestCase {
         let currentSection = sections![0]
         
         XCTAssertEqual( currentSection.numberOfObjects, 1,   "il n ya pas d activite pour Day8")
-        
+        /// nettoyage de la BD
+        Day.deleteData(7)
+        Activity.deleteData(100)
     }
     
     // test de la fonction qui renvoie tous les jours existants dans la base
@@ -86,8 +88,8 @@ class DayTest: XCTestCase {
         }
         let sections = frc.sections
         let currentSection = sections![0]
-        // On avait 6 day à la base , comme on insere un autre dans la fonction precedente on se retrouve avec 7 day
-        XCTAssertEqual( currentSection.numberOfObjects, 7,   "le nombre de jour existant est faux")
+        // On a 6 dans notre base
+        XCTAssertEqual( currentSection.numberOfObjects, 6,   "le nombre de jour existant est faux")
         
     }
     
