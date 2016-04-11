@@ -42,7 +42,7 @@ class ActivityTest: XCTestCase {
         let day8 = Day.insertNewDay(moc, id: 8, day: "Day 8")
         let activite1 = Activity.insertNewActivity(moc, id: 100, nom: "Open Ceremony", desc: "Speech about FISU and all events", dateD: "04/07/2016, 09:00", dateF: "04/07/2016, 12:30", lieu: nil, speak: nil, photo: "ceremony", day: day8, selected: false)
         XCTAssertNotNil(activite1, "L'insertion de activite1 c'est mal passee")
-       let activite2 = Activity.insertNewActivity(moc, id: 100, nom: "Open Ceremony", desc: "Speech about FISU and all events", dateD: "04/07/2016, 09:00", dateF: "04/07/2016, 12:30", lieu: nil, speak: nil, photo: "ceremony", day: day8, selected: false)
+        let activite2 = Activity.insertNewActivity(moc, id: 100, nom: "Open Ceremony", desc: "Speech about FISU and all events", dateD: "04/07/2016, 09:00", dateF: "04/07/2016, 12:30", lieu: nil, speak: nil, photo: "ceremony", day: day8, selected: false)
         
         
         ///- Si jamais on insere une activity qui a deja ete insere, il n y pas d erreur ni de nouvelle insertion: l'activity qui avait ete insere est juste retourne
@@ -62,8 +62,8 @@ class ActivityTest: XCTestCase {
         let activite1 = Activity.insertNewActivity(moc, id: 1000, nom: "Open Ceremony", desc: "Speech about FISU and all events", dateD: "04/07/2016, 09:00", dateF: "04/07/2016, 12:30", lieu: nil, speak: nil, photo: "ceremony", day: day8, selected: false)
         
         ///- permet de recuperer le day correspondant a activite1
-    
-            XCTAssertEqual(activite1!.getDay(),"Monday, July 4, 2016")
+        
+        XCTAssertEqual(activite1!.getDay(),"Monday, July 4, 2016")
         
         // nettoyage de la base apres les test
         Activity.deleteData(1000)
@@ -71,53 +71,53 @@ class ActivityTest: XCTestCase {
         
     }
     
- // test de la fonction convertStringToNSDate : permettant de trasformer un string en NSDate
-   func testconvertStringToNSDate()
-   {
-    let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
-    
-    let day8 = Day.insertNewDay(moc, id: 8, day: "Day 8")
-    
-    // initialisation d une activity ayant lieu le 8eme jour
-    let activite1 = Activity.insertNewActivity(moc, id: 1003, nom: "Open Ceremony", desc: "Speech about FISU and all events", dateD: "04/08/2016, 12:00", dateF: "04/08/2016, 13:00", lieu: nil, speak: nil, photo: "ceremony", day: day8, selected: false)
-    
-    // activite1!.dateFin est un NSDate
-    XCTAssertEqual(activite1!.dateFin,Activity.convertStringToNSDate("04/08/2016, 13:00"), " ces deux NSDate ne sont pas egales")
-    
-    // nettoyage de la base apres les test
-    Activity.deleteData(1003)
-    Day.deleteData(8)
-
-    
+    // test de la fonction convertStringToNSDate : permettant de trasformer un string en NSDate
+    func testconvertStringToNSDate()
+    {
+        let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
+        
+        let day8 = Day.insertNewDay(moc, id: 8, day: "Day 8")
+        
+        // initialisation d une activity ayant lieu le 8eme jour
+        let activite1 = Activity.insertNewActivity(moc, id: 1003, nom: "Open Ceremony", desc: "Speech about FISU and all events", dateD: "04/08/2016, 12:00", dateF: "04/08/2016, 13:00", lieu: nil, speak: nil, photo: "ceremony", day: day8, selected: false)
+        
+        // activite1!.dateFin est un NSDate
+        XCTAssertEqual(activite1!.dateFin,Activity.convertStringToNSDate("04/08/2016, 13:00"), " ces deux NSDate ne sont pas egales")
+        
+        // nettoyage de la base apres les test
+        Activity.deleteData(1003)
+        Day.deleteData(8)
+        
+        
     }
-// fonction permettant de tester la foction  getTimeDeb et getTimeFin, qui retourne la date de debut d'une activite sous forme de String
-
- func testgetTimeDebFin()
-   {
+    // fonction permettant de tester la foction  getTimeDeb et getTimeFin, qui retourne la date de debut d'une activite sous forme de String
     
-    let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
-    
-    let day8 = Day.insertNewDay(moc, id: 8, day: "Day 8")
-    // initialisation d une activity ayant lieu le 8eme jour
-    let activite1 = Activity.insertNewActivity(moc, id: 1003, nom: "Open Ceremony", desc: "Speech about FISU and all events", dateD: "04/08/2016, 12:00", dateF: "04/08/2016, 13:00", lieu: nil, speak: nil, photo: "ceremony", day: day8, selected: false)
-    
-    // verification de l egalite entre "12:00 PM" (correspondant a dateD de activite1) et la date de debut de activite1
-      XCTAssertEqual(activite1!.getTimeDeb(),"12:00 PM")
-    
-     /// verification de l egalite entre "1:00 PM" (correspondant a dateF de activite1) et la date de fin de activite1
-     XCTAssertEqual(activite1!.getTimeFin(),"1:00 PM")
-    
-    // nettoyage de la base apres les test
-    Activity.deleteData(1003)
-    Day.deleteData(8)
-    
+    func testgetTimeDebFin()
+    {
+        
+        let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
+        
+        let day8 = Day.insertNewDay(moc, id: 8, day: "Day 8")
+        // initialisation d une activity ayant lieu le 8eme jour
+        let activite1 = Activity.insertNewActivity(moc, id: 1003, nom: "Open Ceremony", desc: "Speech about FISU and all events", dateD: "04/08/2016, 12:00", dateF: "04/08/2016, 13:00", lieu: nil, speak: nil, photo: "ceremony", day: day8, selected: false)
+        
+        // verification de l egalite entre "12:00 PM" (correspondant a dateD de activite1) et la date de debut de activite1
+        XCTAssertEqual(activite1!.getTimeDeb(),"12:00 PM")
+        
+        /// verification de l egalite entre "1:00 PM" (correspondant a dateF de activite1) et la date de fin de activite1
+        XCTAssertEqual(activite1!.getTimeFin(),"1:00 PM")
+        
+        // nettoyage de la base apres les test
+        Activity.deleteData(1003)
+        Day.deleteData(8)
+        
     }
     /// tester la fonction qui permet de recuperer le detail d'une act
     func testgetDetailActivity(){
         
         let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
         
-         let activite1 = Activity.insertNewActivity(moc, id: 1003, nom: "Open Ceremony", desc: "Speech about FISU and all events", dateD: "04/08/2016, 12:00", dateF: "04/08/2016, 13:00", lieu: nil, speak: nil, photo: "ceremony", day: nil, selected: false)
+        let activite1 = Activity.insertNewActivity(moc, id: 1003, nom: "Open Ceremony", desc: "Speech about FISU and all events", dateD: "04/08/2016, 12:00", dateF: "04/08/2016, 13:00", lieu: nil, speak: nil, photo: "ceremony", day: nil, selected: false)
         let frc = Activity.getDetailActivityFetchedResultController("Activity", key: "idAct", predicat: "idAct=%@", args: (activite1?.idAct)!)
         
         do {
@@ -129,7 +129,7 @@ class ActivityTest: XCTestCase {
         
         let indexPath = NSIndexPath(forItem: 0, inSection: 0)
         let act = frc.objectAtIndexPath(indexPath)  as! Activity
-      //  let sections = frc.sections
+        //  let sections = frc.sections
         //let currentSection = sections![0]
         XCTAssertEqual(activite1?.nomAct,act.nomAct, " les noms ne sont pas pareils")
         // nettoyage de la base apres les test
@@ -137,3 +137,4 @@ class ActivityTest: XCTestCase {
     }
     
 }
+

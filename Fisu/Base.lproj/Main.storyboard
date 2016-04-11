@@ -751,10 +751,10 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZBa-je-u7T">
                                                 <rect key="frame" x="8" y="0.0" width="584" height="259"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="-21" translatesAutoresizingMaskIntoConstraints="NO" id="Ci5-Co-xPN">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="-21" translatesAutoresizingMaskIntoConstraints="NO" id="Ci5-Co-xPN">
                                                         <rect key="frame" x="0.0" y="0.0" width="584" height="31"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXK-Jr-l2Z">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXK-Jr-l2Z">
                                                                 <rect key="frame" x="0.0" y="0.0" width="556" height="31"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 <color key="textColor" red="0.60392156860000001" green="0.17274130209999999" blue="0.12743489559999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -768,7 +768,7 @@
                                                             </switch>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Pu4-JD-uoh">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Pu4-JD-uoh">
                                                         <rect key="frame" x="0.0" y="31" width="584" height="119"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6f0-eB-Nlq">
@@ -851,7 +851,6 @@
                                         <constraints>
                                             <constraint firstItem="ZBa-je-u7T" firstAttribute="leading" secondItem="gKI-e5-tet" secondAttribute="leadingMargin" id="1co-sb-q2R"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="ZBa-je-u7T" secondAttribute="bottom" id="53D-vg-Gxl"/>
-                                            <constraint firstItem="ZBa-je-u7T" firstAttribute="top" secondItem="gKI-e5-tet" secondAttribute="topMargin" id="e18-w7-MmM"/>
                                             <constraint firstItem="ZBa-je-u7T" firstAttribute="top" secondItem="gKI-e5-tet" secondAttribute="top" id="lZ9-Hu-Jky"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="ZBa-je-u7T" secondAttribute="trailing" id="pyh-Pu-usg"/>
                                         </constraints>
