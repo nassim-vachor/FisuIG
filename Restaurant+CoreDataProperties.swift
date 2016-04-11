@@ -2,7 +2,7 @@
 //  Restaurant+CoreDataProperties.swift
 //  Fisu
 //
-//  Created by nassim on 19/03/2016.
+//  Created by nassim on 11/04/2016.
 //  Copyright © 2016 Nassim VACHOR. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -14,13 +14,14 @@ import CoreData
 
 extension Restaurant {
 
-    @NSManaged var hourdeb: NSDate?//
+    @NSManaged var hourdeb: NSDate?
     @NSManaged var hourFin: NSDate?
     @NSManaged var idRes: NSNumber?
     @NSManaged var nameRes: String?
     @NSManaged var phoneRes: String?
     @NSManaged var photoRes: NSData?
     @NSManaged var speciality: String?
+    @NSManaged var rating: NSData?
     @NSManaged var isLocated2: Location?
 
 }

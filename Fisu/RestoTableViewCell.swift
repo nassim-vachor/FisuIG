@@ -21,9 +21,12 @@ class RestoTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBOutlet weak var rating: UIImageView!
     @IBOutlet weak var restoLabel: UILabel!
     
     @IBOutlet weak var restoHorLabel: UILabel!
     
     @IBOutlet weak var restoImage: UIImageView!
+    
+    
 }

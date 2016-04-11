@@ -145,7 +145,7 @@ class Restaurant: NSManagedObject {
     /// methode de classe pour l'insertion d'un nouveau Resto
     /// elle prend en parametre tous les champs de la classe Resto
     /// - returns: le resto inseré si elle existe pas, sinon le resto  même si il existe déja
-    class func  insertNewRestaurant( context: NSManagedObjectContext ,id: NSNumber, nom: String, spec: String,  dateD: String, dateF: String,adresse: Location?, tel: String, photo: String?) -> Restaurant?{
+    class func  insertNewRestaurant( context: NSManagedObjectContext ,id: NSNumber, nom: String, spec: String,  dateD: String, dateF: String,adresse: Location?, tel: String, photo: String?, rating: String?) -> Restaurant?{
         let RestaurantDescription = NSEntityDescription.entityForName( "Restaurant", inManagedObjectContext : context)
         let request = NSFetchRequest()
         request.entity = RestaurantDescription
@@ -170,7 +170,8 @@ class Restaurant: NSManagedObject {
                 // Pour rajouter l'image on prends une image et le transforme en NSData
                 let newImage = UIImage ( named : photo!)
                 newRestaurant.photoRes = UIImageJPEGRepresentation(newImage!, 1.0)
-                
+                let newImage1 = UIImage ( named : rating!)
+                newRestaurant.rating = UIImageJPEGRepresentation(newImage1!, 1.0)
                 Resto = newRestaurant
                 do{
                     try context.save()   //newRestaurant.managedObjectContext?.save()

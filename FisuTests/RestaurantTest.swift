@@ -38,11 +38,11 @@ class RestaurantTest: XCTestCase {
     {
         let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
 
-     let res1 =  Restaurant.insertNewRestaurant(moc, id: 1000, nom: "Domino's Pizza", spec:"Pizza", dateD :"04/07/2016, 11:00", dateF:"01/07/2016, 23:30", adresse: nil , tel: "06 67 79 29 20", photo: "Domino's")
+     let res1 =  Restaurant.insertNewRestaurant(moc, id: 1000, nom: "Domino's Pizza", spec:"Pizza", dateD :"04/07/2016, 11:00", dateF:"01/07/2016, 23:30", adresse: nil , tel: "06 67 79 29 20", photo: "Domino's", rating: "star5")
         
           XCTAssertNotNil(res1, "L'insertion de res1 c'est mal bien passee")
         
-        let res2 =  Restaurant.insertNewRestaurant(moc, id: 1000, nom: "Domino's Pizza", spec:"Pizza", dateD :"04/07/2016, 11:00", dateF:"01/07/2016, 23:30", adresse: nil , tel: "06 67 79 29 20", photo: "Domino's")
+        let res2 =  Restaurant.insertNewRestaurant(moc, id: 1000, nom: "Domino's Pizza", spec:"Pizza", dateD :"04/07/2016, 11:00", dateF:"01/07/2016, 23:30", adresse: nil , tel: "06 67 79 29 20", photo: "Domino's", rating: "star5")
         
         
         // verification de l'egalite entre res1 et res2
@@ -60,7 +60,7 @@ class RestaurantTest: XCTestCase {
     {
         let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
         
-        let res1 =  Restaurant.insertNewRestaurant(moc, id: 1000, nom: "Domino's Pizza", spec:"Pizza", dateD :"04/07/2016, 11:00", dateF:"01/07/2016, 23:30", adresse: nil , tel: "06 67 79 29 20", photo: "Domino's")
+        let res1 =  Restaurant.insertNewRestaurant(moc, id: 1000, nom: "Domino's Pizza", spec:"Pizza", dateD :"04/07/2016, 11:00", dateF:"01/07/2016, 23:30", adresse: nil , tel: "06 67 79 29 20", photo: "Domino's", rating: "star5")
         
         ///- permet de recuperer le day correspondant a res1
         
@@ -78,7 +78,7 @@ class RestaurantTest: XCTestCase {
         let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
         
         // initialisation d une Restaurant ayant lieu le 8eme jour
-         let res1 =  Restaurant.insertNewRestaurant(moc, id: 1000, nom: "Domino's Pizza", spec:"Pizza", dateD :"04/07/2016, 11:00", dateF:"01/07/2016, 23:30", adresse: nil , tel: "06 67 79 29 20", photo: "Domino's")
+         let res1 =  Restaurant.insertNewRestaurant(moc, id: 1000, nom: "Domino's Pizza", spec:"Pizza", dateD :"04/07/2016, 11:00", dateF:"01/07/2016, 23:30", adresse: nil , tel: "06 67 79 29 20", photo: "Domino's", rating: "star5")
         
         // res1!.dateFin est un NSDate
         XCTAssertEqual(res1!.hourdeb ,Restaurant.convertStringToNSDate("04/07/2016, 11:00"), " ces deux NSDate ne sont pas egales")
@@ -96,7 +96,7 @@ class RestaurantTest: XCTestCase {
         let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
         
         // initialisation d une Restaurant ayant lieu le 8eme jour
-        let res1 =  Restaurant.insertNewRestaurant(moc, id: 1000, nom: "Domino's Pizza", spec:"Pizza", dateD :"04/07/2016, 11:00", dateF:"01/07/2016, 23:30", adresse: nil , tel: "06 67 79 29 20", photo: "Domino's")
+        let res1 =  Restaurant.insertNewRestaurant(moc, id: 1000, nom: "Domino's Pizza", spec:"Pizza", dateD :"04/07/2016, 11:00", dateF:"01/07/2016, 23:30", adresse: nil , tel: "06 67 79 29 20", photo: "Domino's", rating: "star5")
         
         // verification de l egalite entre "11:00 PM" (correspondant a dateD de res1) et la date de debut de res1
         XCTAssertEqual(res1!.getTimeDeb(),"11:00 AM")
@@ -131,7 +131,7 @@ class RestaurantTest: XCTestCase {
     func testgetDetailAcco() {
         let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
         
-        let res1 =  Restaurant.insertNewRestaurant(moc, id: 1000, nom: "Domino's Pizza", spec:"Pizza", dateD :"04/07/2016, 11:00", dateF:"01/07/2016, 23:30", adresse: nil , tel: "06 67 79 29 20", photo: "Domino's")
+        let res1 =  Restaurant.insertNewRestaurant(moc, id: 1000, nom: "Domino's Pizza", spec:"Pizza", dateD :"04/07/2016, 11:00", dateF:"01/07/2016, 23:30", adresse: nil , tel: "06 67 79 29 20", photo: "Domino's", rating: "star5")
         
         let frc = Restaurant.getDetailRestoFetchedResultController("Restaurant", key: "idRes", predicat: "idRes=%@", args: (res1?.idRes)!)
         

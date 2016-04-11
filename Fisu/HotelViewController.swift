@@ -72,6 +72,7 @@ class HotelViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         cell.hotelNomLabel.text = acco.name
         cell.hotelImage.image = UIImage( data: (acco.photoA)!, scale: 0.1)
+        cell.rating.image = UIImage( data: (acco.rating)!, scale: 1)
         cell.hotelHorLabel.text = (acco.getTimeDeb())+" - \(acco.getTimeFin())"
         return cell
     }

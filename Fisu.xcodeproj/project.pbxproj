@@ -154,27 +154,29 @@
 		170035CE1CBAE29700DFFF71 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
-				9130FC961C9AB66C0056A8C8 /* Accomodation.swift */,
-				9130FC921C9AB66C0056A8C8 /* Activity.swift */,
 				D49A15341CA6E4430066E478 /* Day.swift */,
 				9130FC981C9AB66C0056A8C8 /* Location.swift */,
-				9130FC941C9AB66C0056A8C8 /* Restaurant.swift */,
+				9130FC921C9AB66C0056A8C8 /* Activity.swift */,
 				9130FC9A1C9AB66C0056A8C8 /* Speaker.swift */,
+				9130FC961C9AB66C0056A8C8 /* Accomodation.swift */,
+				9130FC941C9AB66C0056A8C8 /* Restaurant.swift */,
 				D49A15331CA6E4430066E478 /* Day+CoreDataProperties.swift */,
+				9130FC931C9AB66C0056A8C8 /* Restaurant+CoreDataProperties.swift */,
 				9130FC951C9AB66C0056A8C8 /* Accomodation+CoreDataProperties.swift */,
 				9130FC911C9AB66C0056A8C8 /* Activity+CoreDataProperties.swift */,
 				9130FC971C9AB66C0056A8C8 /* Location+CoreDataProperties.swift */,
-				9130FC931C9AB66C0056A8C8 /* Restaurant+CoreDataProperties.swift */,
 				9130FC991C9AB66C0056A8C8 /* Speaker+CoreDataProperties.swift */,
 				D4EFE8E51CB4707C000CFB73 /* InitDB.swift */,
 			);
 			name = Persistence;
+			path = Fisu;
 			sourceTree = "<group>";
 		};
 		9130FC541C9AA1390056A8C8 = {
 			isa = PBXGroup;
 			children = (
 				9146FAA61CB2AF8D00AF37F0 /* fonts */,
+				170035CE1CBAE29700DFFF71 /* Persistence */,
 				9130FC5F1C9AA1390056A8C8 /* Fisu */,
 				9130FC771C9AA1390056A8C8 /* FisuTests */,
 				9130FC821C9AA1390056A8C8 /* FisuUITests */,
@@ -195,7 +197,6 @@
 		9130FC5F1C9AA1390056A8C8 /* Fisu */ = {
 			isa = PBXGroup;
 			children = (
-				170035CE1CBAE29700DFFF71 /* Persistence */,
 				9130FC601C9AA1390056A8C8 /* AppDelegate.swift */,
 				9130FC621C9AA1390056A8C8 /* ViewController.swift */,
 				D42C47F71CA4472B0009F6AE /* MapViewController.swift */,
@@ -214,7 +215,6 @@
 		9130FC771C9AA1390056A8C8 /* FisuTests */ = {
 			isa = PBXGroup;
 			children = (
-				9130FC781C9AA1390056A8C8 /* FisuTests.swift */,
 				170035DC1CBBEAD800DFFF71 /* AccomodationTest.swift */,
 				170035DA1CBBEACD00DFFF71 /* RestaurantTest.swift */,
 				170035D11CBAE6F200DFFF71 /* DayTest.swift */,

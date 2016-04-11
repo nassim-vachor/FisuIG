@@ -142,7 +142,7 @@ class Accomodation: NSManagedObject {
     /// methode de classe pour l'insertion d'une nouvelle accomodation
     /// elle prend en parametre tous les champs de la classe acco
     /// - returns: l'acco inseré si elle existe pas, sinon l'acco  même si elle existe déja
-    class func  insertNewAccomodation( context: NSManagedObjectContext ,id: NSNumber, nom: String, desc: String,  dateD: String, dateF: String,adresse: Location?, tel: String, photo: String?) -> Accomodation?{
+    class func  insertNewAccomodation( context: NSManagedObjectContext ,id: NSNumber, nom: String, desc: String,  dateD: String, dateF: String,adresse: Location?, tel: String, photo: String?, rating: String?) -> Accomodation?{
         let AccomodationDescription = NSEntityDescription.entityForName( "Accomodation", inManagedObjectContext : context)
         let request = NSFetchRequest()
         request.entity = AccomodationDescription
@@ -167,6 +167,8 @@ class Accomodation: NSManagedObject {
                 // Pour rajouter l'image on prends une image et le transforme en NSData
                 let newImage = UIImage ( named : photo!)
                 newAccomodation.photoA = UIImageJPEGRepresentation(newImage!, 1.0)
+                let newImage2 = UIImage ( named : rating!)
+                newAccomodation.rating = UIImageJPEGRepresentation(newImage2!, 1.0)
                 Acco = newAccomodation
                 do{
                     try context.save()   //newAccomodation.managedObjectContext?.save()

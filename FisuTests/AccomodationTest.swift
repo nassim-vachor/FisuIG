@@ -37,11 +37,11 @@ class AccomodationTest: XCTestCase {
     {
         let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
         
-        let hotel1 = Accomodation.insertNewAccomodation(moc, id: 1000, nom: "Novotel", desc: "Contemporary hotel with a terrace coffee ,a bar , an outdoor pool and a playground ", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse:nil, tel: "04 99 52 34 34", photo: "novotel" )
+        let hotel1 = Accomodation.insertNewAccomodation(moc, id: 1000, nom: "Novotel", desc: "Contemporary hotel with a terrace coffee ,a bar , an outdoor pool and a playground ", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse:nil, tel: "04 99 52 34 34", photo: "novotel", rating: "star5" )
         
         XCTAssertNotNil(hotel1, "L'insertion de hotel1 c'est mal bien passee")
         
-        let hotel2 =  Accomodation.insertNewAccomodation(moc, id: 1000, nom: "Domino's Pizza", desc:"Pizza", dateD :"04/07/2016, 11:00", dateF:"01/07/2016, 23:30", adresse: nil , tel: "06 67 79 29 20", photo: "Domino's")
+        let hotel2 =  Accomodation.insertNewAccomodation(moc, id: 1000, nom: "Domino's Pizza", desc:"Pizza", dateD :"04/07/2016, 11:00", dateF:"01/07/2016, 23:30", adresse: nil , tel: "06 67 79 29 20", photo: "Domino's", rating: "star5")
         
         
         // verification de l'egalite entre hotel1 et hotel2
@@ -59,7 +59,7 @@ class AccomodationTest: XCTestCase {
     {
         let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
         
-        let hotel1 = Accomodation.insertNewAccomodation(moc, id: 1000, nom: "Novotel", desc: "Contemporary hotel with a terrace coffee ,a bar , an outdoor pool and a playground ", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: nil, tel: "04 99 52 34 34", photo: "novotel" )
+        let hotel1 = Accomodation.insertNewAccomodation(moc, id: 1000, nom: "Novotel", desc: "Contemporary hotel with a terrace coffee ,a bar , an outdoor pool and a playground ", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: nil, tel: "04 99 52 34 34", photo: "novotel", rating: "star5" )
         
         ///- permet de recuperer le day correspondant a hotel1
         
@@ -77,7 +77,7 @@ class AccomodationTest: XCTestCase {
         let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
         
         // initialisation d une Accomodation
-        let hotel1 = Accomodation.insertNewAccomodation(moc, id: 1000, nom: "Novotel", desc: "Contemporary hotel with a terrace coffee ,a bar , an outdoor pool and a playground ", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse:nil, tel: "04 99 52 34 34", photo: "novotel" )
+        let hotel1 = Accomodation.insertNewAccomodation(moc, id: 1000, nom: "Novotel", desc: "Contemporary hotel with a terrace coffee ,a bar , an outdoor pool and a playground ", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse:nil, tel: "04 99 52 34 34", photo: "novotel", rating: "star5" )
         
         // hotel1!.ouverture est un NSDate
         XCTAssertEqual(hotel1!.ouverture ,Accomodation.convertStringToNSDate("01/07/2016, 05:00"), " ces deux NSDate ne sont pas egales")
@@ -95,7 +95,7 @@ class AccomodationTest: XCTestCase {
         let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
         
         // initialisation d une Accomodation ayant lieu le 8eme jour
-        let hotel1 = Accomodation.insertNewAccomodation(moc, id: 1001, nom: "Novotel", desc: "Contemporary hotel with a terrace coffee ,a bar , an outdoor pool and a playground ", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse:nil, tel: "04 99 52 34 34", photo: "novotel" )
+        let hotel1 = Accomodation.insertNewAccomodation(moc, id: 1001, nom: "Novotel", desc: "Contemporary hotel with a terrace coffee ,a bar , an outdoor pool and a playground ", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse:nil, tel: "04 99 52 34 34", photo: "novotel", rating: "star5" )
         
         // verification de l egalite entre "05:00 AM" (correspondant a dateD de hotel1) et la date de debut de hotel1
         XCTAssertEqual(hotel1!.getTimeDeb(),"5:00 AM")
@@ -129,7 +129,7 @@ class AccomodationTest: XCTestCase {
     func testgetDetailAcco() {
         let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
         
-        let acco = Accomodation.insertNewAccomodation(moc, id: 100, nom: "hotel", desc: "hotel", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 05:00", adresse: nil, tel: "0658590481", photo: "novotel" )
+        let acco = Accomodation.insertNewAccomodation(moc, id: 100, nom: "hotel", desc: "hotel", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 05:00", adresse: nil, tel: "0658590481", photo: "novotel", rating: "star5")
         let frc = Accomodation.getDetailAccoFetchedResultController("Accomodation", key: "idAcco", predicat: "idAcco=%@", args: (acco?.idAcco)!)
         
         do {

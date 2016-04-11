@@ -22,6 +22,7 @@ class HotelTableViewCell: UITableViewCell {
     }
 
 
+    @IBOutlet weak var rating: UIImageView!
     @IBOutlet weak var hotelNomLabel: UILabel!
     
     @IBOutlet weak var hotelHorLabel: UILabel!

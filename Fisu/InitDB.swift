@@ -133,7 +133,7 @@ class InitDB {
         Activity.insertNewActivity(moc, id: 10, nom: "Plenary session", desc: "Conference about leaderShip", dateD: "06/07/2016, 09:00", dateF: "06/07/2016, 10:00", lieu: Loc4, speak: Speak1, photo: "plenary", day: day3, selected: false)
         
         
-        Activity.insertNewActivity(moc, id: 11, nom: "Project Working Session", desc: "Learning to work in real situation explain by scientist", dateD: "06/07/2016, 11:30", dateF: "06/07/2016, 12:30", lieu: Loc3, speak: Speak3, photo: "project", day: day3, selected: false)
+        Activity.insertNewActivity(moc, id: 11, nom: "Project Working", desc: "Learning to work in real situation explain by scientist", dateD: "06/07/2016, 11:30", dateF: "06/07/2016, 12:30", lieu: Loc3, speak: Speak3, photo: "project", day: day3, selected: false)
         
         
         Activity.insertNewActivity(moc, id: 12, nom: "Rumba", desc: "Come on and discover rumba, a popular dance of Cuba", dateD :"06/07/2016, 16:30", dateF:"06/07/2016, 17:30", lieu: Loc6, speak: nil, photo: "rumba", day: day3, selected: false)
@@ -182,43 +182,43 @@ class InitDB {
         Activity.insertNewActivity(moc, id: 26, nom: "Party", desc: "Enjoy at this party celebrating the end of FISU", dateD :"09/07/2016, 19:30", dateF:"09/07/2016, 23:30", lieu: Loc5, speak: nil, photo: "party", day: day6, selected: false)
         
         //***********************************************Accomodation***************************************************
-        Accomodation.insertNewAccomodation(moc, id: 1, nom: "Novotel", desc: "Contemporary hotel with a terrace coffee ,a bar , an outdoor pool and a playground ", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco1, tel: "04 99 52 34 34", photo: "novotel" )
+        Accomodation.insertNewAccomodation(moc, id: 1, nom: "Novotel", desc: "Contemporary hotel with a terrace coffee ,a bar , an outdoor pool and a playground ", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco1, tel: "04 99 52 34 34", photo: "novotel", rating: "star5" )
         
-        Accomodation.insertNewAccomodation(moc, id: 2, nom: "Ibis", desc: "Ibis is located close to Comedie place,Come and relax you in this beautiful hotel.", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco2, tel: "04 67 64 06 64", photo: "ibis")
-        Accomodation.insertNewAccomodation(moc, id: 3, nom: "Kyriad", desc: "Kyriad is a discreet property with standard rooms, 2 pools, spa, restaurant and free shuttle to the airport", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco3, tel: "04 67 64 56 45", photo: "kyriad")
-        Accomodation.insertNewAccomodation(moc, id: 4, nom: "Grand Hôtel du Midi", desc: "Hotel with elegant furniture. It offers cozy and equipped rooms with a Nespresso machine", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco4, tel: "04 67 92 69 61", photo: "GrandHotelMidi")
+        Accomodation.insertNewAccomodation(moc, id: 2, nom: "Ibis", desc: "Ibis is located close to Comedie place,Come and relax you in this beautiful hotel.", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco2, tel: "04 67 64 06 64", photo: "ibis", rating: "star5")
+        Accomodation.insertNewAccomodation(moc, id: 3, nom: "Kyriad", desc: "Kyriad is a discreet property with standard rooms, 2 pools, spa, restaurant and free shuttle to the airport", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco3, tel: "04 67 64 56 45", photo: "kyriad", rating: "star4")
+        Accomodation.insertNewAccomodation(moc, id: 4, nom: "Grand Hôtel du Midi", desc: "Hotel with elegant furniture. It offers cozy and equipped rooms with a Nespresso machine", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco4, tel: "04 67 92 69 61", photo: "GrandHotelMidi",rating: "star2")
         
-        Accomodation.insertNewAccomodation(moc, id: 5, nom: "Royal Hôtel", desc: "Charming hotel offering cozy and classic rooms , simple decor and warm colors", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco5, tel: "04 67 92 13 36", photo: "RoyalHotel")
+        Accomodation.insertNewAccomodation(moc, id: 5, nom: "Royal Hôtel", desc: "Charming hotel offering cozy and classic rooms , simple decor and warm colors", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco5, tel: "04 67 92 13 36", photo: "RoyalHotel", rating: "star3")
         
-        Accomodation.insertNewAccomodation(moc, id: 6, nom: " Hôtel Majestic", desc: "The Hotel Majestic is located in the heart of Montpellier city centre, 5mn walk from train station and 1 mn walk from famous Place de la Comedie", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco6, tel: "04 67 66 26 85", photo:"majestic" )
+        Accomodation.insertNewAccomodation(moc, id: 6, nom: " Hôtel Majestic", desc: "The Hotel Majestic is located in the heart of Montpellier city centre, 5mn walk from train station and 1 mn walk from famous Place de la Comedie", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco6, tel: "04 67 66 26 85", photo:"majestic", rating: "star4" )
         
-        Accomodation.insertNewAccomodation(moc, id: 7, nom: "Auberge de jeunesse Montpellier", desc: "This hostel with a bar and pool offers dormitories and double rooms ; breakfast included", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco7, tel: "04 67 60 32 22", photo: "auberge" )
+        Accomodation.insertNewAccomodation(moc, id: 7, nom: "Auberge de jeunesse", desc: "This hostel with a bar and pool offers dormitories and double rooms ; breakfast included", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco7, tel: "04 67 60 32 22", photo: "auberge", rating: "star2" )
         
-        Accomodation.insertNewAccomodation(moc, id: 8, nom: " Hôtel de France", desc: "Hotel de France is a beautiful 18th century residence turned into a hotel in the 30's. It is close to the train and bus stations , Place de la Comédie and Corum.", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco8, tel: "04 67 92 29 29", photo: "HotelDeFrance")
+        Accomodation.insertNewAccomodation(moc, id: 8, nom: " Hôtel de France", desc: "Hotel de France is a beautiful 18th century residence turned into a hotel in the 30's. It is close to the train and bus stations , Place de la Comédie and Corum.", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco8, tel: "04 67 92 29 29", photo: "HotelDeFrance", rating: "star3")
         
-        Accomodation.insertNewAccomodation(moc, id: 9, nom: " Amerique Hotel", desc: "Establishment with lift offering colorful rooms with wifi, bar, pool and outdoor jacuzzi", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco9, tel: "04 67 68 04 39", photo: "AmeriqueHotel")
-        Accomodation.insertNewAccomodation(moc, id: 10, nom: "Hotel Prime", desc: "a hotel with outdoor pool offering simple but functional rooms", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco10, tel: "04 67 07 59 59", photo: "PrimeHotel")
+        Accomodation.insertNewAccomodation(moc, id: 9, nom: " Amerique Hotel", desc: "Establishment with lift offering colorful rooms with wifi, bar, pool and outdoor jacuzzi", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco9, tel: "04 67 68 04 39", photo: "AmeriqueHotel",rating: "star3")
+        Accomodation.insertNewAccomodation(moc, id: 10, nom: "Hotel Prime", desc: "a hotel with outdoor pool offering simple but functional rooms", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco10, tel: "04 67 07 59 59", photo: "PrimeHotel", rating: "star5")
         
         //***********************************************Restauration***************************************************
         
-        Restaurant.insertNewRestaurant(moc, id: 1, nom: "Domino's Pizza", spec:"Pizza", dateD :"04/07/2016, 11:00", dateF:"01/07/2016, 23:30", adresse: LocRes1, tel: "06 67 79 29 20", photo: "Domino's")
+        Restaurant.insertNewRestaurant(moc, id: 1, nom: "Domino's Pizza", spec:"Pizza", dateD :"04/07/2016, 11:00", dateF:"01/07/2016, 23:30", adresse: LocRes1, tel: "06 67 79 29 20", photo: "Domino's", rating: "star3")
         
-        Restaurant.insertNewRestaurant(moc, id: 2, nom: "Pizza Marsala", spec:"Pizza", dateD :"04/07/2016, 11:30", dateF:"01/07/2016, 23:00", adresse: LocRes2, tel: "09 52 54 54 22", photo:"PizzaMarsala" )
+        Restaurant.insertNewRestaurant(moc, id: 2, nom: "Pizza Marsala", spec:"Pizza", dateD :"04/07/2016, 11:30", dateF:"01/07/2016, 23:00", adresse: LocRes2, tel: "09 52 54 54 22", photo:"PizzaMarsala", rating: "star3" )
         
-        Restaurant.insertNewRestaurant(moc, id: 3, nom: "Subway", spec:"Fast Food specialized in sandwichs and salads", dateD :"01/07/2016, 09:00", dateF:"04/07/2016, 23:00", adresse: LocRes3, tel: "04 99 06 89 64", photo: "Subway")
-        Restaurant.insertNewRestaurant(moc, id: 4, nom: "Mcdonald's", spec:"Fast food specialized in sandwichs and ice creams", dateD :"01/07/2016, 10:00", dateF:"04/07/2016, 00:00", adresse: LocRes4, tel: "04 67 52 77 00", photo: "McDonald's")
+        Restaurant.insertNewRestaurant(moc, id: 3, nom: "Subway", spec:"Fast Food specialized in sandwichs and salads", dateD :"01/07/2016, 09:00", dateF:"04/07/2016, 23:00", adresse: LocRes3, tel: "04 99 06 89 64", photo: "Subway", rating: "star3")
+        Restaurant.insertNewRestaurant(moc, id: 4, nom: "Mcdonald's", spec:"Fast food specialized in sandwichs and ice creams", dateD :"01/07/2016, 10:00", dateF:"04/07/2016, 00:00", adresse: LocRes4, tel: "04 67 52 77 00", photo: "McDonald's", rating: "star3")
         
-        Restaurant.insertNewRestaurant(moc, id: 5, nom: "La Rose des Sables", spec:"Kebab", dateD :"01/07/2016, 12:00", dateF:"04/07/2016, 01:00", adresse: LocRes5, tel: "04 99 63 93 15", photo: "RoseSable")
-        Restaurant.insertNewRestaurant(moc, id: 6, nom: "L'Entrecôte", spec:"Restaurant specialized in sirloin and fries", dateD :"01/07/2016, 13:00", dateF:"04/07/2016, 22:45", adresse: LocRes6, tel: "04 67 58 42 56", photo: "LEntrecote")
+        Restaurant.insertNewRestaurant(moc, id: 5, nom: "La Rose des Sables", spec:"Kebab", dateD :"01/07/2016, 12:00", dateF:"04/07/2016, 01:00", adresse: LocRes5, tel: "04 99 63 93 15", photo: "RoseSable", rating: "star4")
+        Restaurant.insertNewRestaurant(moc, id: 6, nom: "L'Entrecôte", spec:"Restaurant specialized in sirloin and fries", dateD :"01/07/2016, 13:00", dateF:"04/07/2016, 22:45", adresse: LocRes6, tel: "04 67 58 42 56", photo: "LEntrecote", rating: "star5")
         
-        Restaurant.insertNewRestaurant(moc, id: 7, nom: "Tripti Kulai", spec:"vegetarian dishes and homemade desserts ", dateD :"04/07/2016, 13:00", dateF:"04/07/2016, 22:45", adresse: LocRes7 , tel: "04 67 66 30 51", photo: "TriptiKulai")
-        Restaurant.insertNewRestaurant(moc, id: 8, nom: "Le Bourgeon", spec:"Vegetarian and cooked meal", dateD :"01/07/2016, 16:15", dateF:"04/07/2016, 22:30", adresse: LocRes8 , tel: "04 67 60 51 86", photo: "Bourgeon")
+        Restaurant.insertNewRestaurant(moc, id: 7, nom: "Tripti Kulai", spec:"vegetarian dishes and homemade desserts ", dateD :"04/07/2016, 13:00", dateF:"04/07/2016, 22:45", adresse: LocRes7 , tel: "04 67 66 30 51", photo: "TriptiKulai", rating: "star4")
+        Restaurant.insertNewRestaurant(moc, id: 8, nom: "Le Bourgeon", spec:"Vegetarian and cooked meal", dateD :"01/07/2016, 16:15", dateF:"04/07/2016, 22:30", adresse: LocRes8 , tel: "04 67 60 51 86", photo: "Bourgeon", rating: "star4")
         
-        Restaurant.insertNewRestaurant(moc, id: 9, nom: "French Connection", spec:"French, american cooking, vegetarian and coffee", dateD :"01/07/2016, 18:15", dateF:"04/07/2016, 22:30", adresse: LocRes9, tel: "06 76 60 76 38", photo: "FrenchConnection")
+        Restaurant.insertNewRestaurant(moc, id: 9, nom: "French Connection", spec:"French, american cooking, vegetarian and coffee", dateD :"01/07/2016, 18:15", dateF:"04/07/2016, 22:30", adresse: LocRes9, tel: "06 76 60 76 38", photo: "FrenchConnection", rating: "star5")
         
-        Restaurant.insertNewRestaurant(moc, id: 10, nom: "Restaurant Boutonnet", spec:"Kebbab", dateD :"01/07/2016, 11:30", dateF:"04/07/2016, 14:00", adresse: LocRes10 , tel: "04 67 63 52 06", photo: "RestoU")
+        Restaurant.insertNewRestaurant(moc, id: 10, nom: "Restaurant Boutonnet", spec:"Kebbab", dateD :"01/07/2016, 11:30", dateF:"04/07/2016, 14:00", adresse: LocRes10 , tel: "04 67 63 52 06", photo: "RestoU", rating: "star3")
         
-        Restaurant.insertNewRestaurant(moc, id: 11, nom: "Georges Café", spec:"Coffee", dateD :"04/07/2016, 15:00", dateF:"04/07/2016, 19:00", adresse: LocRes11 , tel: "04 67 66 01 63", photo: "GeorgesCafe")
+        Restaurant.insertNewRestaurant(moc, id: 11, nom: "Georges Café", spec:"Coffee", dateD :"04/07/2016, 15:00", dateF:"04/07/2016, 19:00", adresse: LocRes11 , tel: "04 67 66 01 63", photo: "GeorgesCafe", rating: "star2")
         
         
     }

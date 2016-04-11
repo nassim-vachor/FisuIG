@@ -67,6 +67,7 @@ class RestoViewController: UIViewController , UITableViewDelegate, UITableViewDa
            let res = frc.objectAtIndexPath(indexPath) as! Restaurant
         cell.restoLabel.text = res.nameRes
         cell.restoImage.image = UIImage( data: (res.photoRes)!, scale: 0.1)
+        cell.rating.image =  UIImage( data: (res.rating)!, scale: 1)
         cell.restoHorLabel.text = (res.getTimeDeb())+" - \(res.getTimeFin())"
        
         return cell

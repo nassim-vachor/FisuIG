@@ -92,7 +92,7 @@
             </objects>
             <point key="canvasLocation" x="2852" y="317"/>
         </scene>
-        <!--Resto View Controller-->
+        <!--Restaurants-->
         <scene sceneID="fz7-EV-WFE">
             <objects>
                 <viewController id="fxs-F8-yIY" customClass="RestoViewController" customModule="Fisu" customModuleProvider="target" sceneMemberID="viewController">
@@ -115,24 +115,28 @@
                                             <rect key="frame" x="0.0" y="0.0" width="580" height="109"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8f-fN-DfK">
-                                                    <rect key="frame" x="118" y="24" width="455" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9fA-l3-dNW">
+                                                    <rect key="frame" x="0.0" y="5" width="110" height="99"/>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8i-eW-5q4">
-                                                    <rect key="frame" x="118" y="62" width="455" height="21"/>
+                                                    <rect key="frame" x="118" y="37" width="455" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9fA-l3-dNW">
-                                                    <rect key="frame" x="0.0" y="5" width="110" height="99"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8us-ud-cYR">
+                                                    <rect key="frame" x="118" y="60" width="111" height="41"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8f-fN-DfK">
+                                                    <rect key="frame" x="118" y="8" width="455" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="rating" destination="8us-ud-cYR" id="lg3-OD-0MR"/>
                                             <outlet property="restoHorLabel" destination="c8i-eW-5q4" id="4zF-CI-6p6"/>
                                             <outlet property="restoImage" destination="9fA-l3-dNW" id="W4s-GD-Zak"/>
                                             <outlet property="restoLabel" destination="W8f-fN-DfK" id="nQc-f2-FGK"/>
@@ -150,7 +154,7 @@
                             <constraint firstItem="IjG-9v-Wmz" firstAttribute="leading" secondItem="QEX-Yf-tDB" secondAttribute="leadingMargin" id="zDQ-RY-66E"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Ilj-MY-CbQ">
+                    <navigationItem key="navigationItem" title="Restaurants" id="Ilj-MY-CbQ">
                         <barButtonItem key="leftBarButtonItem" image="Home1" id="ROb-gf-mtj">
                             <connections>
                                 <action selector="home:" destination="fxs-F8-yIY" id="KxP-r9-Lly"/>
@@ -270,7 +274,7 @@
             </objects>
             <point key="canvasLocation" x="5773" y="1988"/>
         </scene>
-        <!--Map View Controller-->
+        <!--Map-->
         <scene sceneID="4ku-Jd-W3l">
             <objects>
                 <viewController id="a58-Nr-uLb" customClass="MapViewController" customModule="Fisu" customModuleProvider="target" sceneMemberID="viewController">
@@ -294,7 +298,7 @@
                             <constraint firstItem="1xF-uI-7ik" firstAttribute="top" secondItem="25V-20-aQ2" secondAttribute="topMargin" id="sKk-ja-qpl"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="OzN-GC-JbL">
+                    <navigationItem key="navigationItem" title="Map" id="OzN-GC-JbL">
                         <barButtonItem key="leftBarButtonItem" image="Home1" id="6eW-N4-bcw">
                             <connections>
                                 <action selector="home:" destination="a58-Nr-uLb" id="Ll3-hb-liI"/>
@@ -309,7 +313,7 @@
             </objects>
             <point key="canvasLocation" x="5226" y="-1074"/>
         </scene>
-        <!--My Event View Controller-->
+        <!--My Events-->
         <scene sceneID="PbA-3j-7Fw">
             <objects>
                 <viewController id="aW8-4I-WHh" customClass="MyEventViewController" customModule="Fisu" customModuleProvider="target" sceneMemberID="viewController">
@@ -374,7 +378,7 @@
                             <constraint firstItem="KHv-xJ-nsS" firstAttribute="top" secondItem="VPn-kd-KRq" secondAttribute="topMargin" id="zX0-aQ-Aoh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="YCr-mu-RuI">
+                    <navigationItem key="navigationItem" title="My Events" id="YCr-mu-RuI">
                         <barButtonItem key="leftBarButtonItem" image="Home1" id="KGx-rh-1uM">
                             <connections>
                                 <action selector="home:" destination="aW8-4I-WHh" id="1aX-tl-w3k"/>
@@ -389,7 +393,7 @@
             </objects>
             <point key="canvasLocation" x="6393" y="-385"/>
         </scene>
-        <!--Hotel View Controller-->
+        <!--Hotels-->
         <scene sceneID="nBG-AS-Xaf">
             <objects>
                 <viewController id="iEw-wR-Ker" customClass="HotelViewController" customModule="Fisu" customModuleProvider="target" sceneMemberID="viewController">
@@ -415,15 +419,18 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PFs-7X-iZb">
                                                     <rect key="frame" x="8" y="8" width="110" height="90"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lat-Rt-Et4">
-                                                    <rect key="frame" x="126" y="60" width="165" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6E-5y-gph">
+                                                    <rect key="frame" x="126" y="8" width="165" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6E-5y-gph">
-                                                    <rect key="frame" x="126" y="19" width="165" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4vc-dp-9sR">
+                                                    <rect key="frame" x="126" y="51" width="111" height="41"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lat-Rt-Et4">
+                                                    <rect key="frame" x="126" y="31" width="165" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -433,6 +440,7 @@
                                             <outlet property="hotelHorLabel" destination="lat-Rt-Et4" id="PVf-k8-Hl2"/>
                                             <outlet property="hotelImage" destination="PFs-7X-iZb" id="ye1-Cp-neZ"/>
                                             <outlet property="hotelNomLabel" destination="d6E-5y-gph" id="wTK-8i-g5C"/>
+                                            <outlet property="rating" destination="4vc-dp-9sR" id="AT1-y0-ERe"/>
                                             <segue destination="JhS-uL-pyb" kind="show" identifier="hotelSegue" id="sVn-3i-Gsk"/>
                                         </connections>
                                     </tableViewCell>
@@ -447,7 +455,7 @@
                             <constraint firstItem="RhF-dm-RIB" firstAttribute="top" secondItem="lvD-jH-kXz" secondAttribute="topMargin" constant="6" id="nhI-Kq-rOw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="pex-el-9XL">
+                    <navigationItem key="navigationItem" title="Hotels" id="pex-el-9XL">
                         <barButtonItem key="leftBarButtonItem" image="Home1" id="GO3-vO-Ut4">
                             <connections>
                                 <action selector="home:" destination="iEw-wR-Ker" id="VsY-OI-jzd"/>
@@ -493,7 +501,6 @@
                                     <constraint firstAttribute="height" constant="25" id="CaQ-US-OYJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wM7-Zt-EgX">
@@ -502,12 +509,6 @@
                                     <constraint firstAttribute="height" constant="41" id="crm-NG-zNn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Chi-ga-Xho">
-                                <rect key="frame" x="165" y="111" width="435" height="34"/>
-                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2F-hA-uge">
@@ -529,6 +530,11 @@
                                     <constraint firstAttribute="height" constant="61" id="17t-2X-M2R"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Chi-ga-Xho">
+                                <rect key="frame" x="165" y="111" width="435" height="34"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="13"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -574,7 +580,7 @@
             </objects>
             <point key="canvasLocation" x="7083" y="338"/>
         </scene>
-        <!--Event View Controller-->
+        <!--Schedule-->
         <scene sceneID="oci-Lv-lr8">
             <objects>
                 <viewController id="eVv-wc-Fi5" customClass="EventViewController" customModule="Fisu" customModuleProvider="target" sceneMemberID="viewController">
@@ -649,7 +655,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="G7q-yU-HoJ" secondAttribute="trailing" constant="-20" id="Qqw-AN-m2d"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="k3V-NT-4X8">
+                    <navigationItem key="navigationItem" title="Schedule" id="k3V-NT-4X8">
                         <barButtonItem key="leftBarButtonItem" image="Home1" id="sWQ-HV-bol">
                             <connections>
                                 <action selector="home:" destination="eVv-wc-Fi5" id="uXw-mQ-bzr"/>

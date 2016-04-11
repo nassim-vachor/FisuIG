@@ -8,6 +8,7 @@
         <attribute name="ouverture" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="phoneAcco" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photoA" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="rating" optional="YES" attributeType="Binary" syncable="YES"/>
         <relationship name="isLocated" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="correspond" inverseEntity="Location" syncable="YES"/>
     </entity>
     <entity name="Activity" representedClassName="Activity" syncable="YES">
@@ -44,6 +45,7 @@
         <attribute name="nameRes" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phoneRes" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photoRes" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="rating" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="speciality" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="isLocated2" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="correspond2" inverseEntity="Location" syncable="YES"/>
     </entity>
@@ -57,11 +59,11 @@
         <relationship name="participate" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="isPresented" inverseEntity="Activity" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Accomodation" positionX="288" positionY="333" width="128" height="165"/>
+        <element name="Accomodation" positionX="288" positionY="333" width="128" height="180"/>
         <element name="Activity" positionX="196" positionY="98" width="128" height="193"/>
         <element name="Day" positionX="-63" positionY="378" width="128" height="88"/>
         <element name="Location" positionX="-108" positionY="468" width="128" height="165"/>
-        <element name="Restaurant" positionX="297" positionY="594" width="128" height="165"/>
+        <element name="Restaurant" positionX="297" positionY="594" width="128" height="180"/>
         <element name="Speaker" positionX="-135" positionY="-16" width="128" height="150"/>
     </elements>
 </model>

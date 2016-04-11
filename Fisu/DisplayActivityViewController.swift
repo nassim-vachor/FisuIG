@@ -16,7 +16,7 @@ class DisplayActivityViewController: UIViewController, UITableViewDelegate, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationItem.title = receved?.day
         // get all activity for day = receved ( the day selected in the previous view)
         frc = Day.getActivityFetchedResultController("Activity", key: "idAct", predicat: "dayIs=%@", args: receved!)
         frc.delegate = self
