@@ -49,7 +49,7 @@ class DayTest: XCTestCase {
     }
     
     
-    // test de la fonction qui renvoie toutes les activités d'un jour donné
+    /// test de la fonction qui renvoie toutes les activités d'un jour donné
     func testGetActivityFetchedResultController()
     {
         
