@@ -80,7 +80,7 @@ class ActivityTest: XCTestCase {
     // verification de l egalite entre "12:00 PM" (correspondant a dateD de activite1) et la date de debut de activite1
       XCTAssertEqual(activite1!.getTimeDeb(),"12:00 PM")
     
-     // verification de l egalite entre "1:00 PM" (correspondant a dateF de activite1) et la date de fin de activite1
+     /// verification de l egalite entre "1:00 PM" (correspondant a dateF de activite1) et la date de fin de activite1
      XCTAssertEqual(activite1!.getTimeFin(),"1:00 PM")
     
     }
