@@ -21,7 +21,6 @@
 		9130FC691C9AA1390056A8C8 /* Fisu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9130FC671C9AA1390056A8C8 /* Fisu.xcdatamodeld */; };
 		9130FC6B1C9AA1390056A8C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9130FC6A1C9AA1390056A8C8 /* Assets.xcassets */; };
 		9130FC6E1C9AA1390056A8C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9130FC6C1C9AA1390056A8C8 /* LaunchScreen.storyboard */; };
-		9130FC791C9AA1390056A8C8 /* FisuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9130FC781C9AA1390056A8C8 /* FisuTests.swift */; };
 		9130FC841C9AA1390056A8C8 /* FisuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9130FC831C9AA1390056A8C8 /* FisuUITests.swift */; };
 		9130FC9B1C9AB66C0056A8C8 /* Activity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9130FC911C9AB66C0056A8C8 /* Activity+CoreDataProperties.swift */; };
 		9130FC9D1C9AB66C0056A8C8 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9130FC921C9AB66C0056A8C8 /* Activity.swift */; };
@@ -91,7 +90,6 @@
 		9130FC6D1C9AA1390056A8C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9130FC6F1C9AA1390056A8C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9130FC741C9AA1390056A8C8 /* FisuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FisuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9130FC781C9AA1390056A8C8 /* FisuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FisuTests.swift; sourceTree = "<group>"; };
 		9130FC7A1C9AA1390056A8C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9130FC7F1C9AA1390056A8C8 /* FisuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FisuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9130FC831C9AA1390056A8C8 /* FisuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FisuUITests.swift; sourceTree = "<group>"; };
@@ -218,7 +216,6 @@
 			children = (
 				170035DC1CBBEAD800DFFF71 /* AccomodationTest.swift */,
 				170035DA1CBBEACD00DFFF71 /* RestaurantTest.swift */,
-				9130FC781C9AA1390056A8C8 /* FisuTests.swift */,
 				170035D11CBAE6F200DFFF71 /* DayTest.swift */,
 				170035D31CBB11E300DFFF71 /* ActivityTest.swift */,
 				D4C485C11CBBDDFB00D5B043 /* LocationTest.swift */,
@@ -460,7 +457,6 @@
 				170035DD1CBBEAD800DFFF71 /* AccomodationTest.swift in Sources */,
 				D4C485C01CBAFFE700D5B043 /* DayTest.swift in Sources */,
 				D4C485C41CBBEC8800D5B043 /* SpeakerTest.swift in Sources */,
-				9130FC791C9AA1390056A8C8 /* FisuTests.swift in Sources */,
 				D4C485C21CBBDDFB00D5B043 /* LocationTest.swift in Sources */,
 				170035DB1CBBEACD00DFFF71 /* RestaurantTest.swift in Sources */,
 				170035D41CBB11E300DFFF71 /* ActivityTest.swift in Sources */,
