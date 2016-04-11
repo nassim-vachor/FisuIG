@@ -106,11 +106,11 @@ class InitDB {
         
         Activity.insertNewActivity(moc, id: 2, nom: "UNESCO session", desc: "UNESCO will speak about the importance of world heritage", dateD: "04/07/2016, 13:45", dateF: "04/07/2016, 14:30", lieu: Loc2, speak: Speak2, photo: "unesco", day: day1, selected: false)
         
-        Activity.insertNewActivity(moc, id: 3, nom: "Football", desc: "A collective sport that oppose 2 teams of 11 players, each defends goals at opposite ends of a field h", dateD: "04/07/2016, 14:00", dateF: "04/07/2016, 17:00", lieu: Loc12, speak: nil, photo: "foot", day: day1, selected: false)
+        Activity.insertNewActivity(moc, id: 3, nom: "Football", desc: "Football tournement between Fisu participants", dateD: "04/07/2016, 14:00", dateF: "04/07/2016, 17:00", lieu: Loc12, speak: nil, photo: "foot", day: day1, selected: false)
         
-        Activity.insertNewActivity(moc, id: 4, nom: "Salsa session", desc: "Popular music of Latin American origin that has absorbed characteristics of rhythm and blues, jazz, and rock", dateD: "04/07/2016, 14:00", dateF: "04/07/2016, 17:00", lieu: Loc6, speak: nil , photo: "salsa", day: day1, selected: false)
+        Activity.insertNewActivity(moc, id: 4, nom: "Salsa session", desc: "Come on and dance on Latin American music", dateD: "04/07/2016, 14:00", dateF: "04/07/2016, 17:00", lieu: Loc6, speak: nil , photo: "salsa", day: day1, selected: false)
         
-        Activity.insertNewActivity(moc, id: 5, nom: "Project working group", desc: "Learning to work in real situation explain by scientist", dateD :"04/07/2016, 15:30", dateF:"04/07/2016, 16:30", lieu: Loc3, speak: Speak4, photo: "team", day: day1, selected: false)
+        Activity.insertNewActivity(moc, id: 5, nom: "Project working", desc: "Learning to work in real situation explain by scientist", dateD :"04/07/2016, 15:30", dateF:"04/07/2016, 16:30", lieu: Loc3, speak: Speak4, photo: "team", day: day1, selected: false)
         
         Activity.insertNewActivity(moc, id: 6, nom: "Boules/Pétanque", desc: "Playing and take a rest", dateD :"04/07/2016, 17:00", dateF:"04/07/2016, 19:00", lieu: Loc12, speak: nil, photo: "boule", day: day1, selected: false)
         
@@ -125,7 +125,7 @@ class InitDB {
         
         
         
-        Activity.insertNewActivity(moc, id: 9, nom: "Visit of Montpellier", desc: "Come on and discover Montpellier, a wonderful city with its beautiful places", dateD :"05/07/2016, 16:30", dateF:"05/07/2016, 18:30", lieu: Loc8, speak: nil, photo: "montpell", day: day2, selected: false)
+        Activity.insertNewActivity(moc, id: 9, nom: "Visit of Montpellier", desc: "Discover Montpellier, a wonderful city with its beautiful places", dateD :"05/07/2016, 16:30", dateF:"05/07/2016, 18:30", lieu: Loc8, speak: nil, photo: "montpell", day: day2, selected: false)
         
         //********************************************Day2finish******************************************************
         //*********************************************Day3***********************************************************
@@ -136,7 +136,7 @@ class InitDB {
         Activity.insertNewActivity(moc, id: 11, nom: "Project Working Session", desc: "Learning to work in real situation explain by scientist", dateD: "06/07/2016, 11:30", dateF: "06/07/2016, 12:30", lieu: Loc3, speak: Speak3, photo: "project", day: day3, selected: false)
         
         
-        Activity.insertNewActivity(moc, id: 12, nom: "Rumba", desc: "A dance of Cuban origin, combining complex footwork with a pronounced movement of the hips.", dateD :"06/07/2016, 16:30", dateF:"06/07/2016, 17:30", lieu: Loc6, speak: nil, photo: "rumba", day: day3, selected: false)
+        Activity.insertNewActivity(moc, id: 12, nom: "Rumba", desc: "Come on and discover rumba, a popular dance of Cuba", dateD :"06/07/2016, 16:30", dateF:"06/07/2016, 17:30", lieu: Loc6, speak: nil, photo: "rumba", day: day3, selected: false)
         
         
         //********************************************Day3finish******************************************************
@@ -144,42 +144,42 @@ class InitDB {
         
         
         
-        Activity.insertNewActivity(moc, id:13, nom: "HandBall", desc:"A team game similar to football in which the ball is hit with the hands rather than kicked.", dateD: "07/07/2016, 08:00", dateF: "07/07/2016, 10:30", lieu: Loc12, speak: nil, photo: "hand", day: day4, selected: false)
+        Activity.insertNewActivity(moc, id:13, nom: "HandBall", desc:"Handball tournement between Fisu participants", dateD: "07/07/2016, 08:00", dateF: "07/07/2016, 10:30", lieu: Loc12, speak: nil, photo: "hand", day: day4, selected: false)
         
-        Activity.insertNewActivity(moc, id: 14, nom: "Volley", desc: "A team sport in which two teams of six players are separated by a net", dateD: "07/07/2016, 10:30", dateF: "07/07/2016, 13:00", lieu: Loc12, speak:nil, photo: "volley", day: day4, selected: false)
+        Activity.insertNewActivity(moc, id: 14, nom: "Volley", desc: "Volley tournement between Fisu participants", dateD: "07/07/2016, 10:30", dateF: "07/07/2016, 13:00", lieu: Loc12, speak:nil, photo: "volley", day: day4, selected: false)
         
         
-        Activity.insertNewActivity(moc, id: 15, nom:  "Theather", desc: "You love theather, come on and enjoy yourself watching comedy and tragedy", dateD :"07/07/2016, 13:45", dateF:"07/07/2016, 14:45", lieu: Loc8, speak: nil, photo: "theatre", day: day4, selected: false)
-        Activity.insertNewActivity(moc, id: 16, nom: "Shopping", desc: "Doing shopping in your free time",dateD :"07/07/2016, 19:00", dateF:"07/07/2016, 19:45", lieu: Loc8, speak: nil, photo: "shopping", day: day4, selected: false)
+        Activity.insertNewActivity(moc, id: 15, nom:  "Theather", desc: "You love theather, enjoy yourself watching comedy and tragedy", dateD :"07/07/2016, 13:45", dateF:"07/07/2016, 14:45", lieu: Loc8, speak: nil, photo: "theatre", day: day4, selected: false)
+        Activity.insertNewActivity(moc, id: 16, nom: "Shopping", desc: "Do shopping in your free time",dateD :"07/07/2016, 19:00", dateF:"07/07/2016, 19:45", lieu: Loc8, speak: nil, photo: "shopping", day: day4, selected: false)
         
         Activity.insertNewActivity(moc, id: 17, nom: "Party", desc: "Enjoy the party and relax you",dateD :"07/07/2016, 23:00", dateF:"07/07/2016, 03:45", lieu: Loc7, speak: nil, photo: "party", day: day4, selected: false)
         
         
         //***********************************************Day4finish***************************************************
         //************************************************Day5******************************************************
-        Activity.insertNewActivity(moc, id: 18, nom: "Equitation", desc: "Come on and discover the art and practice of horsemanship and horse riding", dateD: "08/07/2016, 09:00", dateF: "08/07/2016, 11:00", lieu: Loc12, speak: nil , photo: "equit", day: day5, selected: false)
+        Activity.insertNewActivity(moc, id: 18, nom: "Equitation", desc: "Discover the art and practice of horsemanship and horse riding", dateD: "08/07/2016, 09:00", dateF: "08/07/2016, 11:00", lieu: Loc12, speak: nil , photo: "equit", day: day5, selected: false)
         
         
-        Activity.insertNewActivity(moc, id: 19, nom: "Visit of Montpellier", desc: "Come on and discover Montpellier, a wonderful city with its beautiful places", dateD: "08/07/2016, 18:30", dateF: "08/07/2016, 19:45", lieu:Loc8, speak:nil, photo: "montpell", day: day5, selected: false)
+        Activity.insertNewActivity(moc, id: 19, nom: "Visit of Montpellier", desc: "Discover Montpellier, a wonderful city with its beautiful places", dateD: "08/07/2016, 18:30", dateF: "08/07/2016, 19:45", lieu:Loc8, speak:nil, photo: "montpell", day: day5, selected: false)
         
-        Activity.insertNewActivity(moc, id: 20, nom: "Running", desc: "Move at a speed faster than a walk and enjoy yourself", dateD: "08/07/2016, 19:45", dateF: "08/07/2016, 21:00", lieu: Loc12, speak: nil, photo: "run", day: day5, selected: false)
+        Activity.insertNewActivity(moc, id: 20, nom: "Running", desc: "Participate at Montpellier marathon", dateD: "08/07/2016, 19:45", dateF: "08/07/2016, 21:00", lieu: Loc12, speak: nil, photo: "run", day: day5, selected: false)
         
         
         ///***********************************************Day5finish***************************************************
         //************************************************Day6******************************************************
         
-        Activity.insertNewActivity(moc, id: 21, nom: "Hiking", desc: "Hiking is your favorite sport? Come on and don't miss this morning hiking", dateD: "09/07/2016, 11:00", dateF: "09/07/2016, 11:30", lieu: Loc12, speak: nil, photo: "hiking", day: day6, selected: false)
+        Activity.insertNewActivity(moc, id: 21, nom: "Hiking", desc: "Morning hiking at Montpellier, Pic Saint Loup", dateD: "09/07/2016, 11:00", dateF: "09/07/2016, 11:30", lieu: Loc12, speak: nil, photo: "hiking", day: day6, selected: false)
         
         
-        Activity.insertNewActivity(moc, id: 22, nom: "Canoe Kayak", desc:"Come and discover Montpellier landscapes by canoeing", dateD :"09/07/2016, 17:00", dateF:"09/07/2016, 18:00", lieu: Loc11, speak: nil, photo: "canoe", day: day6, selected: false)
-        Activity.insertNewActivity(moc, id: 23, nom: "Tennis", desc:"A game in which two or four players strike a ball with rackets over a net stretched across a court.", dateD :"09/07/2016, 17:00", dateF:"09/07/2016, 18:00", lieu: Loc12, speak: nil, photo: "tennis", day: day6, selected: false)
+        Activity.insertNewActivity(moc, id: 22, nom: "Canoe Kayak", desc:"Discover Montpellier landscapes by canoeing", dateD :"09/07/2016, 17:00", dateF:"09/07/2016, 18:00", lieu: Loc11, speak: nil, photo: "canoe", day: day6, selected: false)
+        Activity.insertNewActivity(moc, id: 23, nom: "Tennis", desc:"Tennis tournement between Fisu participants", dateD :"09/07/2016, 17:00", dateF:"09/07/2016, 18:00", lieu: Loc12, speak: nil, photo: "tennis", day: day6, selected: false)
         
         
-        Activity.insertNewActivity(moc, id: 24, nom: "Closing Ceremony", desc: "A ceremony to celebrate the end of these wonderful days at Montpellier", dateD :"09/07/2016, 09:30", dateF:"09/07/2016, 11:30", lieu: Loc5, speak: Speak4, photo: "ceremony", day: day6, selected: false)
+        Activity.insertNewActivity(moc, id: 24, nom: "Closing Ceremony", desc: "Celebration of the end of these wonderful days", dateD :"09/07/2016, 09:30", dateF:"09/07/2016, 11:30", lieu: Loc5, speak: Speak4, photo: "ceremony", day: day6, selected: false)
         
         Activity.insertNewActivity(moc, id: 25, nom: "Beach", desc: "Swimming and relaxing at Palavas Beach", dateD :"09/07/2016, 14:30", dateF:"09/07/2016, 17:30", lieu: Loc7, speak: nil, photo: "beach", day: day6, selected: false)
         
-        Activity.insertNewActivity(moc, id: 26, nom: "Party", desc: "Come on and enjoy at this party celebrating the end of FISU", dateD :"09/07/2016, 19:30", dateF:"09/07/2016, 23:30", lieu: Loc5, speak: nil, photo: "party", day: day6, selected: false)
+        Activity.insertNewActivity(moc, id: 26, nom: "Party", desc: "Enjoy at this party celebrating the end of FISU", dateD :"09/07/2016, 19:30", dateF:"09/07/2016, 23:30", lieu: Loc5, speak: nil, photo: "party", day: day6, selected: false)
         
         //***********************************************Accomodation***************************************************
         Accomodation.insertNewAccomodation(moc, id: 1, nom: "Novotel", desc: "Contemporary hotel with a terrace coffee ,a bar , an outdoor pool and a playground ", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco1, tel: "04 99 52 34 34", photo: "novotel" )
