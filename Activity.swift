@@ -93,7 +93,7 @@ class Activity: NSManagedObject {
     /// fonction permettant de mettre à jour la BD--
     /// utiliser notamment quand l'utilisateur s'incrit à une activité
     /// - parameter select:la colonne à modifier, id: utiliser dans la clause where afin de selectionner la bonne activité
-        func updateData ( select: NSNumber , id: NSNumber){
+    func updateData ( select: NSNumber ,KeyPath: String, id: NSNumber) {
         let context = ( UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         let ActivityDescription = NSEntityDescription.entityForName( "Activity", inManagedObjectContext : context)
         let request = NSFetchRequest()
@@ -106,7 +106,7 @@ class Activity: NSManagedObject {
             
             if result.count != 0 {
                 let manage = result[0]
-                manage.setValue( select , forKeyPath: "selected")
+                manage.setValue( select , forKeyPath: KeyPath)
                 do{
                     try context.save()   //newActivity.managedObjectContext?.save()
                     print("data updated")
@@ -181,7 +181,7 @@ class Activity: NSManagedObject {
         return activity
         
     }
-    
+
     
 }
 

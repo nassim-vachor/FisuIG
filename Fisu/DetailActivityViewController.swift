@@ -23,11 +23,11 @@ class DetailActivityViewController: UIViewController, NSFetchedResultsController
     @IBAction func switchOnOff(sender: AnyObject) {
     
         if theSwitch.on {
-            receved?.updateData(1, id: (receved?.idAct)!)
+            receved?.updateData(1, KeyPath: "selected", id: (receved?.idAct)! )
             
         }
         else {
-            receved?.updateData(0, id: (receved?.idAct)!)
+            receved?.updateData( 0, KeyPath: "selected", id: (receved?.idAct)!)
         }
         
         self.reloadInputViews()

@@ -71,24 +71,24 @@ class DayTest: XCTestCase {
         let currentSection = sections![0]
         
         XCTAssertEqual( currentSection.numberOfObjects, 1,   "il n ya pas d activite pour Day8")
-  
+        
     }
     
     // test de la fonction qui renvoie tous les jours existants dans la base
     func testGetDayFetchedResultController()
     {
-       let   frc = Day.getDayFetchedResultController("Day", key: "keyDay")
+        let   frc = Day.getDayFetchedResultController("Day", key: "keyDay")
         do {
-        try frc.performFetch()
-               } catch {
-    
-               print("An error occured")
-           }
-           let sections = frc.sections
-           let currentSection = sections![0]
-            // On avait 6 day à la base , comme on insere un autre dans la fonction precedente on se retrouve avec 7 day
-           XCTAssertEqual( currentSection.numberOfObjects, 7,   "le nombre de jour existant est faux")
+            try frc.performFetch()
+        } catch {
+            
+            print("An error occured")
+        }
+        let sections = frc.sections
+        let currentSection = sections![0]
+        // On avait 6 day à la base , comme on insere un autre dans la fonction precedente on se retrouve avec 7 day
+        XCTAssertEqual( currentSection.numberOfObjects, 7,   "le nombre de jour existant est faux")
         
     }
-
+    
 }
