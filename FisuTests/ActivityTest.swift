@@ -33,6 +33,7 @@ class ActivityTest: XCTestCase {
         }
     }
     
+    
     func testActivtyInsert()
     {
         let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
@@ -45,7 +46,7 @@ class ActivityTest: XCTestCase {
         
         
         ///- Si jamais on insere une activity qui a deja ete insere, il n y pas d erreur ni de nouvelle insertion: l'activity qui avait ete insere est juste retourne
-        XCTAssertEqual(activite1, activite2, "L activite1 et l activite2 correspondent au meme activity")
+        XCTAssertEqual(activite1, activite2, "L activite1 et l activite2 ne correspondent pas au meme activity")
         
     }
     
@@ -85,6 +86,22 @@ class ActivityTest: XCTestCase {
     
     }
     
+    
+    func testUpdate()
+    {
+        
+        let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
+        let day8 = Day.insertNewDay(moc, id: 8, day: "Day 8")
+        
+        // initialisation d une activity ayant lieu le 8eme jour
+        let activite1 = Activity.insertNewActivity(moc, id: 1003, nom: "Open Ceremony", desc: "Speech about FISU and all events", dateD: "04/08/2016, 12:00", dateF: "04/08/2016, 13:00", lieu: nil, speak: nil, photo: "ceremony", day: day8, selected: false)
+        
+        Activity.updateData(1, KeyPath: "selected" , id: 1003)
+        XCTAssertEqual(activite1?.selected, 1)
+        
+        
+        
+    }
     
 
     
