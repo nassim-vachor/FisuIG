@@ -112,7 +112,7 @@ class ActivityTest: XCTestCase {
     Day.deleteData(8)
     
     }
-    
+    /// tester la fonction qui permet de recuperer le detail d'une act
     func testgetDetailActivity(){
         
         let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext

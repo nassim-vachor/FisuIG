@@ -109,6 +109,49 @@ class RestaurantTest: XCTestCase {
         
     }
     
+    // test de la fonction qui renvoie tous les restau existants dans la base
+    func testGetAccoFetchedResultController()
+    {
+        let   frc = Restaurant.getRestoFetchedResultController("Restaurant", key: "idRes")
+        do {
+            try frc.performFetch()
+        } catch {
+            
+            print("An error occured")
+        }
+        let sections = frc.sections
+        let currentSection = sections![0]
+        // On en a 11 dans notre base
+        XCTAssertEqual( currentSection.numberOfObjects, 11,   "le nombre de jour existant est faux")
+        
+    }
+    
+    
+    // TEST de la fonction permettant d'avoir le detail d'un hotel
+    func testgetDetailAcco() {
+        let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
+        
+        let res1 =  Restaurant.insertNewRestaurant(moc, id: 1000, nom: "Domino's Pizza", spec:"Pizza", dateD :"04/07/2016, 11:00", dateF:"01/07/2016, 23:30", adresse: nil , tel: "06 67 79 29 20", photo: "Domino's")
+        
+        let frc = Restaurant.getDetailRestoFetchedResultController("Restaurant", key: "idRes", predicat: "idRes=%@", args: (res1?.idRes)!)
+        
+        do {
+            try frc.performFetch()
+        } catch {
+            
+            print("An error occured")
+        }
+        
+        let indexPath = NSIndexPath(forItem: 0, inSection: 0)
+        let res = frc.objectAtIndexPath(indexPath)  as! Restaurant
+        //  let sections = frc.sections
+        //let currentSection = sections![0]
+        XCTAssertEqual(res1?.nameRes, res.nameRes, " les noms ne sont pas pareils")
+        // nettoyage de la base apres les test
+       Restaurant.deleteData(1000)
+        
+    }
+    
     
     
 }

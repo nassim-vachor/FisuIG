@@ -107,6 +107,46 @@ class AccomodationTest: XCTestCase {
         Accomodation.deleteData(1001)
         
     }
+    // test de la fonction qui renvoie tous les hotel existants dans la base
+    func testGetAccoFetchedResultController()
+    {
+        let   frc = Accomodation.getAccoFetchedResultController("Accomodation", key: "idAcco")
+        do {
+            try frc.performFetch()
+        } catch {
+            
+            print("An error occured")
+        }
+        let sections = frc.sections
+        let currentSection = sections![0]
+        // On en a 10 dans notre base
+        XCTAssertEqual( currentSection.numberOfObjects, 10,   "le nombre de jour existant est faux")
+        
+    }
     
+    
+    // TEST de la fonction permettant d'avoir le detail d'un hotel
+    func testgetDetailAcco() {
+        let moc = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
+        
+        let acco = Accomodation.insertNewAccomodation(moc, id: 100, nom: "hotel", desc: "hotel", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 05:00", adresse: nil, tel: "0658590481", photo: "novotel" )
+        let frc = Accomodation.getDetailAccoFetchedResultController("Accomodation", key: "idAcco", predicat: "idAcco=%@", args: (acco?.idAcco)!)
+        
+        do {
+            try frc.performFetch()
+        } catch {
+            
+            print("An error occured")
+        }
+        
+        let indexPath = NSIndexPath(forItem: 0, inSection: 0)
+        let accomodation = frc.objectAtIndexPath(indexPath)  as! Accomodation
+        //  let sections = frc.sections
+        //let currentSection = sections![0]
+        XCTAssertEqual(acco?.name, accomodation.name, " les noms ne sont pas pareils")
+        // nettoyage de la base apres les test
+        Accomodation.deleteData(100)
+        
+    }
     
 }
