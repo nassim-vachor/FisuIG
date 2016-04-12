@@ -62,7 +62,7 @@ class DetailActivityViewController: UIViewController, NSFetchedResultsController
      
         
       override func viewDidLoad() {
-            super.viewDidLoad()
+          super.viewDidLoad()
       
         // get detailActivity for the activity selected
         frc = Activity.getDetailActivityFetchedResultController("Activity", key: "idAct", predicat: "idAct=%@", args: (receved?.idAct)!)
@@ -75,11 +75,29 @@ class DetailActivityViewController: UIViewController, NSFetchedResultsController
         
         let indexPath = NSIndexPath(forItem: 0, inSection: 0)
         let act = frc.objectAtIndexPath(indexPath)  as! Activity
-       
-            NomActLabel.text =  act.nomAct  
-            DescLabel.text = "About This Event : \(act.descriptionAct!)"
-            //[descLabel.text.: "About This Restaurant" ]
-            HeureActLabel.text = "\(act.getDay())"
+        NomActLabel.text =  act.nomAct
+        
+        let myString:NSString = "About This Event : \(act.descriptionAct!)"
+        var myMutableString = NSMutableAttributedString()
+        
+        myMutableString = NSMutableAttributedString(string: myString as String, attributes: [NSFontAttributeName : UIFont( name: "Georgia" , size: 15.0)!])
+        myMutableString.addAttribute(NSForegroundColorAttributeName, value: UIColor.init(red: 128/255, green: 0/255, blue: 0/255, alpha: 1),range: NSRange(location: 0, length: 19))
+         myMutableString.addAttribute(NSFontAttributeName, value: UIFont( name: "Georgia-Bold" , size: 15.0)!, range: NSRange(location: 0, length: 19))
+        DescLabel.attributedText = myMutableString
+        
+        /*
+        let colors = "<font size = 4><font color = red>About This Event :</font>+\(act.descriptionAct!)"
+        DescLabel.text = "\(colors)"
+        let encoding = colors.dataUsingEncoding(NSUTF8StringEncoding)!
+        let options = [NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType]
+        do {
+            let string =  try! NSAttributedString(data: encoding, options: options, documentAttributes: nil)
+            DescLabel.attributedText = string
+        
+        }*/
+           // DescLabel.text = "About This Event : \(act.descriptionAct!)"
+        
+        HeureActLabel.text = "\(act.getDay())"
             horaireLabel.text = "\(act.getTimeDeb())"+" - \(act.getTimeFin())"
         
         
@@ -95,7 +113,19 @@ class DetailActivityViewController: UIViewController, NSFetchedResultsController
             speakButton.setTitle(buttonTitle, forState: UIControlState.Normal)
         }
         
-            adresseLabel?.text = "Location Map : \((act.isLocated3!).nomLoc!)"
+        // Modification de la couleur du label de Location Map
+        
+        
+        let myString2:NSString = "Location Map : \((act.isLocated3!).nomLoc!)"
+        var myMutableString2 = NSMutableAttributedString()
+        
+        myMutableString2 = NSMutableAttributedString(string: myString2 as String, attributes: [NSFontAttributeName : UIFont( name: "Georgia" , size: 15.0)!])
+        myMutableString2.addAttribute(NSForegroundColorAttributeName, value: UIColor.init(red: 128/255, green: 0/255, blue: 0/255, alpha: 1),range: NSRange(location: 0, length: 15))
+        myMutableString2.addAttribute(NSFontAttributeName, value: UIFont( name: "Georgia-Bold" , size: 15.0)!, range: NSRange(location: 0, length: 15))
+         adresseLabel?.attributedText = myMutableString2
+
+        
+            //adresseLabel?.text = "Location Map : \((act.isLocated3!).nomLoc!)"
             imageAct.image = UIImage(data: (act.photoActi)!, scale: 0.1)
             let location =  CLLocationCoordinate2D(latitude: CLLocationDegrees( (act.isLocated3?.latitude)! ), longitude: CLLocationDegrees((act.isLocated3?.longitude)! ))
             let span = MKCoordinateSpanMake(0.05, 0.05)

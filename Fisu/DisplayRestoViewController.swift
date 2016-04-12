@@ -40,11 +40,50 @@ class DisplayRestoViewController: UIViewController, NSFetchedResultsControllerDe
         let res = frc.objectAtIndexPath(indexPath)  as! Restaurant
         
         nomLabel.text = res.nameRes
-        descLabel.text = "About This Restaurant : \(res.speciality!)"
+       
+        // Modification de la couleur du label descLabel
+        
+        let myString:NSString = "About This Restaurant : \(res.speciality!)"
+        var myMutableString = NSMutableAttributedString()
+        
+        myMutableString = NSMutableAttributedString(string: myString as String, attributes: [NSFontAttributeName : UIFont( name: "Georgia" , size: 15.0)!])
+        myMutableString.addAttribute(NSForegroundColorAttributeName, value: UIColor.init(red: 128/255, green: 0/255, blue: 0/255, alpha: 1),range: NSRange(location: 0, length: 24))
+        myMutableString.addAttribute(NSFontAttributeName, value: UIFont( name: "Georgia-Bold" , size: 15.0)!, range: NSRange(location: 0, length: 24))
+        descLabel.attributedText = myMutableString
+        
 
-        heurLabel.text = "Openning Hours\n\(res.getTimeDeb())"+" - \(res.getTimeFin())"
-        telLabel.text = "Phone : \(res.phoneRes!)"
-        adresseLabel?.text = "Location Map : \((res.isLocated2!).address!)"
+        
+        
+        
+        // Modification de la couleur de heurLabel
+        let myString2:NSString = "Openning Hours\n\(res.getTimeDeb())"+" - \(res.getTimeFin())"
+        var myMutableString2 = NSMutableAttributedString()
+        
+        myMutableString2 = NSMutableAttributedString(string: myString2 as String, attributes: [NSFontAttributeName : UIFont( name: "Arial" , size: 14.0)!])
+        myMutableString2.addAttribute(NSForegroundColorAttributeName, value: UIColor.init(red: 128/255, green: 0/255, blue: 0/255, alpha: 1),range: NSRange(location: 0, length: 14))
+        myMutableString2.addAttribute(NSFontAttributeName, value: UIFont( name: "Georgia-Bold" , size: 14.0)!, range: NSRange(location: 0, length: 14))
+        heurLabel.attributedText = myMutableString2
+        
+        // Modification de la couleur du label telLabel
+        let myString3:NSString = "Phone : \(res.phoneRes!)"
+        var myMutableString3 = NSMutableAttributedString()
+        myMutableString3 = NSMutableAttributedString(string: myString3 as String, attributes: [NSFontAttributeName : UIFont( name: "Arial" , size: 13.5)!])
+        myMutableString3.addAttribute(NSForegroundColorAttributeName, value: UIColor.init(red: 128/255, green: 0/255, blue: 0/255, alpha: 1),range: NSRange(location: 0, length: 7))
+        myMutableString3.addAttribute(NSFontAttributeName, value: UIFont( name: "Georgia-Bold" , size: 13.5)!, range: NSRange(location: 0, length: 7))
+        telLabel.attributedText = myMutableString3
+
+
+     
+        //  Modification de la couleur du label adresseLabel
+        
+        let myString4:NSString =  "Location Map : \((res.isLocated2!).address!)"
+        var myMutableString4 = NSMutableAttributedString()
+        myMutableString4 = NSMutableAttributedString(string: myString4 as String, attributes: [NSFontAttributeName : UIFont( name: "Arial" , size: 15.0)!])
+        myMutableString4.addAttribute(NSForegroundColorAttributeName, value: UIColor.init(red: 128/255, green: 0/255, blue: 0/255, alpha: 1),range: NSRange(location: 0, length: 15))
+        myMutableString4.addAttribute(NSFontAttributeName, value: UIFont( name: "Georgia-Bold" , size: 15.0)!, range: NSRange(location: 0, length: 15))
+        adresseLabel?.attributedText = myMutableString4
+
+      
         imageResto.image = UIImage(data: (res.photoRes)!, scale: 0.1)
         let location =  CLLocationCoordinate2D(latitude: CLLocationDegrees( (res.isLocated2?.latitude)! ), longitude: CLLocationDegrees((res.isLocated2?.longitude)! ))
         let span = MKCoordinateSpanMake(0.05, 0.05)

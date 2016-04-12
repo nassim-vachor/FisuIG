@@ -190,11 +190,11 @@ class InitDB {
         
         Accomodation.insertNewAccomodation(moc, id: 5, nom: "Royal Hôtel", desc: "Charming hotel offering cozy and classic rooms , simple decor and warm colors", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco5, tel: "04 67 92 13 36", photo: "RoyalHotel", rating: "star3")
         
-        Accomodation.insertNewAccomodation(moc, id: 6, nom: " Hôtel Majestic", desc: "The Hotel Majestic is located in the heart of Montpellier city centre, 5mn walk from train station and 1 mn walk from famous Place de la Comedie", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco6, tel: "04 67 66 26 85", photo:"majestic", rating: "star4" )
+        Accomodation.insertNewAccomodation(moc, id: 6, nom: " Hôtel Majestic", desc: "The Hotel Majestic is located in the heart of Montpellier city centre", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco6, tel: "04 67 66 26 85", photo:"majestic", rating: "star4" )
         
         Accomodation.insertNewAccomodation(moc, id: 7, nom: "Auberge de jeunesse", desc: "This hostel with a bar and pool offers dormitories and double rooms ; breakfast included", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco7, tel: "04 67 60 32 22", photo: "auberge", rating: "star2" )
         
-        Accomodation.insertNewAccomodation(moc, id: 8, nom: " Hôtel de France", desc: "Hotel de France is a beautiful 18th century residence turned into a hotel in the 30's. It is close to the train and bus stations , Place de la Comédie and Corum.", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco8, tel: "04 67 92 29 29", photo: "HotelDeFrance", rating: "star3")
+        Accomodation.insertNewAccomodation(moc, id: 8, nom: " Hôtel de France", desc: "Hotel de France is a beautiful 18th century residence turned into a hotel in the 30's.", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco8, tel: "04 67 92 29 29", photo: "HotelDeFrance", rating: "star3")
         
         Accomodation.insertNewAccomodation(moc, id: 9, nom: " Amerique Hotel", desc: "Establishment with lift offering colorful rooms with wifi, bar, pool and outdoor jacuzzi", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco9, tel: "04 67 68 04 39", photo: "AmeriqueHotel",rating: "star3")
         Accomodation.insertNewAccomodation(moc, id: 10, nom: "Hotel Prime", desc: "a hotel with outdoor pool offering simple but functional rooms", dateD: "01/07/2016, 05:00", dateF: "01/07/2016, 23:40", adresse: LocAcco10, tel: "04 67 07 59 59", photo: "PrimeHotel", rating: "star5")
